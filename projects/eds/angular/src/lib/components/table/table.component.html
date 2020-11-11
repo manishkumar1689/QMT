@@ -1,0 +1,16 @@
+<table class="table" [ngClass]="modes">
+  <thead *ngIf="columns">
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col.content}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let cell of row">
+        {{cell.content}}
+      </td>
+    </tr>
+  </tbody>
+</table>

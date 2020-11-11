@@ -1,0 +1,12 @@
+
+
+
+.floatLeft {
+  width: 60%;
+  float: left;
+}
+
+.floatRight {
+  width: 40%;
+  float: right;
+}

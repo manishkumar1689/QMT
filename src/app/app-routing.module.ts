@@ -1,0 +1,63 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+//import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { PlaygroundComponent } from './pages/playground/playground.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { GroupOnBoardingComponent } from './pages/Grouping/group-on-boarding/group-on-boarding/group-on-boarding.component';
+import { ProjectOnBoardingComponent } from './pages/Grouping/project-on-boarding/project-on-boarding/project-on-boarding.component';
+import { CreateProjectComponent } from './pages/Grouping/project-on-boarding/form/create-project/create-project.component';
+import { EditProjectComponent } from './pages/Grouping/project-on-boarding/form/edit-project/edit-project.component';
+import { SettingsComponent } from './pages/Grouping/project-on-boarding/form/settings/settings.component';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+    data: { title: 'Getting started' },
+    children: [
+      { path: '', component: ProjectOnBoardingComponent },
+
+      { path: 'groups', component: GroupOnBoardingComponent }
+    ]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { title: 'Getting started' },
+    children: [{ path: 'projectOnBoarding', component: ProjectOnBoardingComponent },
+      { path: 'createProject', component: CreateProjectComponent },
+      { path: 'editProject/:projectId', component: EditProjectComponent },
+      { path: 'settingProject/:projectId', component: SettingsComponent },
+      { path: 'groupOnBoarding', component: GroupOnBoardingComponent }]
+  },
+  {
+    path: 'components/playground',
+    component: PlaygroundComponent,
+    data: {
+      title: 'Playground',
+      subtitle: 'Angular components'
+    }
+  },
+  {
+    path: 'groupOnBoarding',
+    component: GroupOnBoardingComponent,
+    data: {
+      title: 'Group OnBoarding',
+      subtitle: 'Angular components'
+    }
+  },
+  {
+    path: '**',
+    redirectTo: '/',
+    data: { title: '404' }
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
