@@ -43,6 +43,7 @@ import { EditProjectComponent } from './pages/Grouping/project-on-boarding/form/
 import { SettingsComponent } from './pages/Grouping/project-on-boarding/form/settings/settings.component';
 import { CreateGroupComponent } from './pages/Grouping/group-on-boarding/form/create-group/create-group.component';
 import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit-group/edit-group.component';
+import { BtnCellCross } from './pages/shared/btn-cell-cross.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit
     EditProjectComponent,
     SettingsComponent,
     CreateGroupComponent,
-    EditGroupComponent
+    EditGroupComponent,
+    BtnCellCross
   ],
   imports: [
     AppRoutingModule,

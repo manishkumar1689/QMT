@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BtnCellRenderer } from '../../../shared/btn-cell-renderer.component';
-
+import 'ag-grid-community';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import { BtnCellCross } from '../../../shared/btn-cell-cross.component';
 @Component({
   selector: 'app-project-on-boarding',
   templateUrl: './project-on-boarding.component.html',
   styleUrls: ['./project-on-boarding.component.scss']
 })
-export class ProjectOnBoardingComponent  {
+export class ProjectOnBoardingComponent {
   public gridApi;
   public gridColumnApi;
 
@@ -28,9 +31,9 @@ export class ProjectOnBoardingComponent  {
         headerName: 'Actions',
         field: 'project',
         cellRenderer: "btnCellRenderer",
-        checkboxSelection: checkboxSelection,
-        headerCheckboxSelection: headerCheckboxSelection,
-        //cellClassRules: { 'show-cell': 'value !== undefined' },
+        //checkboxSelection: checkboxSelection,
+       // headerCheckboxSelection: headerCheckboxSelection,
+        cellClassRules: { 'show-cell': 'value !== undefined' },
         // cellRenderer: 'showCellRenderer',
         //cellStyle: colSpan,
         cellRendererParams: {
@@ -39,18 +42,22 @@ export class ProjectOnBoardingComponent  {
           }
         },
         width: 200,
-        //rowSpan: rowSpan
+        rowSpan: rowSpan.bind(this)
       },
       {
         headerName: 'Project Name',
         field: 'projectName',
 
 
-        //cellClassRules: { 'show-cell': 'value !== undefined' },
+        cellClassRules: { 'show-cell': 'value !== undefined' },
         //cellRenderer: 'showCellRenderer',
         //cellStyle: colSpan,
         width: 200,
-        rowSpan: rowSpan
+        rowSpan: rowSpan.bind(this)
+         ,
+        sortable: true,
+        filter: true
+     
       },
 
       {
@@ -63,7 +70,8 @@ export class ProjectOnBoardingComponent  {
       },
       {
         headerName: 'OnBoarding Date/Time',
-        field: 'onBoardingDate'
+        field: 'onBoardingDate',
+        
       },
       {
         headerName: 'Polling Status',
@@ -99,14 +107,14 @@ export class ProjectOnBoardingComponent  {
       cellRendererParams: { checkbox: true },
     };
     this.defaultColDef = {
-      editable: true,
+      editable: false,
       enableRowGroup: true,
       enablePivot: true,
       enableValue: true,
-      sortable: true,
+      sortable: false,
       resizable: true,
-      filter: true,
-
+      filter: false,
+      flex: 1,
       minWidth: 100,
     };
     this.components = { showCellRenderer: createShowCellRenderer() };
@@ -119,15 +127,105 @@ export class ProjectOnBoardingComponent  {
     };
 
     this.frameworkComponents = {
-      btnCellRenderer: BtnCellRenderer
+      btnCellRenderer: BtnCellRenderer,
+      btnCellCross: BtnCellCross
     };
   }
 
+  onSortChanged(event) {
+    debugger;
+    let that = event.api;
+    
+
+    let count = 1;
+    let actualIndex = 1;
+    let incrementCounter = 9;
+    let counterOfTen = 10;
+    let rowData = [];
+    that.forEachNodeAfterFilterAndSort(function (rowNode, index) {
+      console.log('node ' + rowNode.data.projectName + ' passes the filter');
+      delete rowNode.data.rowSpan;
+      rowData.push(rowNode.data);
+
+
+    });
+    this.rowData = rowData;
+    rowData.forEach(function (data, index) {
+      debugger;
+      if (index < incrementCounter && rowData.length - 1 !== index && rowData[index].projectName === rowData[index + 1].projectName) {
+        if (count === 1) {
+          actualIndex = index;
+        }
+
+        count++;
+      }
+      //else if (that.rowData.length == index + 1) {
+
+      //}
+      else if ((index === incrementCounter && count > 1) || (index === rowData.length - 1)) {
+        rowData[actualIndex].rowSpan = count;
+        count = 1;
+        incrementCounter = index + 10;
+      }
+      else if (index < incrementCounter && count>1) {
+        rowData[actualIndex].rowSpan = count;
+        count = 1;
+      }
+     
+    });
+   
+   
+  }
   onPageSizeChanged(newPageSize) {
     var value = document.getElementById('page-size').nodeValue;
     this.gridApi.paginationSetPageSize(Number(value));
   }
+  onPaginationChanged() {
+    console.log('onPaginationPageLoaded');
+    if (this.gridApi) {
+     
+      //setText('#lbLastPageFound', this.gridApi.paginationIsLastPageFound());
+      //setText('#lbPageSize', this.gridApi.paginationGetPageSize());
+      //setText('#lbCurrentPage', this.gridApi.paginationGetCurrentPage() + 1);
+      //setText('#lbTotalPages', this.gridApi.paginationGetTotalPages());
+      //setLastButtonDisabled(!this.gridApi.paginationIsLastPageFound());
+    if (this.gridApi.paginationGetCurrentPage() !== 0) {
+        let that = this;
+        let count = 1;
+        let actualIndex = 1;
+        let generatedIndex = 0;
+        generatedIndex = this.gridApi.paginationGetCurrentPage() * 10;
+        this.rowData.map(function (data, index) {
 
+          if (generatedIndex <= index && index < generatedIndex + 9) {
+            
+            if (index < generatedIndex + 9 && that.rowData.length - 1 !== index && that.rowData[index].projectName === that.rowData[index + 1].projectName) {
+              if (count == 1) {
+                actualIndex = index;
+              }
+
+              count++;
+            }
+            //else if (that.rowData.length == index + 1) {
+
+            //}
+            else if (index == generatedIndex + 9 && count > 1) {
+              that.rowData[actualIndex].rowSpan = count;
+              count = 1;
+            }
+            else if (index < generatedIndex + 9 && count > 1) {
+              that.rowData[actualIndex].rowSpan = count;
+              count = 1;
+            }
+          }
+          //if (data[index].projectName < data[index+1].projectName) { return -1; }
+          //if (data[index].projectName > data[index+1].projectName) { return 1; }
+
+        })
+      }
+     
+    }
+  }
   onGridReady(params) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
@@ -138,22 +236,68 @@ export class ProjectOnBoardingComponent  {
         '../../../src/app/pages/shared/rawdata.json'
       )
       .subscribe((data: any) => {
-        debugger;
+        
         this.rowData = data;
         let rowSpan = 1;
+       
         this.rowData.sort(function (a: any, b: any) {
+          
           if (a.projectName < b.projectName) { return -1; }
           if (a.projectName > b.projectName) { return 1; }
-          if (a.projectName === b.projectName) { a.rowSpan = rowSpan++; return 0; }
+          if (a.projectName === b.projectName) {  return 0; }
 
 
         })
-        params.api.paginationGoToPage(4);
-      });
-  }
+        let len;
+        var results = {}
+      //  for (var i = 0; i < this.rowData.length; i++) {
+
+      ////get the requested property value (example: License)
+      //var value = this.rowData[i]["projectName"];
+
+      ////increment counter for this value (starting at 1)
+      //var count = (results[value] || 0) + 1;
+      //results[value] = count;
+      //  }
+       // setTimeout(function () {
+        let that = this;
+        let count = 1;
+        let actualIndex = 1;
+        let incrementCounter = 9;
+        let counterOfTen=10;
+          this.rowData.map(function (data, index) {
+            debugger;
+            //if (data[index].projectName < data[index+1].projectName) { return -1; }
+            //if (data[index].projectName > data[index+1].projectName) { return 1; }
+            
+            if (index < incrementCounter && that.rowData.length - 1 !== index   && that.rowData[index].projectName === that.rowData[index + 1].projectName) {
+              if (count === 1) {
+                actualIndex = index;
+              }
+
+              count++;
+            }
+            //else if (that.rowData.length == index + 1) {
+
+            //}
+            else if ((index === incrementCounter  && count > 1) || (index === that.rowData.length-1)) {
+              that.rowData[actualIndex].rowSpan = count;
+              count = 1;
+              incrementCounter = index+10;
+            }
+            else if (index < incrementCounter && count>1) {
+              that.rowData[actualIndex].rowSpan = count;
+              count = 1;
+            }
+          })
+    //    },2000)
+   
+    params.api.paginationGoToPage(2);
+  });
+}
 }
 function rowSpan(params) {
-  if (params.data.rowSpan) {
+   if (params.data.rowSpan) {
     return params.data.rowSpan;
   } else {
     return 1;
@@ -179,7 +323,7 @@ function createShowCellRenderer() {
     if (cellBlank) {
       return null;
     }
-    debugger;
+    
     this.ui = document.createElement('div');
     this.ui.innerHTML =
       '<div class="show-name">' +

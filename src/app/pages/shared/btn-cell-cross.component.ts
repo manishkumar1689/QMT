@@ -10,12 +10,12 @@ import { Router } from "@angular/router";
 <div>
  
  <div class="example">
-         <button (click)="btnSettingsHandler($event)"><i  class="icon icon-settings"></i></button><button (click)="btnEditHandler($event)"><i  class="icon icon-edit"></i></button><button (click)="btnDeleteHandler($event)"><i  class="icon icon-trashcan"></i></button>
+         <button (click)="btnSettingsHandler($event)"><i  class="icon icon-cross"></i></button>
  </div>
 </div>
   `
 })
-export class BtnCellRenderer implements ICellRendererAngularComp, OnDestroy {
+export class BtnCellCross implements ICellRendererAngularComp, OnDestroy {
     refresh(params: any): boolean {
         throw new Error("Method not implemented.");
     }
@@ -32,11 +32,6 @@ export class BtnCellRenderer implements ICellRendererAngularComp, OnDestroy {
     debugger;
     this.params.clicked(this.params.data.userSignum);
     this.router.navigate(['/dashboard/editProject', this.params.data.userSignum]);
-  }
-  btnDeleteHandler(data) {
-    debugger;
-    this.params.clicked(this.params.data.userSignum);
-    this.router.navigate(['/dashboard/deleteProject', this.params.data.userSignum]);
   }
   btnSettingsHandler(data) {
     debugger;

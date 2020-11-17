@@ -1,11 +1,11 @@
 Inside Project OnBoarding
-<br/>
+<br />
+ <!--[autoGroupColumnDef]="autoGroupColumnDef"-->
 <ag-grid-angular #agGrid
                  style="width: 100%; height: 100%;"
                  id="myGrid"
                  class="ag-theme-alpine"
                  [columnDefs]="columnDefs"
-                 [autoGroupColumnDef]="autoGroupColumnDef"
                  [defaultColDef]="defaultColDef"
                  [suppressRowClickSelection]="true"
                  [groupSelectsChildren]="true"
@@ -20,4 +20,7 @@ Inside Project OnBoarding
                  [rowData]="rowData"
                  [suppressRowTransform]="true"
                  [frameworkComponents]="frameworkComponents"
+                 (paginationChanged)="onPaginationChanged($event)"
+                 
+                 (sortChanged)="onSortChanged($event)"
                  (gridReady)="onGridReady($event)"></ag-grid-angular>

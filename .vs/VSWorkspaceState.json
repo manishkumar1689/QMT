@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\dashboard",
+    "\\src\\app\\pages\\Grouping",
+    "\\src\\app\\pages\\Grouping\\project-on-boarding",
+    "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding",
+    "\\src\\app\\pages\\shared"
+  ],
+  "SelectedNode": "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding\\project-on-boarding.component.ts",
+  "PreviewInSolutionExplorer": false
+}

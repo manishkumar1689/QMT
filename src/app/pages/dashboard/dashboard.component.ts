@@ -51,7 +51,7 @@ export class DashboardComponent {
         cellRenderer: 'showCellRenderer',
         cellStyle: colSpan,
         width: 200,
-        rowSpan: rowSpan
+        rowSpan: 2
       },
      
       {
@@ -137,8 +137,7 @@ export class DashboardComponent {
     this.http
       .get(
        '../../../src/app/pages/shared/rawdata.json'
-    )
-      .subscribe((data: any) => {
+    ).subscribe((data: any) => {
         debugger;
         this.rowData = data;
         let rowSpan = 1;
