@@ -1,5 +1,3 @@
-
-
 <!--<form id="newonboardingbox" name="newonboardingbox" method="post" action="/qmt/onboarding.xhtml" enctype="application/x-www-form-urlencoded">
   <input type="hidden" name="newonboardingbox" value="newonboardingbox">
   <div id="newonboardingbox:newOnboardingPanel" class="ui-panel ui-widget ui-widget-content ui-corner-all panel-width" style="margin-bottom:0px;margin-top:1px" data-widget="newonboardingpanel">
@@ -434,94 +432,141 @@
   </div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="1330763363536027134:878129741004795731" autocomplete="off">
 </form>-->
 
-  <div class="wizard-content">
+<div class="wizard-content">
 
-    <div class="content">
+  <div class="content">
 
 
-      <div class="row" style="margin-left:30px">
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt51" class="" title="Mandatory: Select Country that is applicable for the new Onboarding Project">Country:*</label>
+    <div class="row" style="margin-left:30px">
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt51" class="" title="Mandatory: Select Country that is applicable for the new Onboarding Project">Country:*</label>
+      </div>
+
+      <div class="column lg-3">
+        <div  class="multi-select" >
+       
+            <!--<select id="newonboardingbox:country_input" name="newonboardingbox:country_input" tabindex="-1" aria-hidden="true">
+            <option value="" data-escape="true">Select Country</option>
+            <option value="CU" data-escape="true">Cuba</option>
+            <option value="AR" data-escape="true">Argentina</option>
+            <option value="CN" data-escape="true">China</option>
+            <option value="DK" data-escape="true">Denmark</option>
+            <option value="DO" data-escape="true">Dominican Republic</option>
+            <option value="AS" data-escape="true">America Samoa</option>
+            <option value="AU" data-escape="true">Australia</option>
+            <option value="CL" data-escape="true">Chile</option>
+            <option value="CH" data-escape="true">Switzerland</option>
+            <option value="CR" data-escape="true">Costa Rica</option>
+            <option value="IN" data-escape="true">India</option>
+            </select>-->
+            <ng-multiselect-dropdown [placeholder]="'Select Country'" [data]="countries"
+                                     [settings]="dropdownCountrySettings">
+            </ng-multiselect-dropdown>
+         
+
         </div>
+      </div>
 
-        <div class="column lg-3">
-          <div id="newonboardingbox:country" class="" style="width:220px;" title="Mandatory: Select Country that is applicable for the new Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:country_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:country_input" name="newonboardingbox:country_input" tabindex="-1" aria-hidden="true"><option value="" data-escape="true">Select Country</option><option value="CU" data-escape="true">Cuba</option><option value="AR" data-escape="true">Argentina</option><option value="CN" data-escape="true">China</option><option value="DK" data-escape="true">Denmark</option><option value="DO" data-escape="true">Dominican Republic</option><option value="AS" data-escape="true">America Samoa</option><option value="AU" data-escape="true">Australia</option><option value="CL" data-escape="true">Chile</option><option value="CH" data-escape="true">Switzerland</option><option value="CR" data-escape="true">Costa Rica</option><option value="IN" data-escape="true">India</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div></div>
-        </div>
-
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt54" class="" style="white-space: nowrap" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project">Operator Code:*</label>
-
-        </div>
-
-        <div class="column lg-3">
-          <input id="newonboardingbox:operatorcode" name="newonboardingbox:operatorcode" type="text" style="width:220px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="3" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
-        </div>
-
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt56" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project">Project Code:*</label>
-        </div>
-
-        <div class="column lg-3">
-          <input id="newonboardingbox:projectcode" name="newonboardingbox:projectcode" type="text" style="width:220px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="6" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
-
-        </div>
-
-
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt54" class="" style="white-space: nowrap" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project">Operator Code:*</label>
 
       </div>
 
-      <br />
+      <div class="column lg-3">
+        <input id="newonboardingbox:operatorcode" name="newonboardingbox:operatorcode" type="text" class="multi-select" class="margin-left-30" aria-required="true" maxlength="3" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
+      </div>
 
-      <div class="row" style="margin-left:30px">
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt59" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Tenant ID is a generated ID, generated by the the combination of country, operator code and project code">Tenant ID:</label>
-        </div>
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt56" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project">Project Code:*</label>
+      </div>
 
-        <div class="column lg-3">
-          <input id="newonboardingbox:projectName" name="newonboardingbox:projectName" type="text" style="width:234px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-disabled" disabled="disabled" aria-disabled="true" title="Tenant ID is a generated ID, generated by the the combination of country, operator code and project code" role="textbox" aria-readonly="false">
-        </div>
-
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt60" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Enter a Project Description that is applicable for the new Onboarding Project">Project Description:*</label>
-
-        </div>
-
-        <div class="column lg-3">
-          <input id="newonboardingbox:project" name="newonboardingbox:project" type="text" style="width:220px;margin-left:3px" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="50" title="Mandatory: Enter a Project Description that is applicable for the new Onboarding Project" role="textbox" aria-disabled="false" aria-readonly="false">
-        </div>
-
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt61" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Enter a Project Spoc that is applicable for the new Onboarding Project">Project Spoc:*</label>
-        </div>
-
-        <div class="column lg-3">
-          <input id="newonboardingbox:spoc" name="newonboardingbox:spoc" type="text" style="width:220px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="90" title="Mandatory: Enter a Project Spoc that is applicable for the new Onboarding Project" role="textbox" aria-disabled="false" aria-readonly="false">
-
-        </div>
-
-
+      <div class="column lg-3">
+        <input id="newonboardingbox:projectcode" name="newonboardingbox:projectcode" type="text" class="multi-select" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="6" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
 
       </div>
 
-      <br />
+
+
+    </div>
+
+    <br />
+
+    <div class="row" style="margin-left:30px">
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt59" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Tenant ID is a generated ID, generated by the the combination of country, operator code and project code">Tenant ID:</label>
+      </div>
+
+      <div class="column lg-3">
+        <input id="newonboardingbox:projectName" name="newonboardingbox:projectName" type="text" class="multi-select"  title="Tenant ID is a generated ID, generated by the the combination of country, operator code and project code" role="textbox" aria-readonly="false">
+      </div>
+
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt60" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Enter a Project Description that is applicable for the new Onboarding Project">Project Description:*</label>
+
+      </div>
+
+      <div class="column lg-3">
+        <input id="newonboardingbox:project" name="newonboardingbox:project" type="text" class="multi-select" class="margin-left-30" aria-required="true" maxlength="50" title="Mandatory: Enter a Project Description that is applicable for the new Onboarding Project" role="textbox" aria-disabled="false" aria-readonly="false">
+      </div>
+
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt61" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Enter a Project Spoc that is applicable for the new Onboarding Project">Project Spoc:*</label>
+      </div>
+
+      <div class="column lg-3">
+        <input id="newonboardingbox:spoc" name="newonboardingbox:spoc" type="text" class="multi-select" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="90" title="Mandatory: Enter a Project Spoc that is applicable for the new Onboarding Project" role="textbox" aria-disabled="false" aria-readonly="false">
+
+      </div>
 
 
 
-      <div class="row" style="margin-left:30px">
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt63" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Please select modules with this Onboarding Project">Module:*</label>
+    </div>
+
+    <br />
+
+
+
+    <div class="row" style="margin-left:30px">
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt63" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Please select modules with this Onboarding Project">Module:*</label>
+      </div>
+
+      <div class="column lg-3">
+        <div class="multi-select">
+          <ng-multiselect-dropdown [placeholder]="'Select Module'" [data]="modules"
+                                   [settings]="dropdownModuleSettings">
+          </ng-multiselect-dropdown>
+          <!--<div id="newonboardingbox:module" class="ui-selectcheckboxmenu-multiple ui-selectcheckboxmenu ui-widget ui-state-default ui-corner-all" style="width:242px;" title="Mandatory: Please select modules with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false"><div class="ui-helper-hidden-accessible">
+    <input id="newonboardingbox:module_focus" name="newonboardingbox:module_focus" type="text" readonly="readonly"></div>
+  <div class="ui-helper-hidden">
+    <input id="newonboardingbox:module:0" name="newonboardingbox:module" type="checkbox" value="DevOps" data-escaped="true" aria-required="true">
+    <label for="newonboardingbox:module:0">DevOps</label>
+    <input id="newonboardingbox:module:1" name="newonboardingbox:module" type="checkbox" value="Notify" data-escaped="true" aria-required="true">
+    <label for="newonboardingbox:module:1">Notify</label>
+    <input id="newonboardingbox:module:2" name="newonboardingbox:module" type="checkbox" value="SAP" data-escaped="true" aria-required="true">
+    <label for="newonboardingbox:module:2">SAP</label>
+    <input id="newonboardingbox:module:3" name="newonboardingbox:module" type="checkbox" value="SonarQube" data-escaped="true" aria-required="true">
+    <label for="newonboardingbox:module:3">SonarQube</label>
+    <input id="newonboardingbox:module:4" name="newonboardingbox:module" type="checkbox" value="Testing" data-escaped="true" aria-required="true">
+    <label for="newonboardingbox:module:4">Testing</label></div>
+  <ul class="ui-selectcheckboxmenu-multiple-container ui-widget ui-inputfield ui-state-default ui-corner-all"></ul>
+
+  <div class="ui-selectcheckboxmenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s"></span></div></div>-->
+
         </div>
+      </div>
 
-        <div class="column lg-3">
-          <div id="newonboardingbox:module" class="ui-selectcheckboxmenu-multiple ui-selectcheckboxmenu ui-widget ui-state-default ui-corner-all" style="width:242px;" title="Mandatory: Please select modules with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:module_focus" name="newonboardingbox:module_focus" type="text" readonly="readonly"></div><div class="ui-helper-hidden"><input id="newonboardingbox:module:0" name="newonboardingbox:module" type="checkbox" value="DevOps" data-escaped="true" aria-required="true"><label for="newonboardingbox:module:0">DevOps</label><input id="newonboardingbox:module:1" name="newonboardingbox:module" type="checkbox" value="Notify" data-escaped="true" aria-required="true"><label for="newonboardingbox:module:1">Notify</label><input id="newonboardingbox:module:2" name="newonboardingbox:module" type="checkbox" value="SAP" data-escaped="true" aria-required="true"><label for="newonboardingbox:module:2">SAP</label><input id="newonboardingbox:module:3" name="newonboardingbox:module" type="checkbox" value="SonarQube" data-escaped="true" aria-required="true"><label for="newonboardingbox:module:3">SonarQube</label><input id="newonboardingbox:module:4" name="newonboardingbox:module" type="checkbox" value="Testing" data-escaped="true" aria-required="true"><label for="newonboardingbox:module:4">Testing</label></div><ul class="ui-selectcheckboxmenu-multiple-container ui-widget ui-inputfield ui-state-default ui-corner-all"></ul><div class="ui-selectcheckboxmenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s"></span></div></div>
+      <div class="column lg-1">
+        <label id="newonboardingbox:j_idt67" class="ui-outputlabel ui-widget" style="white-space: nowrap;margin-left:0px;" title="Mandatory: Select Market Area that is applicable for the new Onboarding Project">Market Area:*</label>
+      </div>
+
+      <div class="column lg-3">
+        <!-- <div id="newonboardingbox:region" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all" style="width:210px;" title="Mandatory: Select Market Area that is applicable for the new Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:region_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:region_input" name="newonboardingbox:region_input" tabindex="-1" aria-hidden="true"><option value="" data-escape="true">Select Market Area</option><option value="GLOBAL" data-escape="true">GLOBAL</option><option value="MANA" data-escape="true">MANA</option><option value="MELA" data-escape="true">MELA</option><option value="MMEA" data-escape="true">MMEA</option><option value="MNEA" data-escape="true">MNEA</option><option value="MOAI" data-escape="true">MOAI</option><option value="SDUI" data-escape="true">SDUI</option></select></div><label id="newonboardingbox:region_label" class="ui-selectonemenu-label ui-inputfield ui-corner-all">Select Market Area</label><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div></div>-->
+        <div class="multi-select margin-left-30">
+          <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
+                                   [settings]="dropdownMarketAreaSettings" style="width:220px">
+          </ng-multiselect-dropdown>
         </div>
-
-        <div class="column lg-1">
-          <label id="newonboardingbox:j_idt67" class="ui-outputlabel ui-widget" style="white-space: nowrap;margin-left:0px;" title="Mandatory: Select Market Area that is applicable for the new Onboarding Project">Market Area:*</label>
-        </div>
-
-        <div class="column lg-3">
-          <div id="newonboardingbox:region" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all" style="width:210px;" title="Mandatory: Select Market Area that is applicable for the new Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:region_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:region_input" name="newonboardingbox:region_input" tabindex="-1" aria-hidden="true"><option value="" data-escape="true">Select Market Area</option><option value="GLOBAL" data-escape="true">GLOBAL</option><option value="MANA" data-escape="true">MANA</option><option value="MELA" data-escape="true">MELA</option><option value="MMEA" data-escape="true">MMEA</option><option value="MNEA" data-escape="true">MNEA</option><option value="MOAI" data-escape="true">MOAI</option><option value="SDUI" data-escape="true">SDUI</option></select></div><label id="newonboardingbox:region_label" class="ui-selectonemenu-label ui-inputfield ui-corner-all">Select Market Area</label><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div></div>
         </div>
 
         <div class="column lg-1">
@@ -529,7 +574,7 @@
         </div>
 
         <div class="column lg-3">
-          <input id="newonboardingbox:fasid" name="newonboardingbox:fasid" type="text" style="width:220px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" maxlength="20" title="Optional: Enter a FAS-ID that is applicable for the new Onboarding Project" role="textbox" aria-disabled="false" aria-readonly="false">
+          <input id="newonboardingbox:fasid" name="newonboardingbox:fasid" type="text" class="multi-select" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" maxlength="20" title="Optional: Enter a FAS-ID that is applicable for the new Onboarding Project" role="textbox" aria-disabled="false" aria-readonly="false">
         </div>
 
 
@@ -538,223 +583,514 @@
 
 
 
-    </div>
-
-    <div class="content">
-      <fieldset style="padding:20px;margin:10px;    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;">
-        <legend>GIT:</legend>
-
-        <div class="row" style="margin-left:30px">
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">External-DevOps:</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:j_idt73" class="ui-selectbooleancheckbox ui-chkbox ui-widget" title="Please check if you want to onboard this as External-DevOps project"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:j_idt73_input" name="newonboardingbox:j_idt73_input" type="checkbox" autocomplete="off" aria-hidden="true" aria-checked="false" disabled="disabled" aria-disabled="true"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-disabled"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Domain:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:domain" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Domain assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:domain_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:domain_input" name="newonboardingbox:domain_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:domain&quot;,e:&quot;valueChange&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:domain&quot;,u:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Domain</option><option value="BSS" data-escape="true">BSS</option><option value="COS" data-escape="true">COS</option><option value="Cloud" data-escape="true">Cloud</option><option value="IOT" data-escape="true">IOT</option><option value="Media" data-escape="true">Media</option><option value="OSS" data-escape="true">OSS</option><option value="Other" data-escape="true">Other</option><option value="PC" data-escape="true">PC</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:domain_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"><span class="ui-icon ui-icon-search"></span></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"></div></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Product:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:product" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Product assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:product_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:product_input" name="newonboardingbox:product_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:product&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Product</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:product_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"><ul id="newonboardingbox:product_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox" aria-activedescendant="newonboardingbox:product_0"></ul></div></div></div>
-          </div>
-
-
-
-        </div>
-      </fieldset>
-    </div>
-
-
-    <div class="content">
-      <fieldset style="padding:20px;margin:10px;    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;">
-        <legend>JIRA:</legend>
-
-        <div class="row" style="margin-left:30px">
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">External-DevOps:</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:j_idt73" class="ui-selectbooleancheckbox ui-chkbox ui-widget" title="Please check if you want to onboard this as External-DevOps project"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:j_idt73_input" name="newonboardingbox:j_idt73_input" type="checkbox" autocomplete="off" aria-hidden="true" aria-checked="false" disabled="disabled" aria-disabled="true"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-disabled"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Domain:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:domain" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Domain assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:domain_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:domain_input" name="newonboardingbox:domain_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:domain&quot;,e:&quot;valueChange&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:domain&quot;,u:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Domain</option><option value="BSS" data-escape="true">BSS</option><option value="COS" data-escape="true">COS</option><option value="Cloud" data-escape="true">Cloud</option><option value="IOT" data-escape="true">IOT</option><option value="Media" data-escape="true">Media</option><option value="OSS" data-escape="true">OSS</option><option value="Other" data-escape="true">Other</option><option value="PC" data-escape="true">PC</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:domain_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"><span class="ui-icon ui-icon-search"></span></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"></div></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Select Product assoicated with this Onboarding Project">Product:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:product" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Product assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:product_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:product_input" name="newonboardingbox:product_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:product&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Product</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:product_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"><ul id="newonboardingbox:product_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox" aria-activedescendant="newonboardingbox:product_0"></ul></div></div></div>
-          </div>
-
-
-
-        </div>
-      </fieldset>
-    </div>
-    <div class="content">
-      <fieldset style="padding:20px;margin:10px;    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;">
-        <legend>SONARQUBE:</legend>
-
-        <div class="row" style="margin-left:30px">
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">External-DevOps:</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:j_idt73" class="ui-selectbooleancheckbox ui-chkbox ui-widget" title="Please check if you want to onboard this as External-DevOps project"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:j_idt73_input" name="newonboardingbox:j_idt73_input" type="checkbox" autocomplete="off" aria-hidden="true" aria-checked="false" disabled="disabled" aria-disabled="true"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-disabled"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Domain:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:domain" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Domain assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:domain_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:domain_input" name="newonboardingbox:domain_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:domain&quot;,e:&quot;valueChange&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:domain&quot;,u:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Domain</option><option value="BSS" data-escape="true">BSS</option><option value="COS" data-escape="true">COS</option><option value="Cloud" data-escape="true">Cloud</option><option value="IOT" data-escape="true">IOT</option><option value="Media" data-escape="true">Media</option><option value="OSS" data-escape="true">OSS</option><option value="Other" data-escape="true">Other</option><option value="PC" data-escape="true">PC</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:domain_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"><span class="ui-icon ui-icon-search"></span></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"></div></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Product:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:product" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Product assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:product_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:product_input" name="newonboardingbox:product_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:product&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Product</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:product_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"><ul id="newonboardingbox:product_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox" aria-activedescendant="newonboardingbox:product_0"></ul></div></div></div>
-          </div>
-
-
-
-        </div>
-      </fieldset>
-    </div>
-    <div class="content">
-      <fieldset style="padding:20px;margin:10px;    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;">
-        <legend>SAP FINANCIAL:</legend>
-
-        <div class="row" style="margin-left:30px">
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">External-DevOps:</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:j_idt73" class="ui-selectbooleancheckbox ui-chkbox ui-widget" title="Please check if you want to onboard this as External-DevOps project"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:j_idt73_input" name="newonboardingbox:j_idt73_input" type="checkbox" autocomplete="off" aria-hidden="true" aria-checked="false" disabled="disabled" aria-disabled="true"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-disabled"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Domain:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:domain" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Domain assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:domain_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:domain_input" name="newonboardingbox:domain_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:domain&quot;,e:&quot;valueChange&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:domain&quot;,u:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Domain</option><option value="BSS" data-escape="true">BSS</option><option value="COS" data-escape="true">COS</option><option value="Cloud" data-escape="true">Cloud</option><option value="IOT" data-escape="true">IOT</option><option value="Media" data-escape="true">Media</option><option value="OSS" data-escape="true">OSS</option><option value="Other" data-escape="true">Other</option><option value="PC" data-escape="true">PC</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:domain_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"><span class="ui-icon ui-icon-search"></span></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"></div></div></div>
-          </div>
-
-          <div class="column lg-1">
-            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Product:*</label>
-          </div>
-
-          <div class="column lg-3">
-            <div id="newonboardingbox:product" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Product assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:product_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:product_input" name="newonboardingbox:product_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:product&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Product</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:product_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"><ul id="newonboardingbox:product_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox" aria-activedescendant="newonboardingbox:product_0"></ul></div></div></div>
-          </div>
-
-
-
-        </div>
-      </fieldset>
-    </div>
-    <div class="content">
-      <fieldset style="padding:20px;margin:10px;    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;">
-        <legend>NOTIFICATION:</legend>
-
-        <div class="row" style="margin-left:30px">
-          
-
-
-          <div class="container">
-            <div class="floatLeft">
-              <table cellspacing="15px" style="margin-left:15px" width="375px">
-                <tbody>
-                  <tr>
-                    <td><label id="newonboardingbox:j_idt177" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Select active applicable for the new Onboarding Project">Enabled:*</label></td>
-                    <td><div id="newonboardingbox:polling" class="ui-toggleswitch ui-widget ui-toggleswitch-checked ui-state-disabled" role="checkbox" aria-checked="aria-checked" style="margin-left:5px"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:polling_input" name="newonboardingbox:polling_input" type="checkbox" checked="checked" disabled="disabled" aria-disabled="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:polling&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:polling&quot;});"></div><div class="ui-toggleswitch-slider"></div></div></td>
-                    <td><label id="newonboardingbox:j_idt178" class="ui-outputlabel ui-widget" style="margin-left:10px;white-space: nowrap" title="Mandatory: Enter Interval assoicated with this Onboarding Project should not less than 4 hours">Interval(Minutes):*</label></td>
-                    <td><span id="newonboardingbox:interval" class="ui-spinner ui-widget ui-corner-all ui-state-disabled" style="width:75px;margin-left:5px"><input id="newonboardingbox:interval_input" name="newonboardingbox:interval_input" type="text" class="ui-spinner-input ui-inputfield ui-state-default ui-corner-all" autocomplete="off" value="1440" aria-required="true" disabled="disabled" aria-disabled="true" onkeypress="if(event.which < 48 || event.which > 57) return false;" role="spinner" aria-multiline="false" aria-valuenow="1440" aria-valuemin="1440" aria-valuemax="43200"><a class="ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-n ui-c"></span></span></a><a class="ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></span></a></span></td>
-                    <td><label id="newonboardingbox:j_idt179" class="ui-outputlabel ui-widget" style="margin-left:0px;white-space: nowrap" title="Mandatory: Enter a Schedule time that is applicable for the new Onboarding Project">Schedule(CST):*</label></td>
-                    <td><span id="newonboardingbox:time" class="ui-calendar" style="width:120px;margin-left:5px"><input id="newonboardingbox:time_input" name="newonboardingbox:time_input" type="text" class="ui-inputfield ui-widget ui-state-default ui-corner-all ui-state-disabled hasDatepicker" title="Mandatory: Enter a Schedule time that is applicable for the new Onboarding Project" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:time&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:time&quot;});" aria-required="true" disabled="" aria-disabled="true" readonly="readonly" aria-readonly="true" role="textbox"></span></td>
-                    <td>
-                      <table id="newonboardingbox:notifyPanel" style="margin-left:0px" title="Date and Time should not be in past.Daily Server maintenance is between 10PM to 12AM Date should not be in this interval" width="20px">
-                        <tbody>
-                          <tr><td></td></tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-            <div class="floatRight">
-              <table cellspacing="15px" style="margin-left:15px" width="375px">
-                <tbody>
-                  <tr>
-                    <td><label id="newonboardingbox:j_idt183" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Enter Email Id assoicated with this Onboarding Project">Subscriber Emails:*</label></td>
-                    <td><input id="newonboardingbox:email" name="newonboardingbox:email" type="text" style="width:200px;margin-left:4px" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-disabled" disabled="disabled" aria-disabled="true" maxlength="50" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:email&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:email&quot;,u:&quot;newonboardingbox:updateemail&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:email&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:email&quot;});" role="textbox" aria-readonly="false"></td>
-                    <td><button id="newonboardingbox:add" name="newonboardingbox:add" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-disabled" onclick="PrimeFaces.bcn(this,event,[function(event){PF('newonboardingbox').hide();},function(event){PrimeFaces.ab({s:&quot;newonboardingbox:add&quot;,f:&quot;newonboardingbox&quot;,u:&quot;newonboardingbox&quot;});return false;}]);" type="submit" disabled="disabled" role="button" aria-disabled="true"><span class="ui-button-text ui-c">add</span></button></td>
-                    <td><div id="newonboardingbox:updateemail" aria-live="polite" class="ui-message"></div></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table border="0" cellspacing="15px" style="margin-left:15px" width="80%">
-                <tbody>
-                  <tr>
-                    <td><div id="newonboardingbox:emailtable" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="newonboardingbox:emailtable_head"><tr role="row"><th id="newonboardingbox:emailtable:j_idt185" class="ui-state-default" role="columnheader" aria-label="Emails" scope="col" style="width:35%"><span class="ui-column-title">Emails</span></th><th id="newonboardingbox:emailtable:j_idt187" class="ui-state-default" role="columnheader" aria-label="Delete" scope="col" style="width:15%"><span class="ui-column-title">Delete</span></th></tr></thead><tbody id="newonboardingbox:emailtable_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="2">No records found.</td></tr></tbody></table></div><div id="newonboardingbox:emailtable_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom" role="navigation" aria-label="Pagination"><a href="#" class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled" aria-label="First Page" tabindex="-1"><span class="ui-icon ui-icon-seek-first">F</span></a><a href="#" class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled" aria-label="Previous Page" tabindex="-1"><span class="ui-icon ui-icon-seek-prev">P</span></a><span class="ui-paginator-pages"></span><a href="#" class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled" aria-label="Next Page" tabindex="-1"><span class="ui-icon ui-icon-seek-next">N</span></a><a href="#" class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled" aria-label="Last Page" tabindex="-1"><span class="ui-icon ui-icon-seek-end">E</span></a></div></div></td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-
-          </div>
-        </div>
-
-
-       
-      </fieldset>
-    </div>
-    <div class="content hidden">
-      <!-- Here goes content for step 3 -->
-    </div>
-
-    <!-- ... -->
   </div>
+
+  <div class="content">
+    <fieldset style="padding:20px;margin:10px;    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;">
+      <legend>GIT:</legend>
+
+      <div class="row" style="margin-left:0px">
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">External-DevOps:</label>
+        </div>
+
+        <div class="column lg-3">
+          <div style="width:220px;margin-left:30px">
+            <input type="checkbox" name="instanceType" />
+          </div>
+        </div>
+
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Domain:*</label>
+        </div>
+
+        <div class="column lg-3">
+          <div class="multi-select">
+            <ng-multiselect-dropdown [placeholder]="'Select Domain'" [data]="domains"
+                                     [settings]="dropdownDomainSettings">
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Product:*</label>
+        </div>
+
+        <div class="column lg-3">
+          <div class="multi-select">
+            <ng-multiselect-dropdown [placeholder]="'Select Product'" [data]="products"
+                                     [settings]="dropdownProductSettings">
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="row" style="height:10px"></div>
+      <div class="row" style="margin-left:0px">
+        <div class="width-8">
+          <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Instance Type:</label>
+        </div>
+
+        <div class="leftbox width-16">
+          <div class="margin-select-top">
+            <ng-multiselect-dropdown [placeholder]="'Select Git Instance Type'" [data]="instanceTypes"
+                                     [settings]="dropdownInstanceTypeSettings">
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+
+        <div class="leftbox width-9">
+          <div class="margin-select-top">
+
+            <ng-multiselect-dropdown [placeholder]="'Group Id'" [data]="groupIds"
+                                     [settings]="dropdownGroupIdSettings">
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+
+        <div class="leftbox width-8">
+          <input type="text" name="groupId" style="width:100px" />
+        </div>
+
+        <div class="leftbox width-9">
+          <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Project Job Name:*</label>
+        </div>
+
+        <div class="leftbox width-8">
+          <input type="text" name="productName" style="width:100px" />
+        </div>
+        <div class="leftbox">
+          <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Standard Job Name:*</label>
+        </div>
+
+        <div class="leftbox width-16">
+          <div class="margin-select-top">
+            <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
+                                     [settings]="dropdownMarketAreaSettings">
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+        <div class="rightbox width-7">
+          <input type="button" value="Add" />
+        </div>
+
+      </div>
+      <div class="row" style="height:10px"></div>
+      <div class="row" style="margin-left:0px">
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Dashboard:</label>
+        </div>
+
+        <div class="column lg-2">
+          <div class="multi-select">
+            <ng-multiselect-dropdown [placeholder]="'Select Dashboard'" [data]="dashboards"
+                                     [settings]="dropdownDashboardSettings">
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+
+        <div class="column lg-1">
+        </div>
+
+        <div class="column lg-2">
+        </div>
+
+        <div class="column lg-1">
+        </div>
+
+        <div class="column lg-5">
+        </div>
+
+
+
+      </div>
+      <div class="row" style="margin-left:0px">
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Polling Activated:*</label>
+        </div>
+
+        <div class="column lg-3">
+          <div style="width:220px;margin-left:30px">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Interval(Minutes):*</label>
+        </div>
+
+        <div class="column lg-3">
+          <div style="width:220px;margin-left:30px">
+            <input type="number" name="interval" />
+          </div>
+        </div>
+
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):*</label>
+        </div>
+
+        <div class="column lg-3">
+          <div style="width:220px;margin-left:30px">
+            <input type="text" name="schedule" />
+          </div>
+        </div>
+
+
+
+      </div>
+    </fieldset>
+  </div>
+
+
+  <div class="content">
+    <fieldset style="padding:20px;margin:10px;    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;">
+      <legend>JIRA:</legend>
+
+      <div class="ui-fieldset-content">
+        <table cellspacing="15px" style="margin-left:15px" width="100px">
+          <tbody>
+            <tr>
+              <td><label id="newonboardingbox:j_idt118" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as Non Agile project">Non-Agile:</label></td>
+              <td><div id="newonboardingbox:j_idt119" class="ui-selectbooleancheckbox ui-chkbox ui-widget" style="margin-left:38px" title="Please check if you want to onboard this as Non Agile project"><div class="ui-helper-hidden-accessible"><input id="newonboardingbox:j_idt119_input" name="newonboardingbox:j_idt119_input" type="checkbox" autocomplete="off" aria-hidden="true" aria-checked="false" disabled="disabled" aria-disabled="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:j_idt119&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:j_idt119&quot;,u:&quot;newonboardingbox:jiradashboard&quot;});"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-disabled"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="row" style="margin-left:0px">
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt121" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Select Jira Instance type that is applicable for the new Onboarding Project">Instance Type:*</label></div>
+
+          <div class="column lg-3">
+            <div class="multi-select margin-left-30">
+              <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
+                                       [settings]="dropdownMarketAreaSettings">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt124" class="ui-outputlabel ui-widget" style="white-space: nowrap;margin-left:20px" title="Mandatory: Enter Project key(alpha numeric) assoicated with this Onboarding Project">Project Key:*</label></div>
+
+          <div class="column lg-3">
+            <div class="multi-select margin-left-30">
+              <input id="newonboardingbox:projectKey" name="newonboardingbox:projectKey" type="text"  aria-disabled="true" maxlength="10" title="Mandatory: Enter Project key(alpha numeric) assoicated with this Onboarding Project" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:projectKey&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectKey&quot;});" role="textbox" aria-readonly="false">
+            </div>
+          </div>
+
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt126" class="ui-outputlabel ui-widget" style="white-space: nowrap;margin-left:21px" title="Mandatory: Please select dashboard assoicated with this Onboarding Project">Dashboard:*</label></div>
+
+          <div class="column lg-3">
+            <div class="multi-select margin-left-30">
+              <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
+                                       [settings]="dropdownMarketAreaSettings" style="width:200px">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="row" style="margin-left:0px">
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Polling Activated:*</label>
+          </div>
+
+          <div class="column lg-3">
+            <div style="width:220px;margin-left:30px">
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Interval(Minutes):*</label>
+          </div>
+
+          <div class="column lg-3">
+            <div style="width:220px;margin-left:30px">
+              <input type="number" name="interval" />
+            </div>
+          </div>
+
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):*</label>
+          </div>
+
+          <div class="column lg-3">
+            <div style="width:220px;margin-left:30px">
+              <input type="text" name="schedule" />
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </fieldset>
+  </div>
+  <div class="content">
+    <fieldset style="padding:20px;margin:10px;    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;">
+      <legend>SONARQUBE:</legend>
+
+      <div class="ui-fieldset-content">
+
+        <div class="container">
+          <div class="floatLeftGit">
+            <div class="row" style="margin-left:0px">
+              <div class="column lg-1">
+                <label id="newonboardingbox:j_idt140" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Mandatory: Select Sonar Qube Instance Type assoicated with this Onboarding Project">Instance Type:*</label></div>
+
+              <div class="column lg-3">
+                <div class="multi-select margin-left-30" >
+                  <ng-multiselect-dropdown [placeholder]="'Select Instance Type'" [data]="instanceTypes"
+                                           [settings]="dropdownInstanceTypeSettings">
+                  </ng-multiselect-dropdown>
+                </div>
+              </div>
+
+              <div class="column lg-1">
+              </div>  
+
+              <div class="column lg-3">
+                <div style="width:220px;margin-left:30px">
+                 
+                </div>
+              </div>
+
+              <div class="column lg-1">
+              </div>
+
+              <div class="column lg-3">
+                <div style="width:220px;margin-left:30px">
+                 
+                </div>
+              </div>
+
+
+
+            </div>
+           
+          
+            <div class="row" style="margin-left:0px">
+              <div class="column lg-1">
+                <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Polling Activated:*</label>
+              </div>
+
+              <div class="column lg-3">
+                <div style="width:220px;margin-left:30px">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="column lg-1">
+                <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Interval(Minutes):*</label>
+              </div>
+
+              <div class="column lg-3">
+                <div style="width:220px;margin-left:30px">
+                  <input type="number" name="interval" />
+                </div>
+              </div>
+
+              <div class="column lg-1">
+                <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):*</label>
+              </div>
+
+              <div class="column lg-3">
+                <div style="width:220px;margin-left:30px">
+                  <input type="text" name="schedule" />
+                </div>
+              </div>
+
+
+
+            </div>
+            <table cellspacing="15px" style="margin-left:15px" width="375px">
+              <tbody>
+                <tr><td></td></tr>
+              </tbody>
+            </table>
+            <button id="newonboardingbox:sonarqube" name="newonboardingbox:sonarqube" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-disabled" onclick="PrimeFaces.bcn(this,event,[function(event){PF('sonarqube').show();},function(event){PrimeFaces.ab({s:&quot;newonboardingbox:sonarqube&quot;,f:&quot;newonboardingbox&quot;});return false;}]);" style="margin-left:490px;width:75px;height:25px" title="Delete SonarQube module" type="submit" disabled="disabled" role="button" aria-disabled="true">
+              <span class="ui-button-text ui-c">Delete</span>
+            </button>
+          </div>
+          <div class="floatRightGit">
+            <br><table border="0" cellspacing="3px" style="margin-left:15px" width="100px">
+              <tbody>
+                <tr>
+                  <td>
+                    <fieldset id="newonboardingbox:gitkey" class="ui-fieldset ui-widget ui-widget-content ui-corner-all ui-hidden-container" data-widget="widget_newonboardingbox_gitkey">
+                      <legend class="ui-fieldset-legend ui-corner-all ui-state-default">GIT</legend><div class="ui-fieldset-content">
+                        <table border="0" cellspacing="3px" width="100px">
+                          <tbody>
+                            <tr>
+                              <td><input id="newonboardingbox:gitProject" name="newonboardingbox:gitProject" type="text" style="width:120px" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-disabled" disabled="disabled" aria-disabled="true" maxlength="90" placeholder="Project" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:gitProject&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:gitProject&quot;});" role="textbox" aria-readonly="false"></td>
+                              <td><input id="newonboardingbox:gitBranch" name="newonboardingbox:gitBranch" type="text" style="width:120px;margin-left:4px" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-disabled" disabled="disabled" aria-disabled="true" maxlength="90" placeholder="Branch" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:gitBranch&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:gitBranch&quot;});" role="textbox" aria-readonly="false"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </fieldset>
+                  </td>
+                  <td>
+                    <fieldset id="newonboardingbox:sonarkey" class="ui-fieldset ui-widget ui-widget-content ui-corner-all ui-hidden-container" data-widget="widget_newonboardingbox_sonarkey">
+                      <legend class="ui-fieldset-legend ui-corner-all ui-state-default">SONAR</legend><div class="ui-fieldset-content">
+                        <table border="0" cellspacing="3px" width="100px">
+                          <tbody>
+                            <tr>
+                              <td><input id="newonboardingbox:sonarprojectkey" name="newonboardingbox:sonarprojectkey" type="text" style="width:120px;margin-left:4px" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-disabled" disabled="disabled" aria-disabled="true" maxlength="90" placeholder="Component Key" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:sonarprojectkey&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:sonarprojectkey&quot;});" role="textbox" aria-readonly="false"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </fieldset>
+                  </td>
+                  <td><button id="newonboardingbox:addsonarqube" name="newonboardingbox:addsonarqube" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-disabled" onclick="PrimeFaces.bcn(this,event,[function(event){PF('newonboardingbox').hide();},function(event){PrimeFaces.ab({s:&quot;newonboardingbox:addsonarqube&quot;,f:&quot;newonboardingbox&quot;,u:&quot;newonboardingbox&quot;});return false;}]);" style="height:30px" type="submit" disabled="disabled" role="button" aria-disabled="true"><span class="ui-button-text ui-c">ADD</span></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <table border="0" cellspacing="5px" style="margin-left:15px" width="95%">
+              <tbody>
+                <tr>
+                  <td><div id="newonboardingbox:sonarqubetable" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="newonboardingbox:sonarqubetable_head"><tr role="row"><th id="newonboardingbox:sonarqubetable:j_idt158" class="ui-state-default" role="columnheader" aria-label="Git Project" scope="col" style="width:35%"><span class="ui-column-title">Git Project</span></th><th id="newonboardingbox:sonarqubetable:j_idt160" class="ui-state-default" role="columnheader" aria-label="Git Branch" scope="col" style="width:35%"><span class="ui-column-title">Git Branch</span></th><th id="newonboardingbox:sonarqubetable:j_idt162" class="ui-state-default" role="columnheader" aria-label="Sonar Component Key" scope="col" style="width:35%"><span class="ui-column-title">Sonar Component Key</span></th><th id="newonboardingbox:sonarqubetable:j_idt164" class="ui-state-default" role="columnheader" aria-label="Delete" scope="col" style="width:15%"><span class="ui-column-title">Delete</span></th></tr></thead><tbody id="newonboardingbox:sonarqubetable_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="4">No records found.</td></tr></tbody></table></div><div id="newonboardingbox:sonarqubetable_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom" role="navigation" aria-label="Pagination"><a href="#" class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled" aria-label="First Page" tabindex="-1"><span class="ui-icon ui-icon-seek-first">F</span></a><a href="#" class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled" aria-label="Previous Page" tabindex="-1"><span class="ui-icon ui-icon-seek-prev">P</span></a><span class="ui-paginator-pages"></span><a href="#" class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled" aria-label="Next Page" tabindex="-1"><span class="ui-icon ui-icon-seek-next">N</span></a><a href="#" class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled" aria-label="Last Page" tabindex="-1"><span class="ui-icon ui-icon-seek-end">E</span></a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="content">
+    <fieldset style="padding:20px;margin:10px;    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;">
+      <legend>SAP FINANCIAL:</legend>
+
+      <div class="row" style="margin-left:30px">
+        <div class="column lg-1">
+          <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Dashboard :</label>
+        </div>
+
+        <div class="column lg-3">
+          <div class="multi-select">
+            <ng-multiselect-dropdown [placeholder]="'Select Dashboard'" [data]="dashboards"
+                                     [settings]="dropdownDashboardSettings">
+            </ng-multiselect-dropdown>
+            </div>
+          </div>
+
+          <div class="column lg-1">
+            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">	Project Definition:*</label>
+          </div>
+
+          <div class="column lg-3">
+            <input type="text" name="product" style="margin-left:30px" />
+          </div>
+
+          <div class="column lg-1">
+            <input type="button" value="Add" />
+          </div>
+
+          <div class="column lg-3">
+            <div id="newonboardingbox:product" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-state-disabled" style="width:130px;" title="Mandatory: Select Product assoicated with this Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:product_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:product_input" name="newonboardingbox:product_input" tabindex="-1" aria-hidden="true" onchange="PrimeFaces.ab({s:&quot;newonboardingbox:product&quot;,e:&quot;change&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:product&quot;});"><option value="" data-escape="true">Select Product</option></select></div><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="newonboardingbox:product_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow ui-input-overlay"><div class="ui-selectonemenu-filter-container"></div><div class="ui-selectonemenu-items-wrapper" style="max-height:200px"><ul id="newonboardingbox:product_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox" aria-activedescendant="newonboardingbox:product_0"></ul></div></div></div>
+          </div>
+
+
+
+        </div>
+    </fieldset>
+  </div>
+  <div class="content">
+    <fieldset style="padding:20px;margin:10px;    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;">
+      <legend>NOTIFICATION:</legend>
+
+      <div class="row" style="margin-left:0px">
+        <div class="float-left">
+          <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Polling Activated:*</label>
+        </div>
+
+        <div class="float-left">
+          <div style="margin-left:20px">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="float-left margin-left-30">
+          <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Interval(Minutes):*</label>
+        </div>
+
+        <div class="float-left">
+          <div style="margin-left:20px">
+            <input type="number" name="interval" />
+          </div>
+        </div>
+
+        <div class="float-left margin-left-10">
+          <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):*</label>
+        </div>
+
+        <div class="float-left">
+          <div style="margin-left:20px">
+            <input type="text" name="schedule" />
+          </div>
+        </div>
+
+        <div class="float-left margin-left-10">
+          <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Subscriber Emails:*</label>
+        </div>
+
+        <div class="float-left">
+          <div class="margin-left-20">
+            <input type="text" name="subscriber" />
+          </div>
+        </div>
+        <div class="float-left">
+          <div style="margin-left:10px;margin-top:-5px">
+            <input type="button" name="add" value="Add" />
+          </div>
+        </div>
+      </div>
+
+
+
+    </fieldset>
+  </div>
+  <div class="content hidden">
+    <!-- Here goes content for step 3 -->
+  </div>
+
+  <!-- ... -->
+</div>

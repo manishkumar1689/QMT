@@ -6,7 +6,6 @@ Inside Group Onboarding
                  id="myGrid"
                  class="ag-theme-alpine"
                  [columnDefs]="columnDefs"
-                 [autoGroupColumnDef]="autoGroupColumnDef"
                  [defaultColDef]="defaultColDef"
                  [suppressRowClickSelection]="true"
                  [groupSelectsChildren]="true"
@@ -21,4 +20,6 @@ Inside Group Onboarding
                  [rowData]="rowData"
                  [suppressRowTransform]="true"
                  [frameworkComponents]="frameworkComponents"
+                 (paginationChanged)="onPaginationChanged($event)"
+                 (sortChanged)="onSortChanged($event)"
                  (gridReady)="onGridReady($event)"></ag-grid-angular>

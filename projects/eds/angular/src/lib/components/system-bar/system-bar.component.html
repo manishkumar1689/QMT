@@ -5,10 +5,14 @@
       <span class="product"> {{title}}</span>
       <span class="acronym">{{acronym}}</span>
       <span class="sup" *ngIf="experimental">LAB</span>
+      |&nbsp;
+      <i class="icon icon-home"></i>
+      |&nbsp;&nbsp;&nbsp;
     </div>
   </div>
   <div class="items-container">
-    <ng-content select="eds-system-bar-items"></ng-content>
+    <ng-content select="[eds-system-bar-items]"></ng-content>
+    
     <div class="item hover" *ngIf="username" (click)="toggleSettings()">
       <i class="icon icon-profile"></i>
       <span class="username"> {{username}}</span>
