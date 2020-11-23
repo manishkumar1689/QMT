@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 
 
 @Component({
-  selector: "btn-cell-renderer",
+  selector: "btn-cell-cross",
   template: `
 <div>
  

@@ -5,6 +5,7 @@ import 'ag-grid-community';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { BtnCellCross } from '../../../shared/btn-cell-cross.component';
+import { BtnCellEdit } from '../../../shared/btn-cell-edit.component';
 
 @Component({
   selector: 'app-group-on-boarding',
@@ -46,51 +47,38 @@ export class GroupOnBoardingComponent  {
         width: 200,
         rowSpan: rowSpan.bind(this)
       },
+     
       {
-        headerName: 'Project Name',
-        field: 'projectName',
+        headerName: 'Name',
+        field: 'name'
 
 
-        cellClassRules: { 'show-cell': 'value !== undefined' },
-        //cellRenderer: 'showCellRenderer',
-        //cellStyle: colSpan,
-        width: 200,
-        rowSpan: rowSpan.bind(this)
-        ,
-        sortable: true,
-        filter: true
+       
+      
 
       },
-
+      {
+        headerName: 'Type',
+        field: 'type'
+      },
       {
         headerName: 'User Signum',
         field: 'userSignum'
       },
       {
-        headerName: 'Module',
-        field: 'module'
+        headerName: 'Created Date/Time',
+        field: 'createdDate'
       },
       {
-        headerName: 'OnBoarding Date/Time',
-        field: 'onBoardingDate',
+        headerName: 'Last Modified Date/Time',
+        field: 'lastModifiedDate',
 
       },
       {
-        headerName: 'Polling Status',
-        field: 'pollingStatus'
-      },
-      {
-        headerName: 'Polling Interval(Minutes)',
-        field: 'pollingInterval'
-      },
-      {
-        headerName: 'Last Data Retrieval Time',
-        field: 'lastDataRetrievalTime'
-      },
-      {
-        headerName: 'Next Data Retrieval Time',
-        field: 'nextDataRetrievalTime'
-      },
+        headerName: 'Associated Project',
+        field: 'associatedProject',
+        
+      }
 
     ];
     this.autoGroupColumnDef = {
@@ -113,9 +101,9 @@ export class GroupOnBoardingComponent  {
       enableRowGroup: true,
       enablePivot: true,
       enableValue: true,
-      sortable: false,
+      sortable: true,
       resizable: true,
-      filter: false,
+      filter: true,
       flex: 1,
       minWidth: 100,
     };
@@ -129,7 +117,7 @@ export class GroupOnBoardingComponent  {
     };
 
     this.frameworkComponents = {
-      btnCellRenderer: BtnCellRenderer,
+      btnCellRenderer: BtnCellEdit,
       btnCellCross: BtnCellCross
     };
   }
@@ -235,7 +223,7 @@ export class GroupOnBoardingComponent  {
 
     this.http
       .get(
-        '../../../src/app/pages/shared/rawdata.json'
+        '../../../src/app/pages/shared/grouprawdata.json'
       )
       .subscribe((data: any) => {
 

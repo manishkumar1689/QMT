@@ -8,6 +8,8 @@ import { ProjectOnBoardingComponent } from './pages/Grouping/project-on-boarding
 import { CreateProjectComponent } from './pages/Grouping/project-on-boarding/form/create-project/create-project.component';
 import { EditProjectComponent } from './pages/Grouping/project-on-boarding/form/edit-project/edit-project.component';
 import { SettingsComponent } from './pages/Grouping/project-on-boarding/form/settings/settings.component';
+import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit-group/edit-group.component';
+import { CreateGroupComponent } from './pages/Grouping/group-on-boarding/form/create-group/create-group.component';
 
 const appRoutes: Routes = [
   {
@@ -27,6 +29,8 @@ const appRoutes: Routes = [
     children: [{ path: 'projectOnBoarding', component: ProjectOnBoardingComponent },
       { path: 'createProject', component: CreateProjectComponent },
       { path: 'editProject/:projectId', component: EditProjectComponent },
+      { path: 'createGroup', component: CreateGroupComponent },
+      { path: 'editGroup/:groupId', component: EditGroupComponent },
       { path: 'settingProject/:projectId', component: SettingsComponent },
       { path: 'groupOnBoarding', component: GroupOnBoardingComponent }]
   },

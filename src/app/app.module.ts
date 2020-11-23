@@ -45,6 +45,7 @@ import { CreateGroupComponent } from './pages/Grouping/group-on-boarding/form/cr
 import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit-group/edit-group.component';
 import { BtnCellCross } from './pages/shared/btn-cell-cross.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { BtnCellEdit } from './pages/shared/btn-cell-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     SettingsComponent,
     CreateGroupComponent,
     EditGroupComponent,
-    BtnCellCross
+    BtnCellCross,
+    BtnCellEdit
   ],
   imports: [
     AppRoutingModule,
@@ -86,7 +88,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     TableModule,
     TileModule,
     HttpClientModule,
-    AgGridModule.withComponents([BtnCellRenderer]),
+    AgGridModule.withComponents([BtnCellRenderer, BtnCellCross, BtnCellEdit]),
     NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [ThemeService],

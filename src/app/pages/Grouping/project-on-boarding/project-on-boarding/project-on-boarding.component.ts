@@ -75,7 +75,8 @@ export class ProjectOnBoardingComponent {
       },
       {
         headerName: 'Polling Status',
-        field: 'pollingStatus'
+        field: 'pollingStatus',
+        cellRenderer: "btnCellCross"
       },
       {
         headerName: 'Polling Interval(Minutes)',
