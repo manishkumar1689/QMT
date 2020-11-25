@@ -10,6 +10,7 @@ import { EditProjectComponent } from './pages/Grouping/project-on-boarding/form/
 import { SettingsComponent } from './pages/Grouping/project-on-boarding/form/settings/settings.component';
 import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit-group/edit-group.component';
 import { CreateGroupComponent } from './pages/Grouping/group-on-boarding/form/create-group/create-group.component';
+import { UsermanagementComponent } from './pages/usermanagement/usermanagement.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
       { path: 'createGroup', component: CreateGroupComponent },
       { path: 'editGroup/:groupId', component: EditGroupComponent },
       { path: 'settingProject/:projectId', component: SettingsComponent },
+      { path: 'usermanagement', component: UsermanagementComponent },
       { path: 'groupOnBoarding', component: GroupOnBoardingComponent }]
   },
   {

@@ -5,16 +5,17 @@ import { Router } from "@angular/router";
 
 
 @Component({
-  selector: "btn-cell-cross",
+  selector: "btn-cell-search",
   template: `
 <div>
+ 
  <div class="example">
-         <button (click)="btnSettingsHandler($event)"><i  class="icon icon-cross"></i></button>
+         <button (click)="btnEditHandler($event)"><i  class="icon icon-search"></i></button>
  </div>
 </div>
   `
 })
-export class BtnCellCross implements ICellRendererAngularComp, OnDestroy {
+export class BtnCellSearch implements ICellRendererAngularComp, OnDestroy {
     refresh(params: any): boolean {
         throw new Error("Method not implemented.");
     }
@@ -30,7 +31,12 @@ export class BtnCellCross implements ICellRendererAngularComp, OnDestroy {
   btnEditHandler(data) {
     debugger;
     this.params.clicked(this.params.data.userSignum);
-    this.router.navigate(['/dashboard/editProject', this.params.data.userSignum]);
+    this.router.navigate(['/dashboard/editGroup', this.params.data.userSignum]);
+  }
+  btnDeleteHandler(data) {
+    debugger;
+    this.params.clicked(this.params.data.userSignum);
+    this.router.navigate(['/dashboard/deleteGroup', this.params.data.userSignum]);
   }
   btnSettingsHandler(data) {
     debugger;

@@ -6,6 +6,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { BtnCellCross } from '../../../shared/btn-cell-cross.component';
 import { BtnCellEdit } from '../../../shared/btn-cell-edit.component';
+import { BtnCellSearch } from '../../../shared/btn-cell-search.component';
 
 @Component({
   selector: 'app-group-on-boarding',
@@ -77,6 +78,7 @@ export class GroupOnBoardingComponent  {
       {
         headerName: 'Associated Project',
         field: 'associatedProject',
+        cellRenderer: "btnCellSearch",
         
       }
 
@@ -118,7 +120,8 @@ export class GroupOnBoardingComponent  {
 
     this.frameworkComponents = {
       btnCellRenderer: BtnCellEdit,
-      btnCellCross: BtnCellCross
+      btnCellCross: BtnCellCross,
+      btnCellSearch: BtnCellSearch,
     };
   }
 

@@ -46,6 +46,12 @@ import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit
 import { BtnCellCross } from './pages/shared/btn-cell-cross.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { BtnCellEdit } from './pages/shared/btn-cell-edit.component';
+import { BtnCellSearch } from './pages/shared/btn-cell-search.component';
+import { UsermanagementComponent } from './pages/usermanagement/usermanagement.component';
+import { FilterComponent } from './pages/shared/filter/filter.component';
+import { CheckListPipe } from './pages/shared/checklist.filter';
+import { AngularDualListBoxModule } from 'angular-dual-listbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +66,11 @@ import { BtnCellEdit } from './pages/shared/btn-cell-edit.component';
     CreateGroupComponent,
     EditGroupComponent,
     BtnCellCross,
-    BtnCellEdit
+    BtnCellEdit,
+    BtnCellSearch,
+    UsermanagementComponent,
+    FilterComponent,
+    CheckListPipe
   ],
   imports: [
     AppRoutingModule,
@@ -88,8 +98,10 @@ import { BtnCellEdit } from './pages/shared/btn-cell-edit.component';
     TableModule,
     TileModule,
     HttpClientModule,
-    AgGridModule.withComponents([BtnCellRenderer, BtnCellCross, BtnCellEdit]),
-    NgMultiSelectDropDownModule.forRoot()
+    AgGridModule.withComponents([BtnCellRenderer, BtnCellCross, BtnCellEdit, BtnCellSearch]),
+    NgMultiSelectDropDownModule.forRoot(),
+    AngularDualListBoxModule 
+    
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent]
