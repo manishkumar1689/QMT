@@ -51,6 +51,10 @@ import { UsermanagementComponent } from './pages/usermanagement/usermanagement.c
 import { FilterComponent } from './pages/shared/filter/filter.component';
 import { CheckListPipe } from './pages/shared/checklist.filter';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
+import { RouterModule } from '@angular/router';
+import { BtnCellEditDelete } from './pages/shared/btn-cell-edit-delete.component';
+import { UsersComponent } from './pages/usermanagement/users/users.component';
+import { GroupsComponent } from './pages/usermanagement/groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,10 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     BtnCellSearch,
     UsermanagementComponent,
     FilterComponent,
-    CheckListPipe
+    CheckListPipe,
+    BtnCellEditDelete,
+    UsersComponent,
+    GroupsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -98,9 +105,10 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     TableModule,
     TileModule,
     HttpClientModule,
-    AgGridModule.withComponents([BtnCellRenderer, BtnCellCross, BtnCellEdit, BtnCellSearch]),
+    AgGridModule.withComponents([BtnCellRenderer, BtnCellCross, BtnCellEdit, BtnCellSearch, BtnCellEditDelete]),
     NgMultiSelectDropDownModule.forRoot(),
-    AngularDualListBoxModule 
+    AngularDualListBoxModule,
+    RouterModule
     
   ],
   providers: [ThemeService],

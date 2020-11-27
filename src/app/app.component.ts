@@ -11,8 +11,11 @@ export class AppComponent {
   menuOpened = (window.innerWidth > 768);
   settingsOpened = false;
   isLightTheme = true;
-
-  constructor(private themeService: ThemeService) {}
+  components = [];
+  constructor(private themeService: ThemeService) {
+    this.components[0] = { resourceDisplayName: "Project OnBoarding", routingName:"projectOnBoarding"};
+    this.components[1] = { resourceDisplayName: "Group OnBoarding", routingName: "groupOnBoarding" };
+  }
 
   toggleTheme(isLight: boolean) {
    this.themeService.toggle(isLight);

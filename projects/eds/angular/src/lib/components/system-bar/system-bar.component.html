@@ -5,12 +5,13 @@
       <span class="product"> {{title}}</span>
       <span class="acronym">{{acronym}}</span>
       <span class="sup" *ngIf="experimental">LAB</span>
-      |&nbsp;
-      <a href="/"><i class="icon icon-home"></i></a>
-      |&nbsp;&nbsp;&nbsp;
-      |&nbsp;
-      <a href="/usermanagement"><i class="icon icon-profile"></i></a>
-      |&nbsp;&nbsp;&nbsp;
+
+      <span>
+        <ng-content select="[eds-system-bar-items-headers]"></ng-content>
+      </span>
+      <!--|&nbsp;
+      <a  style="float:left" [routerLink]="['/dashboard/usermanagement']"><i class="icon icon-profile"></i></a>
+      |&nbsp;&nbsp;&nbsp;-->
     </div>
   </div>
   <div class="items-container">

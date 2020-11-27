@@ -1,6 +1,16 @@
 <eds-system-bar (settingsHandler)="settingsHandler($event)">
- 
-  <a eds-system-bar-items class="margin-right-100 cursor-pointer" >Tableau Access Control</a>
+  <span eds-system-bar-items-headers>
+    |&nbsp;
+    <a [routerLink]="['/']"><i class="icon icon-home"></i></a>
+    |&nbsp;&nbsp;&nbsp;
+  </span>
+  <span eds-system-bar-items-headers>
+    |&nbsp;
+    <a [routerLink]="['/usermanagement']"><i class="icon icon-profile"></i></a>
+    |
+
+  </span>
+  <a eds-system-bar-items class="margin-right-100 cursor-pointer">Tableau Access Control</a>
 </eds-system-bar>
 <main>
   <eds-settings [opened]="settingsOpened">
@@ -17,7 +27,7 @@
           <div class="title">Tableau Access Control</div>
         </div>
       </div>
-    
+
     </div>
 
     <div class="column sm-12 bottom">

@@ -11,6 +11,8 @@ import { SettingsComponent } from './pages/Grouping/project-on-boarding/form/set
 import { EditGroupComponent } from './pages/Grouping/group-on-boarding/form/edit-group/edit-group.component';
 import { CreateGroupComponent } from './pages/Grouping/group-on-boarding/form/create-group/create-group.component';
 import { UsermanagementComponent } from './pages/usermanagement/usermanagement.component';
+import { UsersComponent } from './pages/usermanagement/users/users.component';
+import { GroupsComponent } from './pages/usermanagement/groups/groups.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +26,14 @@ const appRoutes: Routes = [
     ]
   },
   {
+    path: 'usermanagement',
+    component: UsermanagementComponent,
+    children: [{ path: '', component: UsersComponent },
+      { path: 'group', component: GroupsComponent },
+    ]
+   
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent,
     data: { title: 'Getting started' },
@@ -33,7 +43,7 @@ const appRoutes: Routes = [
       { path: 'createGroup', component: CreateGroupComponent },
       { path: 'editGroup/:groupId', component: EditGroupComponent },
       { path: 'settingProject/:projectId', component: SettingsComponent },
-      { path: 'usermanagement', component: UsermanagementComponent },
+      { path: 'usermanagement',component: UsermanagementComponent},
       { path: 'groupOnBoarding', component: GroupOnBoardingComponent }]
   },
   {

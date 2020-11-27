@@ -1,19 +1,20 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 
-import { Tree } from '../../../assets/tree/Tree';
-import { Layout } from '../../../assets/common/scripts/Layout';
-import { BtnCellEdit } from '../shared/btn-cell-edit.component';
-import { BtnCellCross } from '../shared/btn-cell-cross.component';
-import { BtnCellSearch } from '../shared/btn-cell-search.component';
+import { Tree } from '../../../../assets/tree/Tree';
+import { Layout } from '../../../../assets/common/scripts/Layout';
+import { BtnCellEdit } from '../../shared/btn-cell-edit.component';
+import { BtnCellCross } from '../../shared/btn-cell-cross.component';
+import { BtnCellSearch } from '../../shared/btn-cell-search.component';
 import { HttpClient } from '@angular/common/http';
-import { BtnCellEditDelete } from '../shared/btn-cell-edit-delete.component';
-import { BtnCellRenderer } from '../shared/btn-cell-renderer.component';
+import { BtnCellEditDelete } from '../../shared/btn-cell-edit-delete.component';
+import { BtnCellRenderer } from '../../shared/btn-cell-renderer.component';
+
 @Component({
-  selector: 'app-usermanagement',
-  templateUrl: './usermanagement.component.html',
-  styleUrls: ['./usermanagement.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class UsermanagementComponent implements OnInit, AfterViewInit {
+export class UsersComponent implements OnInit {
   component = [];
   public gridApi;
   public gridColumnApi;
@@ -36,26 +37,18 @@ export class UsermanagementComponent implements OnInit, AfterViewInit {
     this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
 
   }
+
   
-  ngAfterViewInit() {
-    //const layout = new Layout(document.querySelector('body'));
-    //layout.init();
-    setTimeout(function () {
-      const treeDOM = document.querySelector('.tree.navigation');
-      const tree = new Tree(treeDOM);
-      tree.init();
-    }, 2000);
-  }
-  
+
   constructor(private http: HttpClient) {
     this.columnDefs = [
       {
         headerName: 'Actions',
         field: 'user  ',
         cellRenderer: "btnCellRenderer",
-        
+
         width: 200
-     
+
       },
 
       {
@@ -112,9 +105,9 @@ export class UsermanagementComponent implements OnInit, AfterViewInit {
     };
 
     this.frameworkComponents = {
-     
+
       btnCellRenderer: BtnCellEditDelete
-      
+
     };
   }
 
@@ -214,7 +207,7 @@ export class UsermanagementComponent implements OnInit, AfterViewInit {
 
     this.http
       .get(
-        '../../../src/app/pages/shared/userrawdata.json'
+        '../../../../src/app/pages/shared/userrawdata.json'
       )
       .subscribe((data: any) => {
 
@@ -318,5 +311,4 @@ function createShowCellRenderer() {
   };
   return ShowCellRenderer;
 }
-
 
