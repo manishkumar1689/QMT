@@ -33,9 +33,7 @@ export class UsersComponent implements OnInit {
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
-  ngOnInit() {
-    this.component[0] = { resourceDisplayName: "User", routingName: "user" };
-    this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
+  ngAfterViewInit() {
     setTimeout(() => {
       const dialogs = document.querySelectorAll('.dialog');
 
@@ -46,6 +44,11 @@ export class UsersComponent implements OnInit {
         });
       }
     }, 2000);
+  }
+  ngOnInit() {
+    this.component[0] = { resourceDisplayName: "User", routingName: "user" };
+    this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
+   
   }
 
   

@@ -14,7 +14,7 @@ import { Dialog } from '../../../../assets/dialog/Dialog';
   templateUrl: './groups.component.html',
   styleUrls: ['./groups.component.css']
 })
-export class GroupsComponent implements OnInit {
+export class GroupsComponent implements OnInit, AfterViewInit {
 
   component = [];
   public gridApi;
@@ -34,9 +34,7 @@ export class GroupsComponent implements OnInit {
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
-  ngOnInit() {
-    this.component[0] = { resourceDisplayName: "User", routingName: "user" };
-    this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
+  ngAfterViewInit() {
     setTimeout(() => {
       const dialogs = document.querySelectorAll('.dialog');
 
@@ -47,6 +45,11 @@ export class GroupsComponent implements OnInit {
         });
       }
     }, 2000);
+  }
+  ngOnInit() {
+    this.component[0] = { resourceDisplayName: "User", routingName: "user" };
+    this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
+    
   }
 
 
