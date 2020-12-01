@@ -8,7 +8,7 @@ import { BtnCellSearch } from '../../shared/btn-cell-search.component';
 import { HttpClient } from '@angular/common/http';
 import { BtnCellEditDelete } from '../../shared/btn-cell-edit-delete.component';
 import { BtnCellRenderer } from '../../shared/btn-cell-renderer.component';
-
+import { Dialog } from '../../../../assets/dialog/Dialog';
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',
@@ -32,11 +32,21 @@ export class GroupsComponent implements OnInit {
   public components;
   public frameworkComponents;
   //constructor() { }
-
+  source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
+  target = [];
   ngOnInit() {
     this.component[0] = { resourceDisplayName: "User", routingName: "user" };
     this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
+    setTimeout(() => {
+      const dialogs = document.querySelectorAll('.dialog');
 
+      if (dialogs) {
+        Array.from(dialogs).forEach(dialogDOM => {
+          const dialog = new Dialog(dialogDOM);
+          dialog.init();
+        });
+      }
+    }, 2000);
   }
 
 
