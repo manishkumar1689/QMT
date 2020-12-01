@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "btn-dialog",
   template: `
-<div class="content">
+<div class="content" style="width:100%">
     <div class="top">
       <div class="title"><ng-content select="[title]"></ng-content></div>
  

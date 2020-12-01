@@ -27,44 +27,32 @@
   <div title> Add Group</div>
   <div body>
     <div class="row" style="margin-left:30px">
-      <div class="column lg-1">
-        <label id="newonboardingbox:j_idt51" class="" title="Mandatory: Select Country that is applicable for the new Onboarding Project">Country:*</label>
-      </div>
-
-      <div class="column lg-3">
-        <div class="multi-select">
-
-          <ng-multiselect-dropdown [placeholder]="'Select Country'" [data]="countries"
-                                   [settings]="dropdownCountrySettings">
-          </ng-multiselect-dropdown>
-
-
-        </div>
-      </div>
+      
 
       <div class="column lg-1">
-        <label id="newonboardingbox:j_idt54" class="" style="white-space: nowrap" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project">Operator Code:*</label>
+        <label id="newonboardingbox:j_idt54" class="" style="white-space: nowrap" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project">Group:*</label>
 
       </div>
 
-      <div class="column lg-3">
+      <div class="column lg-5">
         <input id="newonboardingbox:operatorcode" name="newonboardingbox:operatorcode" type="text" class="multi-select" class="margin-left-30" aria-required="true" maxlength="3" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
       </div>
 
       <div class="column lg-1">
-        <label id="newonboardingbox:j_idt56" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project">Project Code:*</label>
+        <label id="newonboardingbox:j_idt56" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project">Region:*</label>
       </div>
 
-      <div class="column lg-3">
-        <input id="newonboardingbox:projectcode" name="newonboardingbox:projectcode" type="text" class="multi-select" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="6" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
-
+      <div class="column lg-4">
+        <ng-multiselect-dropdown [placeholder]="'Select Country'" [data]="countries"
+                                 [settings]="dropdownCountrySettings">
+        </ng-multiselect-dropdown>
       </div>
 
 
 
     </div>
-
-    <div class="row" style="margin-left:30px">
+    <br />
+    <div class="row" style="margin-left:30px;margin-right:30px">
 
       <div class="column">
         <dual-list [source]="source" [(destination)]="target" [filter]="true"></dual-list>

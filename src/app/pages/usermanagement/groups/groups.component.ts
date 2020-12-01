@@ -31,9 +31,11 @@ export class GroupsComponent implements OnInit, AfterViewInit {
   public rowData;
   public components;
   public frameworkComponents;
+  dropdownCountrySettings = {};
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
+    countries: { idCountry: number; countryName: string; }[];
   ngAfterViewInit() {
     setTimeout(() => {
       const dialogs = document.querySelectorAll('.dialog');
@@ -49,7 +51,70 @@ export class GroupsComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.component[0] = { resourceDisplayName: "User", routingName: "user" };
     this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
-    
+    this.countries = [{
+      "idCountry": 1,
+      "countryName": "Cuba",
+
+    },
+    {
+      "idCountry": 2,
+      "countryName": "Argentina",
+
+    }, {
+      "idCountry": 3,
+      "countryName": "Cuba",
+
+    },
+    {
+      "idCountry": 4,
+      "countryName": "China",
+
+    }, {
+      "idCountry": 5,
+      "countryName": "Denmark",
+
+    },
+    {
+      "idCountry": 6,
+      "countryName": "Dominican Republic",
+
+    }, {
+      "idCountry": 11,
+      "countryName": "America Samoa",
+
+    },
+    {
+      "idCountry": 12,
+      "countryName": "Australia",
+
+    }, {
+      "idCountry": 13,
+      "countryName": "Chile",
+
+    },
+    {
+      "idCountry": 14,
+      "countryName": "Switzerland",
+
+    }, {
+      "idCountry": 15,
+      "countryName": "Costa Rica",
+
+    },
+    {
+      "idCountry": 16,
+      "countryName": "India",
+
+      }];
+
+
+    this.dropdownCountrySettings = {
+      singleSelection: true,
+      idField: 'idCountry',
+      textField: 'countryName',
+      closeDropDownOnSelection: true,
+      allowSearchFilter: true
+    };
   }
 
 
