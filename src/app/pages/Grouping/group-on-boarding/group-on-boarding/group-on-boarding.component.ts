@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BtnCellRenderer } from '../../../shared/btn-cell-renderer.component';
 import 'ag-grid-community';
@@ -8,12 +8,15 @@ import { BtnCellCross } from '../../../shared/btn-cell-cross.component';
 import { BtnCellEdit } from '../../../shared/btn-cell-edit.component';
 import { BtnCellSearch } from '../../../shared/btn-cell-search.component';
 
+import { Dialog } from '../../../../../assets/dialog/Dialog';
+
+
 @Component({
   selector: 'app-group-on-boarding',
   templateUrl: './group-on-boarding.component.html',
   styleUrls: ['./group-on-boarding.component.scss']
 })
-export class GroupOnBoardingComponent  {
+export class GroupOnBoardingComponent implements AfterViewInit {
 
   public gridApi;
   public gridColumnApi;
@@ -29,7 +32,22 @@ export class GroupOnBoardingComponent  {
   public rowData;
   public components;
   public frameworkComponents;
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const dialogs = document.querySelectorAll('.dialog');
+
+      if (dialogs) {
+        Array.from(dialogs).forEach(dialogDOM => {
+          const dialog = new Dialog(dialogDOM);
+          dialog.init();
+        });
+      }
+    }, 2000);
+  }
   constructor(private http: HttpClient) {
+   
+
+    
     this.columnDefs = [
       {
         headerName: 'Actions',

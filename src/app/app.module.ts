@@ -55,6 +55,9 @@ import { RouterModule } from '@angular/router';
 import { BtnCellEditDelete } from './pages/shared/btn-cell-edit-delete.component';
 import { UsersComponent } from './pages/usermanagement/users/users.component';
 import { GroupsComponent } from './pages/usermanagement/groups/groups.component';
+import { ManagegroupComponent } from './pages/usermanagement/managegroup/managegroup.component';
+import { ManageuserComponent } from './pages/usermanagement/manageuser/manageuser.component';
+import { DialogTest } from './pages/shared/dialog';
 
 @NgModule({
   declarations: [
@@ -77,7 +80,10 @@ import { GroupsComponent } from './pages/usermanagement/groups/groups.component'
     CheckListPipe,
     BtnCellEditDelete,
     UsersComponent,
-    GroupsComponent
+    GroupsComponent,
+    ManagegroupComponent,
+    ManageuserComponent,
+    DialogTest
   ],
   imports: [
     AppRoutingModule,

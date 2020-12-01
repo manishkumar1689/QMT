@@ -114,7 +114,7 @@ export class ProjectOnBoardingComponent {
       enableValue: true,
       sortable: false,
       resizable: true,
-      filter: false,
+      filter: true,
       flex: 1,
       minWidth: 100,
     };

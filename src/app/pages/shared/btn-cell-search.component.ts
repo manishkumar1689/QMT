@@ -1,7 +1,7 @@
-import { Component, OnDestroy } from "@angular/core";
+import { AfterViewInit, Component, OnDestroy } from "@angular/core";
 import { ICellRendererAngularComp } from 'ag-grid-angular/public-api';
 import { Router } from "@angular/router";
-
+import { Dialog } from '@eds/vanilla';
 
 
 @Component({
@@ -10,12 +10,12 @@ import { Router } from "@angular/router";
 <div>
  
  <div class="example">
-         <button (click)="btnEditHandler($event)"><i  class="icon icon-search"></i></button>
+         <button (click)="btnEditHandler($event)" id="opensimple" name="opensimple"><i  class="icon icon-search"></i></button>
  </div>
 </div>
   `
 })
-export class BtnCellSearch implements ICellRendererAngularComp, OnDestroy {
+export class BtnCellSearch implements ICellRendererAngularComp, OnDestroy, AfterViewInit {
     refresh(params: any): boolean {
         throw new Error("Method not implemented.");
     }
@@ -27,21 +27,35 @@ export class BtnCellSearch implements ICellRendererAngularComp, OnDestroy {
   agInit(params: any): void {
     this.params = params;
   }
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const dialogs = document.querySelectorAll('.dialog');
 
+      if (dialogs) {
+        Array.from(dialogs).forEach((dialogDOM) => {
+          const dialog = new Dialog(<HTMLElement>dialogDOM);
+          dialog.init();
+        });
+      }
+    }, 2000);
+   
+  }
   btnEditHandler(data) {
+    
+   
     debugger;
-    this.params.clicked(this.params.data.userSignum);
-    this.router.navigate(['/dashboard/editGroup', this.params.data.userSignum]);
+  //  this.params.clicked(this.params.data.userSignum);
+    //this.router.navigate(['/dashboard/editGroup', this.params.data.userSignum]);
   }
   btnDeleteHandler(data) {
     debugger;
-    this.params.clicked(this.params.data.userSignum);
-    this.router.navigate(['/dashboard/deleteGroup', this.params.data.userSignum]);
+   // this.params.clicked(this.params.data.userSignum);
+   // this.router.navigate(['/dashboard/deleteGroup', this.params.data.userSignum]);
   }
   btnSettingsHandler(data) {
     debugger;
-    this.params.clicked(this.params.data.userSignum);
-    this.router.navigate(['/dashboard/settingProject', this.params.data.userSignum]);
+   // this.params.clicked(this.params.data.userSignum);
+   // this.router.navigate(['/dashboard/settingProject', this.params.data.userSignum]);
   }
   ngOnDestroy() {
     // no need to remove the button click handler

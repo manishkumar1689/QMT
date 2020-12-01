@@ -28,8 +28,9 @@ const appRoutes: Routes = [
   {
     path: 'usermanagement',
     component: UsermanagementComponent,
-    children: [{ path: '', component: UsersComponent },
+    children: [{ path: 'user', component: UsersComponent },
       { path: 'group', component: GroupsComponent },
+      { path: '**', redirectTo: 'user' },
     ]
    
   },

@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^6.1.6",
     "@angular/platform-browser-dynamic": "^6.1.6",
     "@angular/router": "^6.1.6",
+    "@eds/angular": "^0.10.0",
     "@eds/vanilla": "^2.4.0",
     "ag-grid-angular": "^24.1.0",
     "ag-grid-community": "^24.1.0",
