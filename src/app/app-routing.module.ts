@@ -30,6 +30,7 @@ const appRoutes: Routes = [
     component: UsermanagementComponent,
     children: [{ path: 'user', component: UsersComponent },
       { path: 'group', component: GroupsComponent },
+      //{ path: 'edit/group', component: GroupsComponent },
       { path: '**', redirectTo: 'user' },
     ]
    

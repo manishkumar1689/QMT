@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 <div>
  
  <div class="example">
-        <button (click)="btnEditHandler($event)"><i  class="icon icon-edit"></i></button><button (click)="btnDeleteHandler($event)"><i  class="icon icon-trashcan"></i></button>
+        <button (click)="btnEditHandler($event)"><i  class="icon icon-edit"></i></button><button (click)="btnDeleteHandler($event)" style="margin-left:4px"><i  class="icon icon-trashcan"></i></button>
 </div>
 </div>
   `
@@ -31,7 +31,7 @@ export class BtnCellEditDelete implements ICellRendererAngularComp, OnDestroy {
   btnEditHandler(data) {
     debugger;
     this.params.clicked(this.params.data.signum);
-    this.router.navigate(['/usermanagement/edit', this.params.data.signum]);
+    this.router.navigate(['/usermanagement/group/edit', this.params.data.signum]);
   }
   btnDeleteHandler(data) {
     debugger;
