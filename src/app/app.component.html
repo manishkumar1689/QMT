@@ -39,16 +39,33 @@
   
   <div class="app" [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
     <!--<eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)"></eds-app-bar>-->
+
+    <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)" *ngIf="isUserLoggedIn()"></eds-app-bar>
+
     <div class="appbody">
       <!--<div class="appnav" [ngClass]="{hidden: !menuOpened}">
+      <eds-tree mode="navigation">
+        <eds-tree-item route="/">Getting started</eds-tree-item>
+        <eds-sub-tree route="components">
+          <eds-sub-tree-title>Components</eds-sub-tree-title>
+          <eds-tree-item route="components/playground">Playground</eds-tree-item>
+        </eds-sub-tree>
+      </eds-tree>
+    </div>-->
+      <div class="appnav" [ngClass]="{hidden: !menuOpened}"
+           style="padding-right: 10px;">
         <eds-tree mode="navigation">
-          <eds-tree-item route="/">Getting started</eds-tree-item>
-          <eds-sub-tree route="components">
-            <eds-sub-tree-title>Components</eds-sub-tree-title>
-            <eds-tree-item route="components/playground">Playground</eds-tree-item>
+          <eds-tree-item route='/dashboard/projectOnBoarding'>Project OnBoarding</eds-tree-item>
+
+          <eds-tree-item route='/dashboard/groupOnBoarding'>Group OnBoarding</eds-tree-item>
+          <eds-sub-tree>
+            <eds-sub-tree-title>Security</eds-sub-tree-title>
+            <eds-tree-item route="/usermanagement/user">User</eds-tree-item>
+            <eds-tree-item route='/usermanagement/group'>Group</eds-tree-item>
+
           </eds-sub-tree>
         </eds-tree>
-      </div>-->
+      </div>
       <div class="appcontent">
         <router-outlet></router-outlet>
       </div>

@@ -28,4 +28,7 @@ export class AppComponent {
   settingsHandler() {
     this.settingsOpened = !this.settingsOpened;
   }
+  isUserLoggedIn() {
+    return true;
+  }
 }

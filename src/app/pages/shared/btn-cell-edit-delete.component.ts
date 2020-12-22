@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 <div>
  
  <div class="example">
-        <button (click)="btnEditHandler($event)"><i  class="icon icon-edit"></i></button><button (click)="btnDeleteHandler($event)" style="margin-left:4px"><i  class="icon icon-trashcan"></i></button>
+        <span (click)="btnEditHandler($event)"><i  class="icon icon-edit"></i></span><span (click)="btnDeleteHandler($event)" style="margin-left:4px"><i  class="icon icon-trashcan"></i></span>
 </div>
 </div>
   `

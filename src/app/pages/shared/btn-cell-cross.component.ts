@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   template: `
 <div>
  <div class="example">
-         <button (click)="btnSettingsHandler($event)"><i  class="icon icon-cross"></i></button>
+         <span (click)="btnSettingsHandler($event)"><i  class="icon icon-cross"></i></span>
  </div>
 </div>
   `

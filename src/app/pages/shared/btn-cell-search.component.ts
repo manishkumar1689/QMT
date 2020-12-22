@@ -10,7 +10,7 @@ import { Dialog } from '@eds/vanilla';
 <div>
  
  <div class="example">
-         <button (click)="btnEditHandler($event)" id="opensimple" name="opensimple"><i  class="icon icon-search"></i></button>
+         <span (click)="btnEditHandler($event)" id="opensimple" name="opensimple"><i  class="icon icon-search"></i></span>
  </div>
 </div>
   `

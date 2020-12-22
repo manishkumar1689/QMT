@@ -31,8 +31,9 @@
               "src/favicon.ico"
             ],
             "styles": [
-             
-              "src/styles.less"
+
+              "src/styles.less",
+              "src/assets/bootstrap.min.css"
             ],
             "scripts": []
           },

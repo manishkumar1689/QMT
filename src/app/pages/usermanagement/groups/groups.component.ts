@@ -35,7 +35,10 @@ export class GroupsComponent implements OnInit, AfterViewInit {
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
-    countries: { idCountry: number; countryName: string; }[];
+  countries: { idCountry: number; countryName: string; }[];
+  onEditCustomer(model: any) {
+   
+  }
   ngAfterViewInit() {
     setTimeout(() => {
       const dialogs = document.querySelectorAll('.dialog');
