@@ -8,8 +8,8 @@ import { Router } from "@angular/router";
   selector: "btn-dialog",
   template: `
 <div class="content" style="width:100%">
-    <div class="top">
-      <div class="title"><ng-content select="[title]"></ng-content></div>
+    <div class="top" style="margin-top: -16px; margin-left: -16px; margin-right: -16px; background-color: #0082f0; color: white; height: 40px;">
+      <div class="title" style="padding:10px"><ng-content select="[title]"></ng-content></div>
  
     </div>
     <div class="body">

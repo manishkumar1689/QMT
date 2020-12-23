@@ -32,12 +32,19 @@ export class GroupsComponent implements OnInit, AfterViewInit {
   public components;
   public frameworkComponents;
   dropdownCountrySettings = {};
+  openAddDialog: boolean = false;
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
   countries: { idCountry: number; countryName: string; }[];
   onEditCustomer(model: any) {
    
+  }
+  showGroup() {
+    this.openAddDialog = true;
+  }
+  closeGroup() {
+    this.openAddDialog = false;
   }
   ngAfterViewInit() {
     setTimeout(() => {

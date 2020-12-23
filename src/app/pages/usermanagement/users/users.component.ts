@@ -30,6 +30,7 @@ export class UsersComponent implements OnInit {
   public rowData;
   public components;
   public frameworkComponents;
+  openAddDialog: boolean = false;
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
@@ -52,7 +53,12 @@ export class UsersComponent implements OnInit {
   }
 
   
-
+  openUser() {
+    this.openAddDialog = true;
+  }
+  closeUser() {
+    this.openAddDialog = false;
+  }
   constructor(private http: HttpClient) {
     this.columnDefs = [
       {

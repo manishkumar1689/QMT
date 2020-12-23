@@ -42,7 +42,7 @@
 
     <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)" *ngIf="isUserLoggedIn()"></eds-app-bar>
 
-    <div class="appbody">
+    <div class="appbody pat-body">
       <!--<div class="appnav" [ngClass]="{hidden: !menuOpened}">
       <eds-tree mode="navigation">
         <eds-tree-item route="/">Getting started</eds-tree-item>
@@ -66,7 +66,7 @@
           </eds-sub-tree>
         </eds-tree>
       </div>
-      <div class="appcontent">
+      <div class="appcontent" style="margin-top:-10px">
         <router-outlet></router-outlet>
       </div>
     </div>

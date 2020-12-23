@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    data: { title: 'Getting started' },
+    data: { title: '' },
     children: [
       { path: '', component: ProjectOnBoardingComponent },
 
@@ -38,7 +38,7 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    data: { title: 'Getting started' },
+    data: { title: '' },
     children: [{ path: 'projectOnBoarding', component: ProjectOnBoardingComponent },
       { path: 'createProject', component: CreateProjectComponent },
       { path: 'editProject/:projectId', component: EditProjectComponent },
