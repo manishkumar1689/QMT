@@ -25,51 +25,53 @@
                  (gridReady)="onGridReady($event)"></ag-grid-angular>
 
 
+<form #addUser="ngForm">
+  <eds-dialog id="AddPATDialog" #addDialog [isOpened]="openAddDialog" mode="fullscreen">
+    <eds-dialog-title>
+      <div class="top">
+        <div class="title">Add User</div>
+      </div>
+      <!--<div>Add Group</div>-->
 
-<eds-dialog id="AddPATDialog" #addDialog [isOpened]="openAddDialog" mode="fullscreen">
-  <eds-dialog-title>
-    <div class="top">
-      <div class="title">Add User</div>
-    </div>
-    <!--<div>Add Group</div>-->
+
+    </eds-dialog-title>
+    <eds-dialog-content>
+      <div style="width: 820px;height: 360px;overflow-y: auto;" #patDialogSrollTop>
+        <div class="form-group col-md-6">
+          <label id="51" class="" title="Mandatory: Select Country that is applicable for the new Onboarding Project">User:<span style="color: red;">*</span></label>
+
+          <input required class="form-control" [(ngModel)]="a" id="newonboardingbox:projectcode" name="newonboardingbox:projectcode" type="text" >
+
+        </div>
+        <div class="form-group col-md-6">
+          <label id="54" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project">Signum:<span style="color: red;">*</span></label>
+
+          <input required [(ngModel)]="b" id="signum" name="signum" type="text" class="form-control multi-select" >
+
+        </div>
+
+        <div class="form-group col-md-6">
+          <label id="56" style="white-space: nowrap;" >Email:<span style="color: red;">*</span></label>
+
+          <input class="form-control" #secondEmail="ngModel" email required [(ngModel)]="c" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" id="email" name="email" type="email"  >
+
+        </div>
+        <div class="form-group col-md-12">
+          <dual-list [source]="source" [(destination)]="target" [filter]="true"></dual-list>
+        </div>
 
 
-  </eds-dialog-title>
-  <eds-dialog-content>
-    <div style="width: 820px;height: 360px;overflow-y: auto;" #patDialogSrollTop>
-      <div class="form-group col-md-6">
-        <label id="51" class="" title="Mandatory: Select Country that is applicable for the new Onboarding Project">User:<span style="color: red;">*</span></label>
 
-        <input id="newonboardingbox:projectcode" name="newonboardingbox:projectcode" type="text" maxlength="6" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project">
 
       </div>
-      <div class="form-group col-md-6">
-        <label id="54" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project">Signum:<span style="color: red;">*</span></label>
+    </eds-dialog-content>
+    <eds-dialog-actions>
 
-        <input id="newonboardingbox:operatorcode" name="newonboardingbox:operatorcode" type="text" class="multi-select" class="margin-left-30" aria-required="true" maxlength="3" title="Mandatory: Enter a three digit Operator Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:operatorcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:operatorcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
-
+      <div class="bottom" style="margin-top: 9px;">
+        <button class="btn ghost" data-close="true" (click)="closeUser()">Cancel</button>
+        <button class="btn primary" [disabled]="addUser.invalid">Submit</button>
       </div>
+    </eds-dialog-actions>
+  </eds-dialog>
+</form>
 
-      <div class="form-group col-md-6">
-        <label id="56" style="white-space: nowrap;" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project">Email:<span style="color: red;">*</span></label>
-
-        <input id="newonboardingbox:projectcode" name="newonboardingbox:projectcode" type="text" class="multi-select" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" maxlength="6" title="Mandatory: Enter a six digit Project Code(alpha numeric) that is applicable for the new Onboarding Project" onkeyup="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;keyup&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" onblur="PrimeFaces.ab({s:&quot;newonboardingbox:projectcode&quot;,e:&quot;blur&quot;,f:&quot;newonboardingbox&quot;,p:&quot;newonboardingbox:projectcode&quot;,u:&quot;newonboardingbox:projectName newonboardingbox:contextmsg&quot;});" role="textbox" aria-disabled="false" aria-readonly="false">
-
-      </div>
-      <div class="form-group col-md-12">
-        <dual-list [source]="source" [(destination)]="target" [filter]="true"></dual-list>
-      </div>
-
-
-
-
-    </div>
-  </eds-dialog-content>
-  <eds-dialog-actions>
-
-    <div class="bottom" style="margin-top: 9px;">
-      <button class="btn ghost" data-close="true" (click)="closeUser()">Cancel</button>
-      <button class="btn primary" >Submit</button>
-    </div>
-  </eds-dialog-actions>
-</eds-dialog>

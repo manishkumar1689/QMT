@@ -16,3 +16,9 @@ input[type="radio"] {
   width: 100% !important;
   
 }
+input{
+    width:100% !important;
+}
+input[type="radio"]{
+  width: auto !important;
+}

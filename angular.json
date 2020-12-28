@@ -32,7 +32,12 @@
             ],
             "styles": [
 
-              "src/styles.less",
+              "src/styles.css",
+              "node_modules/@eds/vanilla/eds.css",
+              "src/assets/ag-grid/dist/styles/ag-grid.css",
+              "src/assets/ag-grid/dist/styles/ag-theme-balham.css",
+              "src/assets/ag-grid/dist/styles/theme-fresh.css",
+              "src/assets/Content/font-awesome.css",
               "src/assets/bootstrap.min.css"
             ],
             "scripts": []

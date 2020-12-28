@@ -33,10 +33,12 @@ export class GroupsComponent implements OnInit, AfterViewInit {
   public frameworkComponents;
   dropdownCountrySettings = {};
   openAddDialog: boolean = false;
+  group = { selectedItems:[],name:""};
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
   countries: { idCountry: number; countryName: string; }[];
+    requiredField: boolean;
   onEditCustomer(model: any) {
    
   }
@@ -127,7 +129,15 @@ export class GroupsComponent implements OnInit, AfterViewInit {
     };
   }
 
+  setStatus() {
+    debugger;
+    (this.group.selectedItems.length > 0) ? this.requiredField = true : this.requiredField = false;
+  }
 
+  onItemSelect(item: any) {
+    //Do something if required
+    this.setStatus();
+  }
   constructor(private http: HttpClient) {
     this.columnDefs = [
       {

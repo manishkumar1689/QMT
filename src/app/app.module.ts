@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { PlaygroundComponent } from './pages/playground/playground.component';
 import { GroupOnBoardingComponent } from './pages/Grouping/group-on-boarding/group-on-boarding/group-on-boarding.component';
 import { ProjectOnBoardingComponent } from './pages/Grouping/project-on-boarding/project-on-boarding/project-on-boarding.component';
+import { TestGridComponent } from './pages/common/ag-grid/generic.grid';
 
 import {
   AccordionModule,
@@ -61,6 +62,7 @@ import { DialogTest } from './pages/shared/dialog';
 
 @NgModule({
   declarations: [
+    TestGridComponent,
     AppComponent,
     DashboardComponent,
     BtnCellRenderer ,
