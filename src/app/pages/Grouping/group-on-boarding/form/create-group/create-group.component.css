@@ -18,7 +18,18 @@ input[type="radio"] {
 }
 input{
     width:100% !important;
+    background:white !important;
 }
 input[type="radio"]{
   width: auto !important;
 }
+:host ::ng-deep .btn.btn-primary {
+  color: #ffffff !important;
+  background-color: #0082f0 !important;
+  border: 1px solid #0082f0 !important;
+}
+:host ::ng-deep .multiselect-dropdown
+{
+    background:white;
+}
+

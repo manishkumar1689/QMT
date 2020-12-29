@@ -18,7 +18,7 @@ input[type="checkbox"] {
 }
 
 .multi-select {
-  width: 220px;
+  width: 160px;
   margin-top: -5px;
 }
 
@@ -182,4 +182,18 @@ input:checked + .slider:before {
 
 .float-left {
   float: left;
+}
+
+label{
+    margin-left:-12px !important;
+}
+.multi-select-170 {
+  width: 170px;
+}
+:host ::ng-deep .multiselect-dropdown {
+  background: white;
+}
+
+:host ::ng-deep input {
+  background: white !important;
 }
