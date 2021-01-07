@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from "@angular/core";
-import { ICellRendererAngularComp } from 'ag-grid-angular/public-api';
+
 import { Router } from "@angular/router";
 
 
@@ -14,7 +14,7 @@ import { Router } from "@angular/router";
 </div>
   `
 })
-export class BtnCellCross implements ICellRendererAngularComp, OnDestroy {
+export class BtnCellCross implements  OnDestroy {
     refresh(params: any): boolean {
         throw new Error("Method not implemented.");
     }

@@ -1,9 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BtnCellRenderer } from '../../../shared/btn-cell-renderer.component';
-import 'ag-grid-community';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+
 import { BtnCellCross } from '../../../shared/btn-cell-cross.component';
 import { BtnCellEdit } from '../../../shared/btn-cell-edit.component';
 import { BtnCellSearch } from '../../../shared/btn-cell-search.component';

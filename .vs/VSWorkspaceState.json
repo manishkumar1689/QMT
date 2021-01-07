@@ -6,10 +6,11 @@
     "\\src\\app\\pages",
     "\\src\\app\\pages\\dashboard",
     "\\src\\app\\pages\\Grouping",
+    "\\src\\app\\pages\\Grouping\\group-on-boarding",
+    "\\src\\app\\pages\\Grouping\\group-on-boarding\\group-on-boarding",
     "\\src\\app\\pages\\Grouping\\project-on-boarding",
-    "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding",
-    "\\src\\app\\pages\\shared"
+    "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding"
   ],
-  "SelectedNode": "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding\\project-on-boarding.component.ts",
+  "SelectedNode": "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding\\project-on-boarding.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -1,9 +1,9 @@
-﻿<div class="aggridClass">
+<div class="aggridClass">
     <ag-grid-angular #agGrid style="width: 99%;float:left" [style.height]="gridHeight"
                      [gridOptions]="myGridOptions" class="ag-theme-balham" [defaultColDef]="defaultColDef"
                      [getContextMenuItems]="getContextMenuItemsHome" [groupDefaultExpanded]="groupDefaultExpanded" 
                      [defaultGroupSortComparator]="defaultGroupSortComparator"
-                     pagination="false"
+                     pagination="true"
                      (rowClicked)="onRowClicked($event)" (gridReady)="onReady($event)" [detailCellRendererParams]="DetailGridData"
                      [rowData]="test" [rowModelType]="rowModelType" (toolPanelVisibleChanged)="ResizeGrid()" [frameworkComponents]="frameworkComponents"
                      [deltaColumnMode]="true" [sideBar]="sideBar"     [statusBar]="statusBar"

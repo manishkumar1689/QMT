@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy } from "@angular/core";
-import { ICellRendererAngularComp } from 'ag-grid-angular/public-api';
+
 import { Router } from "@angular/router";
 import { Dialog } from '@eds/vanilla';
 
@@ -15,7 +15,7 @@ import { Dialog } from '@eds/vanilla';
 </div>
   `
 })
-export class BtnCellSearch implements ICellRendererAngularComp, OnDestroy, AfterViewInit {
+export class BtnCellSearch implements OnDestroy, AfterViewInit {
     refresh(params: any): boolean {
         throw new Error("Method not implemented.");
     }

@@ -59,6 +59,12 @@ import { GroupsComponent } from './pages/usermanagement/groups/groups.component'
 import { ManagegroupComponent } from './pages/usermanagement/managegroup/managegroup.component';
 import { ManageuserComponent } from './pages/usermanagement/manageuser/manageuser.component';
 import { DialogTest } from './pages/shared/dialog';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { CookieOptions } from 'angular2-cookie/services/base-cookie-options';
+import { GlobalDataService } from './pages/GlobalData';
+import { MyNotificationService } from './pages/common/notification/my.notification.service';
+//import { CustomerModule } from './pages/customer/customer.module';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 @NgModule({
   declarations: [
@@ -113,13 +119,15 @@ import { DialogTest } from './pages/shared/dialog';
     TableModule,
     TileModule,
     HttpClientModule,
-    AgGridModule.withComponents([BtnCellRenderer, BtnCellCross, BtnCellEdit, BtnCellSearch, BtnCellEditDelete]),
+    AgGridModule,
     NgMultiSelectDropDownModule.forRoot(),
     AngularDualListBoxModule,
-    RouterModule
-    
+    RouterModule,
+   
+    SimpleNotificationsModule.forRoot(),
+  
   ],
-  providers: [ThemeService],
+  providers: [ThemeService, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

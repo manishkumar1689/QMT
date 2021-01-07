@@ -24,6 +24,9 @@
       "@eds/angular/*": [
         "dist/eds/angular/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+
   }
 }

@@ -31,8 +31,8 @@ export class DialogComponent implements AfterViewInit {
 
   @Output() change: EventEmitter<IDialog> = new EventEmitter<IDialog>();
 
-  @ViewChild('content') content: ElementRef;
-  @ViewChild('actions') actions: ElementRef;
+  @ViewChild('content', { static: false }) content: ElementRef;
+  @ViewChild('actions', { static: false }) actions: ElementRef;
 
   contentExists = true;
   actionsExist = true;

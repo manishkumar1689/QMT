@@ -5,7 +5,7 @@
 </div>
 <br />
  <!--[autoGroupColumnDef]="autoGroupColumnDef"-->
-<ag-grid-angular #agGrid
+<!--<ag-grid-angular #agGrid
                  style="width: 100%; height: 100%;"
                  id="myGrid"
                  class="ag-theme-alpine"
@@ -27,4 +27,12 @@
                  (paginationChanged)="onPaginationChanged($event)"
                  
                  (sortChanged)="onSortChanged($event)"
-                 (gridReady)="onGridReady($event)"></ag-grid-angular>
+                 (gridReady)="onGridReady($event)"></ag-grid-angular>-->
+<ag-grid id="Projectid" #agGrid1 [rowData]="gridData" [gridHeader]="gridData"
+         [GridIdentifier]="GridIdentifier"
+         (GeneralEditAction)="onEditProject($event)"
+          (GeneralDeleteAction)="onDeleteProject($event)"
+           (GeneralSettingAction)="onSettingProject($event)"
+         (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
+         EnableGridState="true"
+         ></ag-grid>
