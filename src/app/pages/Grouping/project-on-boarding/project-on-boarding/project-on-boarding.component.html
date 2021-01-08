@@ -28,7 +28,7 @@
                  
                  (sortChanged)="onSortChanged($event)"
                  (gridReady)="onGridReady($event)"></ag-grid-angular>-->
-<ag-grid id="Projectid" #agGrid1 [rowData]="gridData" [gridHeader]="gridData"
+<ag-grid id="Projectid" #ProjectGrid [rowData]="gridData" [gridHeader]="gridData"
          [GridIdentifier]="GridIdentifier"
          (GeneralEditAction)="onEditProject($event)"
           (GeneralDeleteAction)="onDeleteProject($event)"

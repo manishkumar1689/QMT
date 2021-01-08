@@ -65,6 +65,10 @@ import { GlobalDataService } from './pages/GlobalData';
 import { MyNotificationService } from './pages/common/notification/my.notification.service';
 //import { CustomerModule } from './pages/customer/customer.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from './pages/common.module';
+import { CustomerComponent } from './pages/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -91,12 +95,16 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     GroupsComponent,
     ManagegroupComponent,
     ManageuserComponent,
-    DialogTest
+    DialogTest,
+    CustomerComponent
   ],
   imports: [
+  
+ 
     AppRoutingModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AccordionModule,
     AppBarModule,
     ButtonModule,

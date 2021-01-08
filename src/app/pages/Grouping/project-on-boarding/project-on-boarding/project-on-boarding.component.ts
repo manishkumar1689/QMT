@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BtnCellRenderer } from '../../../shared/btn-cell-renderer.component';
 
 import { BtnCellCross } from '../../../shared/btn-cell-cross.component';
-import { CustomerConstantsData, CustomerGridData } from './project-on-onboarding.grid.data';
+import { CustomerConstantsData, ProjectGridData } from './project-on-onboarding.grid.data';
 import *  as  data from '../../../../../../src/assets/rawdata.json';
 import { MyNotificationService } from '../../../common/notification/my.notification.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./project-on-boarding.component.scss'],
   providers: [ MyNotificationService]
 })
-export class ProjectOnBoardingComponent implements OnInit {
+export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
   public gridApi;
   public gridColumnApi;
   gridData: any;
@@ -32,8 +32,8 @@ export class ProjectOnBoardingComponent implements OnInit {
   constantMessages: any = {};
   ActivateDeActivateTitle: any;
   ActivateDeActivateMessage: any;
-  products: any = (data as any).default;
-  @ViewChild("agGrid1", { static: false }) agGrid: any;
+  projects: any = (data as any).default;
+  @ViewChild("ProjectGrid", { static: false }) ProjectGrid: any;
   onEditProject(event:any) {
     this.router.navigate(['/dashboard/editProject', event.projectId]);
   }
@@ -149,17 +149,29 @@ export class ProjectOnBoardingComponent implements OnInit {
       btnCellRenderer: BtnCellRenderer,
       btnCellCross: BtnCellCross
     };
-    this.constantMessages = CustomerConstantsData.CUSTOMER_PAGE;
+    this.constantMessages = CustomerConstantsData.PROJECT_PAGE;
     this.GridIdentifier = this.constantMessages.GridIdentifier;
 
   }
+  ngAfterViewInit(): void {
+   
+     
+    }
   ngOnInit(): void {
-    this.gridData = CustomerGridData['CUSTOMER'][0]['Columns'];
+    this.gridData = ProjectGridData['PROJECT'][0]['Columns'];
 
     //this.http
-    //  .get('../../../src/assets/rawdata.json')
-    //  .subscribe((data:any) => {
+    //  .get('assets/rawdata.json')
+    //  .subscribe((data) => {
     //debugger;
+   
+    debugger;
+   
+    setTimeout(() => {
+      debugger;
+      var data1 = this.rowData1;
+      this.ProjectGrid.refresh(this.rowData1, ProjectGridData['PROJECT'][0])
+    }, 2000);
     this.rowData1 =
       [
         {
@@ -439,14 +451,8 @@ export class ProjectOnBoardingComponent implements OnInit {
 
         }
       ];
-    debugger;
-    var data1 = this.products;
-    setTimeout(() => {
-      debugger;
-      this.agGrid.refresh(data1, CustomerGridData['CUSTOMER'][0])
-    }, 4000);
 
-     // });
+   // });
   }
   onSortChanged(event) {
     debugger;
@@ -553,7 +559,7 @@ export class ProjectOnBoardingComponent implements OnInit {
     //  )
     //  .subscribe((data: any) => {
     debugger;
-    this.rowData1 = this.products;
+    this.rowData1 = this.projects;
     let rowSpan = 1;
 
     this.rowData1.sort(function (a: any, b: any) {
@@ -654,3 +660,14 @@ function createShowCellRenderer() {
   return ShowCellRenderer;
 }
 
+export interface project {
+  projectId: any,
+  projectName: any,
+  userSignum: any,
+  module: any,
+  onBoardingDate: any,
+
+  pollingInterval: any,
+  lastDataRetrievalTime: any,
+  nextDataRetrievalTime: any
+} 

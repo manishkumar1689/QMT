@@ -1,0 +1,43 @@
+<div class="form-group">
+<div class="row">
+  <div class="column sm-6 md-12 lg-9 xl-3 filled" style="padding-left: 7px;">
+    <input type="input" class="form-control" id="customerName" style="width: 95%!important;margin-left: 10px;" [disabled]="getUserRole()=='LNADriver'"
+      [(ngModel)]="customerName" placeholder="Enter Customer Name" maxlength="500" [title]="constantMessages.TooltipCustomerName">
+  </div>
+  <div class="column sm-6 md-12 lg-3 xl-3 filled">
+    <button class="btn primary" *ngIf="customerId==0" (click)="SaveCustomer()" 
+        [disabled]="customerName.trim()=='' || getUserRole()=='LNADriver'" style="margin-top: 1px;border-radius: 18px;" [title]="constantMessages.TooltipAdd">Add</button>
+    <button class="btn primary" *ngIf="customerId>0" (click)="SaveCustomer()" 
+      [disabled]="customerName.trim()==''"  style="margin-top: 1px;border-radius: 18px;" [title]="constantMessages.TooltipSave">Save</button>
+    <button class="btn ghost" *ngIf="customerId>0" data-close="true" (click)="resetCustomer()" [title]="constantMessages.TooltipClose"
+                        style="margin-top: 1px;border-radius: 18px;">Cancel</button>
+  </div>
+</div>
+</div>
+<div class="form-group">
+  <ag-grid id="Customerid" #CustomerGrid [rowData]="gridData" [gridHeader]="gridData"
+          GridIdentifier="GridIdentifier"
+          (GeneralEditAction)="onEditCustomer($event)"
+          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
+          EnableGridState="true"></ag-grid>
+</div>
+
+<!-- Customer Activate Dialog -->
+<eds-dialog #Acivatedialog [isOpened]="openActivateDialog" mode="fullscreen">
+<eds-dialog-title>
+    <div class="top">
+        <div class="title">{{ActivateDeActivateTitle}}</div>
+      </div>
+</eds-dialog-title>
+<eds-dialog-content>
+    <div class="body">
+        <p>{{ActivateDeActivateMessage}}</p>
+      </div>
+</eds-dialog-content>
+<eds-dialog-actions>
+    <div class="bottom">
+  <button class="btn primary" [title]="constantMessages.TooltipAcdea" (click)="AcivateDeActivateCustomer()">Yes</button>
+  <button class="btn" data-close="true" [title]="constantMessages.TooltipClose" (click)="CloseActivateDialog()">No</button>
+</div>
+</eds-dialog-actions>
+</eds-dialog>

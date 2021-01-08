@@ -1,36 +1,31 @@
-export const ProjectGridData = {
+export const CustomerGridData = {
 
-  PROJECT: [{
+    CUSTOMER: [{
         Options: [{
-          EditAction: "false",
-          GridHeight: "430",
-          DeleteAction: true,
-          SettingAction:true,
-          Activate: false,
-          SortOrder: "true",
-           
+            EditAction: "false",
+            GridHeight: "430",
+            Activate: "false",
+            SortOrder: "true",
+            AllowCSVExport: "false",
+            AllowExcelExport: "true",
         }],
         Columns: [
-          { 'Project Name,projectName,,': '' },
-          { 'User Signum,userSignum,': '' },
-          { 'Module,module,,': '' },
-          { 'Onboarding Data/Time,onBoardingDate,': '' },
-          { 'Polling Status,pollingStatus,,': '' },
-          { 'Polling Interval(Minutes),pollingInterval,': '' },
-          { 'Last Data Retrieval Time,lastDataRetrievalTime,,': '' },
-          { 'Next Data Retrieval Time,nextDataRetrievalTime,': '' }
+            { 'Id,id,,': '' },
+            { 'Name,customerName,,ColSize,300,': '' }
         ]
 
     }],
 }
 
 export const CustomerConstantsData = {
-    PROJECT_PAGE: {
-        GridIdentifier:"projectGrid",
+    CUSTOMER_PAGE: {
+        GridIdentifier:"customerGrid",
+
         DeActivateCustomerTitle:"De-Activate Customer",
         DeActivateCustomerMessage:"Are you sure want to de-activate this Customer?",
         ActivateCustomerTitle:"Activate Customer",
         ActivateCustomerMessage:"Are you sure want to activate this Customer?",
+
         INF_RCD_DUPL: "Record with same name already exist",
         SUC_REC_INS: "Record inserted successfully!",
         SUC_REC_UPD: "Record updated successfully!",

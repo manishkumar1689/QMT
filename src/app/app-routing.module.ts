@@ -13,6 +13,7 @@ import { CreateGroupComponent } from './pages/Grouping/group-on-boarding/form/cr
 import { UsermanagementComponent } from './pages/usermanagement/usermanagement.component';
 import { UsersComponent } from './pages/usermanagement/users/users.component';
 import { GroupsComponent } from './pages/usermanagement/groups/groups.component';
+import { CustomerComponent } from './pages/customer/customer.component';
 
 const appRoutes: Routes = [
   {
@@ -63,6 +64,10 @@ const appRoutes: Routes = [
       title: 'Group OnBoarding',
       subtitle: 'Angular components'
     }
+  },
+   {
+    path: 'customer',
+    component: CustomerComponent
   },
   {
     path: '**',
