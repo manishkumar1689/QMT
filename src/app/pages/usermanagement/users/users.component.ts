@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { Tree } from '../../../../assets/tree/Tree';
 import { Layout } from '../../../../assets/common/scripts/Layout';
@@ -10,12 +10,14 @@ import { BtnCellEditDelete } from '../../shared/btn-cell-edit-delete.component';
 import { BtnCellRenderer } from '../../shared/btn-cell-renderer.component';
 import { Dialog } from '../../../../assets/dialog/Dialog';
 import *  as  data from '../../../../../src/app/pages/shared/userrawdata.json';
+import { UserGridData } from './users.grid.data';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  users: any = (data as any).default;
   component = [];
   public gridApi;
   public gridColumnApi;
@@ -35,6 +37,8 @@ export class UsersComponent implements OnInit {
   //constructor() { }
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
+  @ViewChild("UserGrid", { static: false }) UserGrid: any;
+    gridData: any;
   ngAfterViewInit() {
     setTimeout(() => {
       const dialogs = document.querySelectorAll('.dialog');
@@ -50,6 +54,15 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.component[0] = { resourceDisplayName: "User", routingName: "user" };
     this.component[1] = { resourceDisplayName: "Group", routingName: "group" };
+
+    this.gridData = UserGridData['USER'][0]['Columns'];
+
+    setTimeout(() => {
+      debugger;
+      var data1 = this.users;
+      this.UserGrid.refresh(data1, UserGridData['USER'][0])
+
+    }, 2000);
    
   }
 

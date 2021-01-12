@@ -4,19 +4,18 @@ export const UserGridData = {
     Options: [{
       EditAction: true,
           GridHeight: "430",
-        
+      DeleteAction: true,
           Activate: false,
           SortOrder: "true",
            
-        }],
+    }], 
         Columns: [
-          { 'Name,name,,': '' },
-          { 'Type,type,,': '' },
-          { 'User Signum,userSignum,': '' }, 
+          { 'Name,user,,': '' },
+        
+          { 'User Signum,signum,': '' }, 
          
-          { 'Created Date,createdDate,': '' },
-          { 'Last Modified Date,lastModifiedDate,,': '' },
-          { 'Associated Project,associatedProject,': '' }
+          { 'Email Date,email,': '' },
+          { 'Associated Groups,associatedGroups,,': '' }
         ]
 
     }],
@@ -24,7 +23,7 @@ export const UserGridData = {
 
 export const UserConstantsData = {
     USER_PAGE: {
-        GridIdentifier:"groupGrid",
+        GridIdentifier:"userGrid",
         DeActivateCustomerTitle:"De-Activate Customer",
         DeActivateCustomerMessage:"Are you sure want to de-activate this Customer?",
         ActivateCustomerTitle:"Activate Customer",

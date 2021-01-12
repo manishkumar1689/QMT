@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { Tree } from '../../../../assets/tree/Tree';
 import { Layout } from '../../../../assets/common/scripts/Layout';
@@ -9,13 +9,15 @@ import { HttpClient } from '@angular/common/http';
 import { BtnCellEditDelete } from '../../shared/btn-cell-edit-delete.component';
 import { BtnCellRenderer } from '../../shared/btn-cell-renderer.component';
 import { Dialog } from '../../../../assets/dialog/Dialog';
+import *  as  data from '../../../../../src/app/pages/shared/groupsrawdata.json';
+import { GroupConstantsData, GroupGridData } from './groups.grid.data';
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',
   styleUrls: ['./groups.component.css']
 })
 export class GroupsComponent implements OnInit, AfterViewInit {
-
+  groups: any = (data as any).default;
   component = [];
   public gridApi;
   public gridColumnApi;
@@ -39,6 +41,8 @@ export class GroupsComponent implements OnInit, AfterViewInit {
   target = [];
   countries: { idCountry: number; countryName: string; }[];
     requiredField: boolean;
+  gridData: any;
+  @ViewChild("GroupGrid", { static: false }) GroupGrid: any;
   onEditCustomer(model: any) {
    
   }
@@ -127,6 +131,15 @@ export class GroupsComponent implements OnInit, AfterViewInit {
       closeDropDownOnSelection: true,
       allowSearchFilter: true
     };
+   
+      this.gridData = GroupGridData['GROUP'][0]['Columns'];
+
+    setTimeout(() => {
+      debugger;
+      var data1 = this.groups;
+      this.GroupGrid.refresh(data1, GroupGridData['GROUP'][0])
+
+    }, 2000);
   }
 
   setStatus() {

@@ -4,19 +4,15 @@ export const GroupGridData = {
     Options: [{
       EditAction: true,
           GridHeight: "430",
-        
+      DeleteAction: true,
           Activate: false,
-          SortOrder: "true",
-           
+          SortOrder: "true"
+    
         }],
         Columns: [
-          { 'Name,name,,': '' },
-          { 'Type,type,,': '' },
-          { 'User Signum,userSignum,': '' }, 
-         
-          { 'Created Date,createdDate,': '' },
-          { 'Last Modified Date,lastModifiedDate,,': '' },
-          { 'Associated Project,associatedProject,': '' }
+          { 'Group,group,,': '' },
+          { 'Region,region,,': '' },
+          { 'Associated Roles,associatedRoles,': '' }
         ]
 
     }],

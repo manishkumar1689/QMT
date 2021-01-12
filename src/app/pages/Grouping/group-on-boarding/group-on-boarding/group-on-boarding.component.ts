@@ -36,7 +36,7 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
   groups: any = (data as any).default;
   @ViewChild("GroupGrid", { static: false }) GroupGrid: any;
   onEditGroup(event: any) {
-    this.router.navigate(['/dashboard/editGroup', event.projectId]);
+    this.router.navigate(['/dashboard/createGroup']);
   }
   onDeleteGroup(event: any) {
     this.router.navigate(['/dashboard/deleteProject', event.projectId]);

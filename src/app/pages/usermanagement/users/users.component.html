@@ -24,9 +24,9 @@
                  (sortChanged)="onSortChanged($event)"
                  (gridReady)="onGridReady($event)"></ag-grid-angular>-->
 
-<ag-grid id="Groupid" #GroupGrid [rowData]="gridData" [gridHeader]="gridData"
+<ag-grid id="Userid" #UserGrid [rowData]="gridData" [gridHeader]="gridData"
          [GridIdentifier]="GridIdentifier"
-         (GeneralEditAction)="onEditGroup($event)"
+         (GeneralEditAction)="onEditUser($event)"
          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
          EnableGridState="true"></ag-grid>
 <form #addUser="ngForm">
