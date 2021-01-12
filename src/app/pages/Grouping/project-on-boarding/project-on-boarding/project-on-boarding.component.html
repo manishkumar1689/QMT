@@ -31,8 +31,9 @@
 <ag-grid id="Projectid" #ProjectGrid [rowData]="gridData" [gridHeader]="gridData"
          [GridIdentifier]="GridIdentifier"
          (GeneralEditAction)="onEditProject($event)"
-          (GeneralDeleteAction)="onDeleteProject($event)"
-           (GeneralSettingAction)="onSettingProject($event)"
+         (GeneralDeleteAction)="onDeleteProject($event)"
+         (GeneralSettingAction)="onSettingProject($event)"
          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
+         
          EnableGridState="true"
          ></ag-grid>

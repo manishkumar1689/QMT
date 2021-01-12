@@ -6,7 +6,7 @@
   </a>
 </div>
 <br />
-<ag-grid-angular #agGrid
+<!--<ag-grid-angular #agGrid
                  style="width: 100%; height: 100%;"
                  id="myGrid"
                  class="ag-theme-alpine"
@@ -27,8 +27,17 @@
                  [frameworkComponents]="frameworkComponents"
                  (paginationChanged)="onPaginationChanged($event)"
                  (sortChanged)="onSortChanged($event)"
-                 (gridReady)="onGridReady($event)"></ag-grid-angular>
+                 (gridReady)="onGridReady($event)"></ag-grid-angular>-->
 
+<br />
+<ag-grid id="Groupid" #GroupGrid [rowData]="gridData" [gridHeader]="gridData"
+         [GridIdentifier]="GridIdentifier"
+         (GeneralEditAction)="onEditGroup($event)"
+        
+         (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
+         
+         EnableGridState="true"
+         ></ag-grid>
 
 <!--<div class="dialog" data-trigger="#openwarning"  data-type="simple">
   <div class="content">

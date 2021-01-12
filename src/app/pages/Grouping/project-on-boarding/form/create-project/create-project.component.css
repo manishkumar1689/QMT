@@ -197,3 +197,11 @@ label{
 :host ::ng-deep input {
   background: white !important;
 }
+
+legend{
+    width:auto !important;
+}
+.font-weight-size {
+  font-weight: 400;
+  font-size: 12px;
+}

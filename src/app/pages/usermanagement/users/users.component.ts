@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { BtnCellEditDelete } from '../../shared/btn-cell-edit-delete.component';
 import { BtnCellRenderer } from '../../shared/btn-cell-renderer.component';
 import { Dialog } from '../../../../assets/dialog/Dialog';
+import *  as  data from '../../../../../src/app/pages/shared/userrawdata.json';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',

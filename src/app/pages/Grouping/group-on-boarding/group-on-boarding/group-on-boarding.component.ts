@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BtnCellRenderer } from '../../../shared/btn-cell-renderer.component';
 
@@ -7,18 +7,21 @@ import { BtnCellEdit } from '../../../shared/btn-cell-edit.component';
 import { BtnCellSearch } from '../../../shared/btn-cell-search.component';
 
 import { Dialog } from '../../../../../assets/dialog/Dialog';
+import { Router } from '@angular/router';
+import *  as  data from '../../../../../../src/app/pages/shared/grouprawdata.json';
 
+import { GroupConstantsData,GroupGridData } from './group-on-onboarding.grid.data';
 
 @Component({
   selector: 'app-group-on-boarding',
   templateUrl: './group-on-boarding.component.html',
   styleUrls: ['./group-on-boarding.component.scss']
 })
-export class GroupOnBoardingComponent implements AfterViewInit {
+export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
 
   public gridApi;
   public gridColumnApi;
-
+  gridData: any;
   public columnDefs;
   public autoGroupColumnDef;
   public defaultColDef;
@@ -30,6 +33,26 @@ export class GroupOnBoardingComponent implements AfterViewInit {
   public rowData;
   public components;
   public frameworkComponents;
+  groups: any = (data as any).default;
+  @ViewChild("GroupGrid", { static: false }) GroupGrid: any;
+  onEditGroup(event: any) {
+    this.router.navigate(['/dashboard/editGroup', event.projectId]);
+  }
+  onDeleteGroup(event: any) {
+    this.router.navigate(['/dashboard/deleteProject', event.projectId]);
+  }
+  onSettingGroup(event: any) {
+    this.router.navigate(['/dashboard/settingProject', event.projectId]);
+  }
+  ngOnInit(): void {
+    this.gridData = GroupGridData['GROUP'][0]['Columns'];
+
+    setTimeout(() => {
+      debugger;
+      var data1 = this.groups;
+      this.GroupGrid.refresh(data1, GroupGridData['GROUP'][0])
+    }, 2000);
+  }
   ngAfterViewInit() {
     setTimeout(() => {
       const dialogs = document.querySelectorAll('.dialog');
@@ -42,7 +65,7 @@ export class GroupOnBoardingComponent implements AfterViewInit {
       }
     }, 2000);
   }
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
    
 
     

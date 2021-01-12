@@ -1,6 +1,6 @@
 
-<button id="openGroup" class="btn primary" (click)="showGroup()"><i class="icon icon-plus"></i>Add groups</button> 
-<ag-grid-angular #agGrid
+<button id="openGroup" class="btn primary" (click)="showGroup()"><i class="icon icon-plus"></i>Add groups</button>
+<!--<ag-grid-angular #agGrid
                  style="width: 100%; height: 100%;"
                  id="myGrid"
                  class="ag-theme-alpine"
@@ -21,8 +21,14 @@
                  [frameworkComponents]="frameworkComponents"
                  (paginationChanged)="onPaginationChanged($event)"
                  (sortChanged)="onSortChanged($event)"
-                 
-                 (gridReady)="onGridReady($event)"></ag-grid-angular>
+                 (gridReady)="onGridReady($event)"></ag-grid-angular>-->
+
+
+<ag-grid id="Groupid" #GroupGrid [rowData]="gridData" [gridHeader]="gridData"
+         [GridIdentifier]="GridIdentifier"
+         (GeneralEditAction)="onEditGroup($event)"
+         (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
+         EnableGridState="true"></ag-grid>
 <form #addGroup="ngForm" name="addGroup">
   <eds-dialog id="AddPATDialog" #addDialog [isOpened]="openAddDialog" mode="fullscreen">
     <eds-dialog-title>
@@ -63,7 +69,7 @@
         <button class="btn ghost" data-close="true" (click)="closeGroup()">Cancel</button>
         <button class="btn primary" [disabled]="addGroup.invalid || !requiredField">Submit</button>
       </div>
-      
+
     </eds-dialog-actions>
   </eds-dialog>
 
