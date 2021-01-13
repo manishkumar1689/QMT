@@ -43,8 +43,11 @@ export class GroupsComponent implements OnInit, AfterViewInit {
     requiredField: boolean;
   gridData: any;
   @ViewChild("GroupGrid", { static: false }) GroupGrid: any;
-  onEditCustomer(model: any) {
+  onEditGroup(model: any) {
    
+  }
+  onSearchGroup(model: any) {
+    alert('what are you doing');
   }
   showGroup() {
     this.openAddDialog = true;

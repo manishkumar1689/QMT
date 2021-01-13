@@ -8,10 +8,11 @@ export const ProjectGridData = {
           SettingAction:true,
           Activate: false,
           SortOrder: "true",
+          EnableGridGroup: "true",
            
         }],
         Columns: [
-          { 'Project Name,projectName,,': '' },
+          { 'Project Name,projectName,,,,,,,true,,': '' },
           { 'User Signum,userSignum,': '' },
           { 'Module,module,,': '' },
           { 'Onboarding Data/Time,onBoardingDate,': '' },

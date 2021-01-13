@@ -33,7 +33,7 @@
 <ag-grid id="Groupid" #GroupGrid [rowData]="gridData" [gridHeader]="gridData"
          [GridIdentifier]="GridIdentifier"
          (GeneralEditAction)="onEditGroup($event)"
-        
+        (GeneralSearchAction)="onSearchGroup($event)"
          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
          
          EnableGridState="true"
@@ -55,7 +55,7 @@
   </div>
 </div>-->
 
-<btn-dialog class="dialog fullscreen" id="addeditproject" data-trigger="#opensimple" data-type="simple">
+<btn-dialog class="dialog fullscreen" id="addeditproject"  [hidden]="!openAddDialog">
   <div title> Projects</div>
   <div body> Body</div>
   <div bottom>

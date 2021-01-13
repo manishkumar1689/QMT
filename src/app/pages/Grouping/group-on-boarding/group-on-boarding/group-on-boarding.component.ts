@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import *  as  data from '../../../../../../src/app/pages/shared/grouprawdata.json';
 
 import { GroupConstantsData,GroupGridData } from './group-on-onboarding.grid.data';
-
+import { IMyDpOptions, IMyDateModel } from 'mydatepicker';
 @Component({
   selector: 'app-group-on-boarding',
   templateUrl: './group-on-boarding.component.html',
@@ -33,8 +33,16 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
   public rowData;
   public components;
   public frameworkComponents;
+  public openAddDialog: boolean = false;
   groups: any = (data as any).default;
   @ViewChild("GroupGrid", { static: false }) GroupGrid: any;
+  public startDatePickerOptions: IMyDpOptions = {
+    inline: false,
+    selectionTxtFontSize: '12px',
+    height: '30px',
+    dateFormat: 'mm/dd/yyyy',
+    disableUntil: { year: 2020, month: 12, day: 12 },
+  };
   onEditGroup(event: any) {
     this.router.navigate(['/dashboard/createGroup']);
   }
@@ -43,6 +51,16 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
   }
   onSettingGroup(event: any) {
     this.router.navigate(['/dashboard/settingProject', event.projectId]);
+  }
+  onSearchGroup(event: any) {
+    debugger;
+    if (!this.openAddDialog) {
+      this.openAddDialog = true;
+    }
+    else {
+      this.openAddDialog = false;
+    }
+    
   }
   ngOnInit(): void {
     this.gridData = GroupGridData['GROUP'][0]['Columns'];

@@ -27,6 +27,7 @@
 <ag-grid id="Groupid" #GroupGrid [rowData]="gridData" [gridHeader]="gridData"
          [GridIdentifier]="GridIdentifier"
          (GeneralEditAction)="onEditGroup($event)"
+         (GeneralSearchAction)="onSearchGroup($event)"
          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
          EnableGridState="true"></ag-grid>
 <form #addGroup="ngForm" name="addGroup">

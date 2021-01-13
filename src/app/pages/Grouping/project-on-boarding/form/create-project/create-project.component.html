@@ -105,7 +105,7 @@
 
       <div class="column md-3">
         <!-- <div id="newonboardingbox:region" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all" style="width:210px;" title="Mandatory: Select Market Area that is applicable for the new Onboarding Project" role="combobox" aria-haspopup="true" aria-expanded="false" aria-owns="newonboardingbox:region_items"><div class="ui-helper-hidden-accessible"><select id="newonboardingbox:region_input" name="newonboardingbox:region_input" tabindex="-1" aria-hidden="true"><option value="" data-escape="true">Select Market Area</option><option value="GLOBAL" data-escape="true">GLOBAL</option><option value="MANA" data-escape="true">MANA</option><option value="MELA" data-escape="true">MELA</option><option value="MMEA" data-escape="true">MMEA</option><option value="MNEA" data-escape="true">MNEA</option><option value="MOAI" data-escape="true">MOAI</option><option value="SDUI" data-escape="true">SDUI</option></select></div><label id="newonboardingbox:region_label" class="ui-selectonemenu-label ui-inputfield ui-corner-all">Select Market Area</label><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div></div>-->
-        <div class="multi-select margin-left-30" style="width:170px">
+        <div class="multi-select margin-left-30" >
           <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
                                    [settings]="dropdownMarketAreaSettings" style="width:220px">
           </ng-multiselect-dropdown>
@@ -294,10 +294,15 @@
             <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):<span style="color: red;">*</span></label>
           </div>
 
-          <div class="column md-3">
-            <div class="width-margin-left">
-              <input type="text" name="schedule" class="form-control"/>
-            </div>
+          <div class="column md-2" style="margin-top:-7px">
+            <!--<div class="width-margin-left">-->
+              <!--<input type="text" name="schedule" class="form-control" />-->
+              <my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
+                              [(ngModel)]="startDateObject" 
+                               required
+                              >
+              </my-date-picker>
+            <!--</div>-->
           </div>
 
 
@@ -352,7 +357,7 @@
           </div>
 
           <div class="column md-3">
-            <div class="multi-select-170" style="margin-left:30px">
+            <div class="multi-select-170" >
               <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
                                        [settings]="dropdownMarketAreaSettings" style="width:200px">
               </ng-multiselect-dropdown>
@@ -391,10 +396,14 @@
             <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):<span style="color: red;">*</span></label>
           </div>
 
-          <div class="column md-3">
-            <div class="width-margin-left">
-              <input type="text" name="schedule" class="form-control"/>
-            </div>
+          <div class="column md-2" style="margin-top:-7px">
+            <!--<div class="width-margin-left">
+    <input type="text" name="schedule" class="form-control"/>
+  </div>-->
+            <my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
+                            [(ngModel)]="startDateObject"
+                            required>
+            </my-date-picker>
           </div>
 
 
@@ -479,10 +488,14 @@
             <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):<span style="color: red;">*</span></label>
           </div>
 
-          <div class="column md-3">
-            <div class="width-margin-left">
-              <input type="text" name="schedule" class="form-control" />
-            </div>
+          <div class="column md-2" style="margin-top:-7px">
+            <!--<div class="width-margin-left">
+    <input type="text" name="schedule" class="form-control" />
+  </div>-->
+            <my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
+                            [(ngModel)]="startDateObject"
+                            required>
+            </my-date-picker>
           </div>
 
 
@@ -629,17 +642,21 @@
           </div>
         </div>
 
-        <div class="float-left margin-left-10">
+        <div class="float-left margin-left-30">
           <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):<span style="color: red;">*</span></label>
         </div>
 
-        <div class="float-left">
-          <div style="margin-left:20px">
-            <input type="text" name="schedule" class="form-control"/>
-          </div>
+        <div class="float-left" style="margin-top:-7px;width:15%">
+          <!--<div style="margin-left:20px">
+    <input type="text" name="schedule" class="form-control"/>
+  </div>-->
+          <my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
+                          [(ngModel)]="startDateObject"
+                          required>
+          </my-date-picker>
         </div>
 
-        <div class="float-left margin-left-10">
+        <div class="float-left margin-left-30">
           <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Subscriber Emails:<span style="color: red;">*</span></label>
         </div>
 

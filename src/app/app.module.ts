@@ -69,10 +69,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './pages/common.module';
 import { CustomerComponent } from './pages/customer/customer.component';
-
+import { TotalRecordsStatusPanelComponent } from './pages/common/ag-grid/total.records.status.panel.component';
+import { ClearFilterStatusPanelComponent } from './pages/common/ag-grid/clear.filter.status.panel.component';
+import { MyDatePickerModule, } from 'mydatepicker';
 @NgModule({
   declarations: [
     TestGridComponent,
+    TotalRecordsStatusPanelComponent,
+    ClearFilterStatusPanelComponent,
     AppComponent,
     DashboardComponent,
     BtnCellRenderer ,
@@ -100,7 +104,7 @@ import { CustomerComponent } from './pages/customer/customer.component';
   ],
   imports: [
   
- 
+    MyDatePickerModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,
@@ -127,7 +131,10 @@ import { CustomerComponent } from './pages/customer/customer.component';
     TableModule,
     TileModule,
     HttpClientModule,
-    AgGridModule,
+    AgGridModule.withComponents([
+      TotalRecordsStatusPanelComponent,
+      ClearFilterStatusPanelComponent,
+    ]),
     NgMultiSelectDropDownModule.forRoot(),
     AngularDualListBoxModule,
     RouterModule,

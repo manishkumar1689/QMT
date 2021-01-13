@@ -30,8 +30,7 @@
     "@types/jquery": "3.3.33",
     "ag-grid-angular": "20.2.0",
     "ag-grid-community": "20.2.0",
-    "ag-grid-angular": "20.2.0",
-    
+    "ag-grid-enterprise": "20.2.0",
     "angular-dual-listbox": "^6.0.0",
     "angular2-cookie": "^1.2.6",
     "angular2-notifications": "^9.0.0",
@@ -42,6 +41,7 @@
     "glyphicons": "0.2.0",
     "jquery": "3.4.1",
     "mapbox-gl": "^0.45.0",
+    "mydatepicker": "^2.6.11",
     "ng-multiselect-dropdown": "^0.2.14",
     "prismjs": "^1.15.0",
     "rxjs": "^6.3.2",

@@ -29,7 +29,7 @@
          (GeneralEditAction)="onEditUser($event)"
          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
          EnableGridState="true"></ag-grid>
-<form #addUser="ngForm">
+<form #addUser="ngForm" >
   <eds-dialog id="AddPATDialog" #addDialog [isOpened]="openAddDialog" mode="fullscreen">
     <eds-dialog-title>
       <div class="top">
