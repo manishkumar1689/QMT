@@ -14,6 +14,7 @@ import { UsermanagementComponent } from './pages/usermanagement/usermanagement.c
 import { UsersComponent } from './pages/usermanagement/users/users.component';
 import { GroupsComponent } from './pages/usermanagement/groups/groups.component';
 import { CustomerComponent } from './pages/customer/customer.component';
+import { LoginComponent } from './pages/login/Login.component';
 
 const appRoutes: Routes = [
   {
@@ -25,6 +26,10 @@ const appRoutes: Routes = [
 
       { path: 'groups', component: GroupOnBoardingComponent }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'usermanagement',
@@ -69,6 +74,7 @@ const appRoutes: Routes = [
     path: 'customer',
     component: CustomerComponent
   },
+  
   {
     path: '**',
     redirectTo: '/',

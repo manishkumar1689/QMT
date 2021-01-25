@@ -1480,18 +1480,19 @@ export class TestGridComponent {
 
           headers.push(_header);
         }
-        else if (innerHeader[1] == 'associatedRoles') {
+        else if (innerHeader[1] == 'associatedRoles' || innerHeader[1] == 'associatedGroups') {
           _header = _.merge(this.createColumn(data[key], isChildGrid),
             {
               filter: 'agTextColumnFilter',
               cellRenderer: function (params) {
-                if (params.data['associatedRoles'] != null && params.data['associatedRoles'] != undefined)
+               // if (params.data['associatedRoles'] != null && params.data['associatedRoles'] != undefined)
                   return '<span style="margin:6px;font-size:12px"><i title="Click to Edit" class="icon icon-search" data-action-type="generalSearch" style="cursor:pointer;"></i></span>'
               }
 
             });
           headers.push(_header);
         }
+       
         else if (innerHeader[1] == 'associatedProject') {
           _header = _.merge(this.createColumn(data[key], isChildGrid),
             {

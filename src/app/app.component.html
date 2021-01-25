@@ -1,4 +1,4 @@
-<eds-system-bar (settingsHandler)="settingsHandler($event)">
+<eds-system-bar (settingsHandler)="settingsHandler($event)" *ngIf="isUserLoggedIn()">
   <span eds-system-bar-items-headers>
     |&nbsp;
     <a [routerLink]="['/']"><i class="icon icon-home"></i></a>
@@ -44,16 +44,16 @@
 
     <div class="appbody pat-body">
       <!--<div class="appnav" [ngClass]="{hidden: !menuOpened}">
-      <eds-tree mode="navigation">
-        <eds-tree-item route="/">Getting started</eds-tree-item>
-        <eds-sub-tree route="components">
-          <eds-sub-tree-title>Components</eds-sub-tree-title>
-          <eds-tree-item route="components/playground">Playground</eds-tree-item>
-        </eds-sub-tree>
-      </eds-tree>
-    </div>-->
+    <eds-tree mode="navigation">
+      <eds-tree-item route="/">Getting started</eds-tree-item>
+      <eds-sub-tree route="components">
+        <eds-sub-tree-title>Components</eds-sub-tree-title>
+        <eds-tree-item route="components/playground">Playground</eds-tree-item>
+      </eds-sub-tree>
+    </eds-tree>
+  </div>-->
       <div class="appnav" [ngClass]="{hidden: !menuOpened}"
-           style="padding-right: 10px;">
+           style="padding-right: 10px;" *ngIf="isUserLoggedIn()">
         <eds-tree mode="navigation">
           <eds-tree-item route='/dashboard/projectOnBoarding'>Project OnBoarding</eds-tree-item>
 
@@ -66,6 +66,10 @@
           </eds-sub-tree>
         </eds-tree>
       </div>
+
+      <!--<div class="appcontent" style="margin-top: -10px;overflow: unset;" [ngClass]="{'login-screen-bg': !isUserLoggedIn()}">
+    <router-outlet></router-outlet>
+  </div>-->
       <div class="appcontent" style="margin-top:-10px">
         <router-outlet></router-outlet>
       </div>

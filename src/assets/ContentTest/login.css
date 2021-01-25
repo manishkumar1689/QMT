@@ -1,0 +1,115 @@
+.container {
+    width: 1474px;
+}
+.ericsson-color-dark-blue {
+    color: #00285e !important;
+}
+#ericsson-logo {
+    background: url('images/ericsson_logo1.png') 0px center no-repeat;
+    background-size: 53px 53px;
+    padding: 12px 10px 0 44px;
+    color: #00285e;
+}
+.colored-separator {
+    height: 3px;
+    background-color: blue;
+    display: block;
+    float: left;
+    width: 100%;
+}
+.page-content {
+    padding:1em 0
+}
+.carousel {
+    max-height: 418px;
+    overflow: hidden;
+}
+
+.mt20 {
+    margin-top:20px
+}
+.table{
+    margin:15px 0
+}
+hr {
+    margin: 27px 0;
+    border-bottom: 1px solid #fff;
+}
+#login-area {
+    padding: 1em 2em;
+    border: 1px solid #c7d0d7;
+    background: url('images/welcome-screen-bg.png') left top repeat-x #fff;
+    border-radius: 10px;
+    border-color: #c7d0d7 #bec9d1 #9aabb7 #d0d7dd;
+}
+.text-muted {
+    color: #777;
+}
+.ericsson-color-green {
+    color: #89ba17 !important;
+}
+.ericsson-color-blue {
+    
+    color: #002a5c !important;
+    font-size: 14px;
+}
+.table > thead > tr > th {
+    border-bottom: 2px solid #d4dbe1 !important;
+}
+.keepSigned {
+    margin: 0px 0 10px 0;
+    padding: 0;
+}
+.keepSigned input {
+    top:-3px
+}
+/*input[type="text"], input[type="number"] {
+    width: 100% !important;
+}*/
+.panel-default.r10 {
+    min-height: 155px;
+    box-shadow: 1px 1px #888888;
+}
+.ng-hide {
+    display:none !important;
+}
+.colored-separator {
+    height: 3px;
+    background: url('images/colored-gradient.jpg') repeat-x;
+}
+.alert-success {
+    color: #000000;
+    background-color: #a8c9f1;
+}
+.technical-support-btn a {
+    color: #fff !important
+}
+
+.technical-support-btn {
+    position: fixed;
+    background: #205081;
+    border: 2px solid #fff;
+    border-bottom: none;
+    color: #fff !important;
+    display: block;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    border-radius: 5px 5px 0 0
+}
+.technical-support-btn.right {
+    top: 33%;
+    right: 0;
+    -webkit-transform: rotate(270deg);
+    -webkit-transform-origin: bottom right;
+    -moz-transform: rotate(270deg);
+    -moz-transform-origin: bottom right;
+    -ms-transform: rotate(270deg);
+    -ms-transform-origin: bottom right;
+    transform: rotate(270deg);
+    transform-origin: bottom right
+}
+@media screen and (max-width: 1280px){
+    .panel-default.r10 {
+        min-height:170px;
+    }
+}

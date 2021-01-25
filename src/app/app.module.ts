@@ -72,6 +72,9 @@ import { CustomerComponent } from './pages/customer/customer.component';
 import { TotalRecordsStatusPanelComponent } from './pages/common/ag-grid/total.records.status.panel.component';
 import { ClearFilterStatusPanelComponent } from './pages/common/ag-grid/clear.filter.status.panel.component';
 import { MyDatePickerModule, } from 'mydatepicker';
+import { LoginComponent } from './pages/login/Login.component';
+import { NgbModule,NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     TestGridComponent,
@@ -100,10 +103,11 @@ import { MyDatePickerModule, } from 'mydatepicker';
     ManagegroupComponent,
     ManageuserComponent,
     DialogTest,
-    CustomerComponent
+    CustomerComponent,
+    LoginComponent
   ],
   imports: [
-  
+  NgbModule,
     MyDatePickerModule,
     AppRoutingModule,
     BrowserModule,
@@ -138,11 +142,10 @@ import { MyDatePickerModule, } from 'mydatepicker';
     NgMultiSelectDropDownModule.forRoot(),
     AngularDualListBoxModule,
     RouterModule,
-   
     SimpleNotificationsModule.forRoot(),
-  
+    
   ],
-  providers: [ThemeService, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
+  providers: [ThemeService,NgbCarouselConfig, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

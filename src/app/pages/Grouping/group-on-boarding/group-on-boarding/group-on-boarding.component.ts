@@ -60,7 +60,7 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
     else {
       this.openAddDialog = false;
     }
-    
+
   }
   ngOnInit(): void {
     this.gridData = GroupGridData['GROUP'][0]['Columns'];
@@ -84,9 +84,9 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
     }, 2000);
   }
   constructor(private http: HttpClient, private router: Router) {
-   
 
-    
+
+
     this.columnDefs = [
       {
         headerName: 'Actions',
@@ -105,14 +105,14 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
         width: 200,
         rowSpan: rowSpan.bind(this)
       },
-     
+
       {
         headerName: 'Name',
         field: 'name'
 
 
-       
-      
+
+
 
       },
       {
@@ -136,7 +136,7 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
         headerName: 'Associated Project',
         field: 'associatedProject',
         cellRenderer: "btnCellSearch",
-        
+
       }
 
     ];
@@ -344,6 +344,15 @@ export class GroupOnBoardingComponent implements AfterViewInit, OnInit {
 
         params.api.paginationGoToPage(2);
       });
+  }
+
+  AcivateDeActivateCustomer() {
+
+    this.openAddDialog = false;
+
+  }
+  CloseActivateDialog() {
+    this.openAddDialog = false;
   }
 }
 function rowSpan(params) {

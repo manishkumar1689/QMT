@@ -1,5 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Wizard } from '@eds/vanilla';
+import { GitGridData } from './create-project-git.grid.data';
+import { SonarQubeGridData } from './create-project-sonarqube.grid.data';
+import { SapFinancialGridData } from './create-project-sapfinancial.grid.data';
+import { NotificationGridData } from './create-project-notification.grid.data';
 @Component({
   selector: 'app-form',
   templateUrl: './create-project.component.html',
@@ -24,9 +28,91 @@ export class CreateProjectComponent implements OnInit {
   dropdownGroupIdSettings = {};
   dropdownStandardJobNameSettings = {};
   dropdownDashboardSettings = {};
+  groupIdProjectId = "Group Id";
+  dropDownSelection;
+  public settingsDashboard = {};
+  @ViewChild("ProjectGrid", { static: false }) ProjectGrid: any;
+  @ViewChild("NotificationGrid", { static: false }) NotificationGrid: any;
+  @ViewChild("SapFinancialGrid", { static: false }) SapFinancialGrid: any;
+  @ViewChild("SonarQubeGrid", { static: false }) SonarQubeGrid: any;
+  gridDataGit: any;
+  gridDataSonarQube: any;
+  gridDataSapFinancial: any;
+  gridDataNotification: any;
+    rowData1: any;
+    rowDataSonarQube;
   constructor() { }
+  groupIdProjectIdChange(data) {
+    this.groupIdProjectId = data[0].groupName;
+    debugger;
+  }
 
   ngOnInit(): void {
+    this.gridDataGit = GitGridData['PROJECT'][0]['Columns'];
+    this.gridDataSonarQube = GitGridData['PROJECT'][0]['Columns'];
+    this.gridDataSapFinancial = GitGridData['PROJECT'][0]['Columns'];
+    this.gridDataNotification = GitGridData['PROJECT'][0]['Columns'];
+
+
+    setTimeout(() => {
+      debugger;
+      var data1 = this.rowData1;
+      this.ProjectGrid.refresh(this.rowData1, GitGridData['PROJECT'][0])
+      this.NotificationGrid.refresh(this.rowData1, NotificationGridData['PROJECT'][0])
+      this.SapFinancialGrid.refresh(this.rowData1, SapFinancialGridData['PROJECT'][0])
+      this.SonarQubeGrid.refresh(this.rowDataSonarQube, SonarQubeGridData['PROJECT'][0])
+    }, 2000);
+
+
+    this.rowData1 =
+      [
+        {
+          "projectId": "1",
+          "projectJobName": "Michael Phelps1",
+          "standardJobName": "Test Standard1"
+          
+
+      },
+      {
+        "projectId": "2",
+        "projectJobName": "Michael Phelps2",
+        "standardJobName": "Test Standard2"
+
+
+      },
+      {
+        "projectId": "3",
+        "projectJobName": "Michael Phelps3",
+        "standardJobName": "Test Standard3"
+
+
+      },
+      ];
+    this.rowDataSonarQube =
+      [
+        {
+          "gitProject": "1",
+          "gitBranch": "Michael Phelps1",
+          "sonarCompositeKey": "Test Standard1"
+
+
+      },
+      {
+        "gitProject": "2",
+        "gitBranch": "Michael Phelps2",
+        "sonarCompositeKey": "Test Standard2"
+
+
+      },
+      {
+        "gitProject": "3",
+        "gitBranch": "Michael Phelps3",
+        "sonarCompositeKey": "Test Standard3"
+
+
+      },
+      ];
+
     const wizards = document.querySelectorAll('.wizard');
     this.countries = [{
       "idCountry": 1,
@@ -149,13 +235,13 @@ export class CreateProjectComponent implements OnInit {
 
       }];
     this.groupIds = [{
-      "idGroup": 1453,
-      "groupName": "DEMO_KT",
+      "idGroup": 1,
+      "groupName": "Group ID",
 
     },
     {
-      "idGroup": 1454,
-      "groupName": "DEMO_KT1",
+      "idGroup": 2,
+      "groupName": "Project ID",
 
       }];
     this.standardJobNames = [{
@@ -256,6 +342,41 @@ export class CreateProjectComponent implements OnInit {
         });
       }, 1000);
     }
+
+    this.settingsDashboard = {
+      singleSelection: false,
+      idField: 'idMarketArea',
+      textField: 'marketAreaName',
+      enableCheckAll: true,
+      selectAllText: 'All',
+      unSelectAllText: 'Unselect All',
+      allowSearchFilter: true,
+      limitSelection: -1,
+      clearSearchFilter: true,
+      maxHeight: 197,
+      itemsShowLimit: 3,
+      searchPlaceholderText: 'Select1 Dashboard',
+      noDataAvailablePlaceholderText: 'Unselect1 Placeholder',
+      closeDropDownOnSelection: false,
+      showSelectedItemsAtTop: false,
+      defaultOpen: false
+    };
+  }
+  public onItemSelect(item: any) {
+    debugger;
+    console.log(item);
+  }
+  public onDeSelect(item: any) {
+    debugger;
+    console.log(item);
   }
 
+  public onSelectAll(items: any) {
+    debugger;
+    console.log(items);
+  }
+  public onDeSelectAll(items: any) {
+    debugger;
+    console.log(items);
+  }
 }

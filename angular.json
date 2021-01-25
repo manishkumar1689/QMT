@@ -28,11 +28,13 @@
               ]
             },
             "assets": [
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
 
               "src/styles.css",
+              
               "node_modules/@eds/vanilla/eds.css",
               "src/assets/ag-grid/dist/styles/ag-grid.css",
               "src/assets/ag-grid/dist/styles/ag-theme-balham.css",

@@ -55,11 +55,29 @@
   </div>
 </div>-->
 
-<btn-dialog class="dialog fullscreen" id="addeditproject"  [hidden]="!openAddDialog">
-  <div title> Projects</div>
-  <div body> Body</div>
-  <div bottom>
-    <button class="btn ghost" data-close="true">Cancel</button>
-    <button class="btn primary">Submit</button>
-  </div>
-</btn-dialog>
+<!--<btn-dialog class="dialog fullscreen" id="addeditproject" data-trigger="#opensimple" data-type="simple" [hidden]="!openAddDialog">-->
+<eds-dialog #Acivatedialog [isOpened]="openAddDialog" mode="fullscreen">
+
+
+
+
+
+  <eds-dialog-title>
+    <div class="top">
+      <div class="title">Projects</div>
+    </div>
+  </eds-dialog-title>
+  <eds-dialog-content>
+    <div class="body">
+      <p>Body</p>
+    </div>
+  </eds-dialog-content>
+  <eds-dialog-actions>
+    <div class="bottom">
+     
+      <button class="btn"  (click)="CloseActivateDialog()">Cancel</button>
+      <button class="btn primary"  (click)="AcivateDeActivateCustomer()">Submit</button>
+    </div>
+  </eds-dialog-actions>
+</eds-dialog>
+<!--</btn-dialog>-->

@@ -1,0 +1,266 @@
+
+<div class="container-fluid">
+  <div class="row page-content" style="padding:0 15px;">
+
+    <div class="colored-separator"></div>
+    <br />
+    <div class="alert alert-success large" [hidden]="!showAnnouncementSection" style="padding:10px; margin-bottom:15px;border-color:#a8c9f1;background-image:linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgb(0 42 92 / 75%) 100%);">
+      <div>
+        <img src="NG2/Content/images/Announcement.png" style="height:40px" />
+        <p style="margin-left:60px;margin-top:-35px;font-size:15px;">
+          <strong>
+            {{LOGIN_TEXT.Announcement}}
+          </strong>
+        </p>
+        <p style="margin-left:60px;margin-top:-6px;font-size:14px;">{{LOGIN_TOOLTIP.Announcement}}</p>
+      </div>
+      
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" style="flex:auto;display:block">
+      <div class="col-xs-12 col-md-4 pull-right" style="display: block;flex:auto;float:right">
+        <div class="r10" id="login-area" style="height:415px">
+          <div class="row">
+            <div class="hidden-xs col-sm-3 col-md-12 text-center">
+              <div style="font-size: 50px">
+                <span class="fa-stack ericsson-color-dark-blue visible-xl-inline-block">
+                  <i class="fa-stack-2x fa fa-fw fa-circle"></i>
+                  <i class="fa-stack-1x fa-inverse fa fa-fw fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-sm-9 col-md-12">
+              <div class="form-group bs-tooltip" title="" data-original-title="Ericsson Signum">
+                <div class="input-group">
+                  <span class="input-group-addon" style="padding:0">
+                    <img src="assets/ContentTest/images/ericsson_logo1.png" width="35" alt="Ericsson Signum">
+                  </span>
+                  <input placeholder="Ericsson Signum" maxlength="12" class="form-control input-lg" type="text" #username name="username" title={{toolTipText.USER_NAME}} [(ngModel)]="model.username"
+                         (keypress)="checkKeyPressed($event)" required="required" style="font-size:15px;">
+                </div>
+              </div>
+              <div class="form-group bs-tooltip" title="" data-original-title="LAN Password">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i style="font-size: 17px" class="ericsson-color-dark-blue fa fa-lock"></i>
+                  </span>
+                  <input placeholder="LAN Password" class="form-control input-lg" type="{{ showPassword ? 'text' : 'password' }}" #password name="password" title={{toolTipText.PASSWORD}} [(ngModel)]="model.password"
+                         (mousedown)="onFocus($event)" 
+                         (keypress)="checkKeyPressed($event)"
+                         (input)="onPasswordChange($event.target.value)" required="required" style="border-radius: 0 6px 6px 0;font-size:15px;">
+                  <span title={{toolTipPasswordText}}
+                        [ngClass]="{ 'glyphicon-eye-open' : showPassword , 'glyphicon-eye-close': !showPassword }"
+                        class="glyphicon form-control-feedback"
+                        style="z-index:6; cursor: pointer; pointer-events: all;"
+                        (click)="showHidePassword()">
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 keepSigned">
+                <label class="checkbox-inline" style="font-size:14px;">
+                  <input type="checkbox" [(ngModel)]="rememberme">
+                  Keep Me Signed In
+                </label>
+              </div>
+              <br />
+              <p>
+                <button title={{toolTipText.LOGIN}}  (click)="LoginUser()" class="btn btn-primary btn-lg btn-block" style="font-size:15px;">
+                  Login to Navigator365
+                </button>
+              </p>
+              <div class="mt20">
+                <a href="" id="loginprivacyLink" target="_blank" title="Read QMT Privacy Notice">
+                  <i class="fa fa-user-secret fa-2x" aria-hidden="true"></i>
+                  <label style="margin-left:10px;font-size:14px;">  Read QMT Privacy Notice</label>
+                </a>
+              </div>
+              <div>
+                <a href="" id="loginCodeBusinessEthics" target="_blank" title="Adhere to Code of Business Ethics">
+                  <!--<i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>-->
+                  <img src="assets/ContentTest/images/N365CodeEthicsCompliance.png" width="21" height="24" style="vertical-align:text-bottom;" />
+                  <label style="margin-left:10px;font-size:14px;"> Adhere to Code of Business Ethics</label>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br class="visible-xs-block visible-sm-block">
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 pull-left" style="margin-bottom:20px;display:block;flex:auto;float:left">
+        <ngb-carousel>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="assets/image3.jpg" alt="Navigator Slider">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="assets/image1.jpg" alt="Navigator Slider">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="assets/image3.jpg" alt="Navigator Slider">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img src="assets/image1.jpg" alt="Navigator Slider">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+      </div>
+      <hr style="margin:15px 0;">
+      <div class="row page-content" style="padding:0 15px;">
+        <div class="row" style="flex:auto;display:block">
+          <div class="col-md-6">
+            <div class="panel panel-default r10">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-1 col-md-1 col-lg-2">
+                    <div class="text-center" style="margin-top:25px;">
+                      <img src="assets/ContentTest/images/N365Navigator.png" width="60" />
+                    </div>
+                  </div>
+                  <div class="col-xs-11 col-md-11 col-lg-10">
+                    <div class="h4">Qmt in a Nutshell</div>
+                    <p style="font-size:14px;">Navigator365 is an Asset Management Platform to connect end-users with assets approved for use in customer engagements, to drive use of approved assets, to drive continuous improvement of approved assets for use in customer engagements, and to ensure process adherence in customer engagements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-default r10">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-1 col-md-1 col-lg-2">
+                    <div class="text-center" style="margin-top:25px;">
+                      <img src="assets/ContentTest/images/N365User.png" width="60" />
+                    </div>
+                  </div>
+                  <div class="col-xs-11 col-md-11 col-lg-10">
+                    <div class="h4">User Centric Platform</div>
+                    <p style="font-size:14px;">It empowers project team, leadership to take data driven to continuosly improve quality, efficiency of services and solutions.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="flex:auto;display:block">
+          <div class="col-md-6">
+            <div class="panel panel-default r10">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-1 col-md-1 col-lg-2">
+                    <div class="text-center" style="margin-top:25px;">
+                      <img src="assets/ContentTest/images/N365LifeCycle.png" width="70" />
+                    </div>
+                  </div>
+                  <div class="col-xs-11 col-md-11 col-lg-10">
+                    <div class="h4">LifeCycle Management of Projects</div>
+                    <p style="font-size:14px;">Project management KPIs for development, testing or system integration type of projects.Readily available KPIs to track and measure development, test execution , delivery quality , team productivity etc</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-default r10">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-1 col-md-1 col-lg-2">
+                    <div class="text-center" style="margin-top:25px;">
+                      <img src="assets/ContentTest/images/N365Process.png" width="70" />
+                    </div>
+                  </div>
+                  <div class="col-xs-11 col-md-11 col-lg-10">
+                    <div class="h4">Adherence to Processes</div>
+                    <p style="font-size:14px;">Promote use of standard way of working and tools acrosse projects. Jira ESAM for application life cycle.Rosetta Gitlab to set up pipeline.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr style="margin:15px 0;" />
+        </div>
+      </div>
+      <table style="font-size: large;" class="table text-muted">
+        <thead>
+          <tr>
+            <th class="col-2"></th>
+            <th class="col-2"><strong>Logins</strong></th>
+            <th class="col-2"><strong>Downloads</strong></th>
+            <th class="col-2"><strong>Feedback</strong></th>
+            <th class="col-2"><strong>Reuses</strong></th>
+            <th class="col-2"><strong>Approved Assets</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Total / </strong><span class="ericsson-color-blue">+{{ loginPageFiguresData.Days}} days change</span>
+            </td>
+            <td>{{ loginPageFiguresData.TotalLogins}}<span class="ericsson-color-blue">/ +{{ loginPageFiguresData.TotalLoginsChange}}</span></td>
+            <td>{{ loginPageFiguresData.AssetDownload}}<span class="ericsson-color-blue">/ +{{ loginPageFiguresData.AssetDownloadChange}}</span></td>
+            <td>{{ loginPageFiguresData.Feedback}}<span class="ericsson-color-blue">/ +{{ loginPageFiguresData.FeedbackChange}}</span></td>
+            <td>{{ loginPageFiguresData.Savings}}<span class="ericsson-color-blue">/ +{{ loginPageFiguresData.SavingsChange}}</span></td>
+            <td>{{ loginPageFiguresData.ApprovedAsset}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="colored-separator"></div>
+      <br />
+      <footer>
+        <div id="footer-ContentTest" class="row">
+          <div class="col-md-12 col-lg-12 pad2 form-anchors">
+            <table style="width:100%">
+              <tr>
+                <td style="width:26%">
+                  <a href="" id="loginPresentation" target="_blank" title=" QMT Training on Degreed">
+                    <i aria-hidden="true">
+                      <img src="assets/ContentTest/images/Degreed_Icon.png" alt="Degreed" width="26" height="29" style="vertical-align:text-bottom;" />
+                    </i>
+                    <label style="margin:0px 0px 2px 10px;"> QMT Training on Degreed</label>
+                  </a>
+                </td>
+                <td style="width:26%">
+                  <a href="" id="loginTraining" target="_blank" title="Latest Release Feature Demo">
+                    <i class="fa fa-caret-square-o-right fa-2x" aria-hidden="true"></i>
+                    <label style="margin-left:10px"> Latest Release Feature Demo</label>
+                  </a>
+                </td>
+                <td style="width:22%">
+                  <a href="" id="loginOtherLink" target="_blank" title="User Manual">
+                    <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+                    <label style="margin-left:10px"> User Manual</label>
+                  </a>
+                </td>
+                <td style="width:26%">
+                  <a href="" id="loginTrainingEnv" target="_blank" title="QMT Training Environment">
+                    <i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
+                    <label style="margin-left:10px"> QMT Training Environment</label>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </footer>
+
+      <button type="button" class="technical-support-btn right" (click)="showSupportView()">
+        <i class="fa fa-user"></i>&nbsp;&nbsp;QMT Support
+      </button>
+      <br /><br />
+    </div>
+    
+
+
+  </div>
