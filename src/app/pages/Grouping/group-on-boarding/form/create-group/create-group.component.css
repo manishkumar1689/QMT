@@ -33,3 +33,9 @@ input[type="radio"]{
     background:white;
 }
 
+
+.red {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+}

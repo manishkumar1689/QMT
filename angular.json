@@ -39,13 +39,12 @@
               "src/assets/ag-grid/dist/styles/ag-grid.css",
               "src/assets/ag-grid/dist/styles/ag-theme-balham.css",
               "src/assets/ag-grid/dist/styles/theme-fresh.css",
-              "src/assets/Content/font-awesome.css",
+              "src/assets/ContentTest/font-awesome.css",
               "src/assets/bootstrap.min.css"
             ],
             "scripts": [
               "src/assets/jquery-3.4.1.min.js",
-              "src/assets/d3.v4.min.js",
-              "src/assets/all.js"
+              "src/assets/d3.v4.min.js"
             ]
           },
           "configurations": {

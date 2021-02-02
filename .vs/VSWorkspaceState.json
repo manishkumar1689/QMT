@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\pages",
-    "\\src\\app\\pages\\dashboard",
-    "\\src\\app\\pages\\Grouping",
-    "\\src\\app\\pages\\Grouping\\group-on-boarding",
-    "\\src\\app\\pages\\Grouping\\group-on-boarding\\group-on-boarding",
+    "\\src\\app\\pages\\Grouping\\group-on-boarding\\form\\edit-group",
     "\\src\\app\\pages\\Grouping\\project-on-boarding",
-    "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding"
+    "\\src\\app\\pages\\Grouping\\project-on-boarding\\form",
+    "\\src\\app\\pages\\login",
+    "\\src\\app\\pages\\usermanagement",
+    "\\src\\app\\pages\\usermanagement\\users"
   ],
-  "SelectedNode": "\\src\\app\\pages\\Grouping\\project-on-boarding\\project-on-boarding\\project-on-boarding.component.html",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

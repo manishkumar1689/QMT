@@ -74,7 +74,8 @@ import { ClearFilterStatusPanelComponent } from './pages/common/ag-grid/clear.fi
 import { MyDatePickerModule, } from 'mydatepicker';
 import { LoginComponent } from './pages/login/Login.component';
 import { NgbModule,NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-
+import { LoginService } from './pages/login/Login.service';
+import { AuthGuard } from './pages/auth/AuthGuard ';
 @NgModule({
   declarations: [
     TestGridComponent,
@@ -145,7 +146,7 @@ import { NgbModule,NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
     SimpleNotificationsModule.forRoot(),
     
   ],
-  providers: [ThemeService,NgbCarouselConfig, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
+  providers: [ThemeService,AuthGuard,LoginService,NgbCarouselConfig, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

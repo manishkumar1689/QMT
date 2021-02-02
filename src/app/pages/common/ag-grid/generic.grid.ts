@@ -1332,6 +1332,105 @@ export class TestGridComponent {
             });
           headers.push(_header);
         }
+   else if (innerHeader[1] == 'onBoardingDate') {
+          _header = _.merge(this.createColumn(data[key], isChildGrid),
+            {
+              sortable: true,
+              tooltipField: '',
+              filter: 'agDateColumnFilter',
+              // add extra parameters for the date filter
+              filterParams: {
+                comparator: function (filterLocalDateAtMidnight, cellValue) {
+                  var dateAsString = cellValue.substr(0, cellValue.indexOf('T'));
+                  if (dateAsString == null) return 0;
+
+                  var dateParts = dateAsString.split("-");
+                  var year = Number(dateParts[0]);
+                  var month = Number(dateParts[1]) - 1;
+                  var day = Number(dateParts[2]);
+                  var cellDate = new Date(year, month, day);
+
+                  if (cellDate < filterLocalDateAtMidnight) {
+                    return -1;
+                  } else if (cellDate > filterLocalDateAtMidnight) {
+                    return 1;
+                  } else {
+                    return 0;
+                  }
+                }
+              },
+              cellRenderer: function (params) {
+                return '<span title="' + params.data["onBoardingDate"] + '">' + params.data["onBoardingDate"] + '</span>'
+              }
+            });
+          headers.push(_header);
+        }
+else if (innerHeader[1] == 'lastDataRetrievalTime') {
+          _header = _.merge(this.createColumn(data[key], isChildGrid),
+            {
+              sortable: true,
+              tooltipField: '',
+              filter: 'agDateColumnFilter',
+              // add extra parameters for the date filter
+              filterParams: {
+                comparator: function (filterLocalDateAtMidnight, cellValue) {
+                  var dateAsString = cellValue.substr(0, cellValue.indexOf('T'));
+                  if (dateAsString == null) return 0;
+
+                  var dateParts = dateAsString.split("-");
+                  var year = Number(dateParts[0]);
+                  var month = Number(dateParts[1]) - 1;
+                  var day = Number(dateParts[2]);
+                  var cellDate = new Date(year, month, day);
+
+                  if (cellDate < filterLocalDateAtMidnight) {
+                    return -1;
+                  } else if (cellDate > filterLocalDateAtMidnight) {
+                    return 1;
+                  } else {
+                    return 0;
+                  }
+                }
+              },
+              cellRenderer: function (params) {
+                return '<span title="' + params.data["lastDataRetrievalTime"] + '">' + params.data["lastDataRetrievalTime"] + '</span>'
+              }
+            });
+          headers.push(_header);
+        }
+else if (innerHeader[1] == 'nextDataRetrievalTime') {
+          _header = _.merge(this.createColumn(data[key], isChildGrid),
+            {
+              sortable: true,
+              tooltipField: '',
+              filter: 'agDateColumnFilter',
+              // add extra parameters for the date filter
+              filterParams: {
+                comparator: function (filterLocalDateAtMidnight, cellValue) {
+                  var dateAsString = cellValue.substr(0, cellValue.indexOf('T'));
+                  if (dateAsString == null) return 0;
+
+                  var dateParts = dateAsString.split("-");
+                  var year = Number(dateParts[0]);
+                  var month = Number(dateParts[1]) - 1;
+                  var day = Number(dateParts[2]);
+                  var cellDate = new Date(year, month, day);
+
+                  if (cellDate < filterLocalDateAtMidnight) {
+                    return -1;
+                  } else if (cellDate > filterLocalDateAtMidnight) {
+                    return 1;
+                  } else {
+                    return 0;
+                  }
+                }
+              },
+              cellRenderer: function (params) {
+                return '<span title="' + params.data["nextDataRetrievalTime"] + '">' + params.data["nextDataRetrievalTime"] + '</span>'
+              }
+            });
+          headers.push(_header);
+        }
         else if (innerHeader[1] == 'riskAnalysis') {
           _header = _.merge(this.createColumn(data[key], isChildGrid),
             {

@@ -4,7 +4,7 @@
     "projectName": "Michael Phelps",
     "userSignum": 1,
     "module": "United States",
-    "onBoardingDate": 2008,
+    "onBoardingDate": "2020-12-26T01:01:00",
 
     "pollingInterval": "Swimming",
     "lastDataRetrievalTime": 8,
@@ -16,7 +16,7 @@
     "projectName": "Michael Phelps123",
     "userSignum": 2,
     "module": "United States1",
-    "onBoardingDate": 20081,
+    "onBoardingDate": "2019-11-26T01:01:00",
 
     "pollingInterval": "Swimming1",
     "lastDataRetrievalTime": 81,
@@ -28,7 +28,7 @@
     "projectName": "Michael Phelps",
     "userSignum": 3,
     "module": "United States",
-    "onBoardingDate": 2008,
+    "onBoardingDate": "2018-10-26T01:01:00",
 
     "pollingInterval": "Swimming",
     "lastDataRetrievalTime": 9,
@@ -40,7 +40,7 @@
     "projectName": "Michael Phelps123",
     "userSignum": 4,
     "module": "United States1",
-    "onBoardingDate": 20081,
+    "onBoardingDate": "2020-12-25T01:01:00",
 
     "pollingInterval": "Swimming1",
     "lastDataRetrievalTime": 82,
@@ -52,7 +52,7 @@
     "projectName": "Michael Phelps",
     "userSignum": 5,
     "module": "United States",
-    "onBoardingDate": 2008,
+    "onBoardingDate": "2020-12-24T01:01:00",
 
     "pollingInterval": "Swimming",
     "lastDataRetrievalTime": 10,

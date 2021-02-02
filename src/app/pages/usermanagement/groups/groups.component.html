@@ -67,8 +67,9 @@
     <eds-dialog-actions>
 
       <div class="bottom" style="margin-top: 9px;">
-        <button class="btn ghost" data-close="true" (click)="closeGroup()">Cancel</button>
         <button class="btn primary" [disabled]="addGroup.invalid || !requiredField">Submit</button>
+        <button class="btn ghost" data-close="true" (click)="closeGroup()">Cancel</button>
+
       </div>
 
     </eds-dialog-actions>

@@ -179,7 +179,7 @@ export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
           "projectName": "Michael Phelps",
           "userSignum": 1,
           "module": "United States",
-          "onBoardingDate": 2008,
+          "onBoardingDate": "2020-12-26T01:01:00",
 
           "pollingInterval": "Swimming",
           "lastDataRetrievalTime": 8,
@@ -191,11 +191,11 @@ export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
           "projectName": "Michael Phelps123",
           "userSignum": 2,
           "module": "United States1",
-          "onBoardingDate": 20081,
+          "onBoardingDate": "2020-12-25T01:01:00",
 
           "pollingInterval": "Swimming1",
-          "lastDataRetrievalTime": 81,
-          "nextDataRetrievalTime": 10
+          "lastDataRetrievalTime": "12:12:12",
+          "nextDataRetrievalTime": "12:12:12"
 
         },
         {
@@ -203,11 +203,11 @@ export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
           "projectName": "Michael Phelps",
           "userSignum": 3,
           "module": "United States",
-          "onBoardingDate": 2008,
+          "onBoardingDate": "2020-12-24T01:01:00",
 
           "pollingInterval": "Swimming",
-          "lastDataRetrievalTime": 9,
-          "nextDataRetrievalTime": 0
+          "lastDataRetrievalTime": "11:11:11",
+          "nextDataRetrievalTime": "11:11:11"
 
         },
         {
@@ -215,11 +215,11 @@ export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
           "projectName": "Michael Phelps123",
           "userSignum": 4,
           "module": "United States1",
-          "onBoardingDate": 20081,
+          "onBoardingDate": "2020-12-23T01:01:00",
 
           "pollingInterval": "Swimming1",
-          "lastDataRetrievalTime": 82,
-          "nextDataRetrievalTime": 10
+          "lastDataRetrievalTime": "10:10:10",
+          "nextDataRetrievalTime": "10:10:10"
 
         },
         {
@@ -227,11 +227,11 @@ export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
           "projectName": "Michael Phelps",
           "userSignum": 5,
           "module": "United States",
-          "onBoardingDate": 2008,
+          "onBoardingDate": "2020-12-27T01:01:00",
 
           "pollingInterval": "Swimming",
-          "lastDataRetrievalTime": 10,
-          "nextDataRetrievalTime": 0
+          "lastDataRetrievalTime": "09:09:09",
+          "nextDataRetrievalTime": "09:09:09"
 
         },
         {
@@ -239,7 +239,7 @@ export class ProjectOnBoardingComponent implements OnInit, AfterViewInit {
           "projectName": "Michael Phelps123",
           "userSignum": 6,
           "module": "United States1",
-          "onBoardingDate": 20081,
+          "onBoardingDate": "2019-12-26T01:01:00",
 
           "pollingInterval": "Swimming1",
           "lastDataRetrievalTime": 83,

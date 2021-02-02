@@ -15,16 +15,16 @@ import { UsersComponent } from './pages/usermanagement/users/users.component';
 import { GroupsComponent } from './pages/usermanagement/groups/groups.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { LoginComponent } from './pages/login/Login.component';
-
+import { AuthGuard } from './pages/auth/AuthGuard ';
 const appRoutes: Routes = [
   {
     path: '',
     component: DashboardComponent,
     data: { title: '' },
     children: [
-      { path: '', component: ProjectOnBoardingComponent },
+      { path: '', component: ProjectOnBoardingComponent, canActivate: [AuthGuard] },
 
-      { path: 'groups', component: GroupOnBoardingComponent }
+      { path: 'groups', component: GroupOnBoardingComponent, canActivate: [AuthGuard] }
     ]
   },
   {
@@ -34,8 +34,8 @@ const appRoutes: Routes = [
   {
     path: 'usermanagement',
     component: UsermanagementComponent,
-    children: [{ path: 'user', component: UsersComponent },
-      { path: 'group', component: GroupsComponent },
+    children: [{ path: 'user', component: UsersComponent, canActivate: [AuthGuard] },
+      { path: 'group', component: GroupsComponent, canActivate: [AuthGuard] },
       //{ path: 'edit/group', component: GroupsComponent },
       { path: '**', redirectTo: 'user' },
     ]
@@ -45,6 +45,7 @@ const appRoutes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     data: { title: '' },
+ canActivate: [AuthGuard],
     children: [{ path: 'projectOnBoarding', component: ProjectOnBoardingComponent },
       { path: 'createProject', component: CreateProjectComponent },
       { path: 'editProject/:projectId', component: EditProjectComponent },

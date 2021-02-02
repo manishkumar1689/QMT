@@ -12,7 +12,7 @@ export const ProjectGridData = {
            
         }],
         Columns: [
-          { 'Project Name,projectName,,,,,,,true,,': '' },
+          { 'Tenant Name,projectName,,,,,,,true,true,': '' },
           { 'User Signum,userSignum,': '' },
           { 'Module,module,,': '' },
           { 'Onboarding Data/Time,onBoardingDate,': '' },

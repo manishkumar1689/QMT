@@ -29,7 +29,7 @@
          (GeneralEditAction)="onEditUser($event)"
          (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
          EnableGridState="true"></ag-grid>
-<form #addUser="ngForm" >
+<form #addUser="ngForm" name="addUser">
   <eds-dialog id="AddPATDialog" #addDialog [isOpened]="openAddDialog" mode="fullscreen">
     <eds-dialog-title>
       <div class="top">
@@ -72,8 +72,9 @@
     <eds-dialog-actions>
 
       <div class="bottom" style="margin-top: 9px;">
+        <button class="btn primary" [disabled]="addUser.invalid || !requiredField">Submit</button>
         <button class="btn ghost" data-close="true" (click)="closeUser()">Cancel</button>
-        <button class="btn primary" [disabled]="addUser.invalid">Submit</button>
+
       </div>
     </eds-dialog-actions>
   </eds-dialog>

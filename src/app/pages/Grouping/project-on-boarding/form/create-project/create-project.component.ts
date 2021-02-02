@@ -10,6 +10,7 @@ import { NotificationGridData } from './create-project-notification.grid.data';
   styleUrls: ['./create-project.component.css']
 })
 export class CreateProjectComponent implements OnInit {
+ requiredField: boolean;
   countries: any;
   modules: any;
   marketAreas: any;

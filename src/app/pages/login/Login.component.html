@@ -1,120 +1,134 @@
+<nav class="navbar navbar-default">
+  <div class="navbar-header container-fluid pad0">
+  
+    <a class="navbar-brand ericsson_logo tourLoginStep1" >
+      <img alt="Ericsson" customtooltip="" src="assets/ContentTest/images/ericsson_logo.png" >
+    </a>
+    <a class="navbar-brand spark_logo tourLoginStep2" >
+      <img alt="QMT" customtooltip="" src="assets/ContentTest/images/navigator__logo.png" >
+    </a><!--bindings={}-->
+  </div>
 
-<div class="container-fluid">
-  <div class="row page-content" style="padding:0 15px;">
+  <div id="notifRefreshId"></div><div id="CalendarRefreshId"></div>
+</nav>
+<br />
+<form #login="ngForm">
+  <div class="container-fluid" style="margin-top:40px">
+    <div class="row page-content" style="padding:0 15px;">
 
-    <div class="colored-separator"></div>
-    <br />
-    <div class="alert alert-success large" [hidden]="!showAnnouncementSection" style="padding:10px; margin-bottom:15px;border-color:#a8c9f1;background-image:linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgb(0 42 92 / 75%) 100%);">
-      <div>
-        <img src="NG2/Content/images/Announcement.png" style="height:40px" />
-        <p style="margin-left:60px;margin-top:-35px;font-size:15px;">
-          <strong>
-            {{LOGIN_TEXT.Announcement}}
-          </strong>
-        </p>
-        <p style="margin-left:60px;margin-top:-6px;font-size:14px;">{{LOGIN_TOOLTIP.Announcement}}</p>
+      <div class="colored-separator"></div>
+      <br />
+      <div class="alert alert-success large" [hidden]="!showAnnouncementSection" style="padding:10px; margin-bottom:15px;border-color:#a8c9f1;background-image:linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgb(0 42 92 / 75%) 100%);">
+        <div>
+          <img src="NG2/Content/images/Announcement.png" style="height:40px" />
+          <p style="margin-left:60px;margin-top:-35px;font-size:15px;">
+            <strong>
+              {{LOGIN_TEXT.Announcement}}
+            </strong>
+          </p>
+          <p style="margin-left:60px;margin-top:-6px;font-size:14px;">{{LOGIN_TOOLTIP.Announcement}}</p>
+        </div>
+
+        <div class="clearfix"></div>
       </div>
-      
-      <div class="clearfix"></div>
-    </div>
 
-    <div class="row" style="flex:auto;display:block">
-      <div class="col-xs-12 col-md-4 pull-right" style="display: block;flex:auto;float:right">
-        <div class="r10" id="login-area" style="height:415px">
-          <div class="row">
-            <div class="hidden-xs col-sm-3 col-md-12 text-center">
-              <div style="font-size: 50px">
-                <span class="fa-stack ericsson-color-dark-blue visible-xl-inline-block">
-                  <i class="fa-stack-2x fa fa-fw fa-circle"></i>
-                  <i class="fa-stack-1x fa-inverse fa fa-fw fa-user"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-sm-9 col-md-12">
-              <div class="form-group bs-tooltip" title="" data-original-title="Ericsson Signum">
-                <div class="input-group">
-                  <span class="input-group-addon" style="padding:0">
-                    <img src="assets/ContentTest/images/ericsson_logo1.png" width="35" alt="Ericsson Signum">
-                  </span>
-                  <input placeholder="Ericsson Signum" maxlength="12" class="form-control input-lg" type="text" #username name="username" title={{toolTipText.USER_NAME}} [(ngModel)]="model.username"
-                         (keypress)="checkKeyPressed($event)" required="required" style="font-size:15px;">
-                </div>
-              </div>
-              <div class="form-group bs-tooltip" title="" data-original-title="LAN Password">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i style="font-size: 17px" class="ericsson-color-dark-blue fa fa-lock"></i>
-                  </span>
-                  <input placeholder="LAN Password" class="form-control input-lg" type="{{ showPassword ? 'text' : 'password' }}" #password name="password" title={{toolTipText.PASSWORD}} [(ngModel)]="model.password"
-                         (mousedown)="onFocus($event)" 
-                         (keypress)="checkKeyPressed($event)"
-                         (input)="onPasswordChange($event.target.value)" required="required" style="border-radius: 0 6px 6px 0;font-size:15px;">
-                  <span title={{toolTipPasswordText}}
-                        [ngClass]="{ 'glyphicon-eye-open' : showPassword , 'glyphicon-eye-close': !showPassword }"
-                        class="glyphicon form-control-feedback"
-                        style="z-index:6; cursor: pointer; pointer-events: all;"
-                        (click)="showHidePassword()">
+      <div class="row" style="flex:auto;display:block">
+        <div class="col-xs-12 col-md-4 pull-right" style="display: block;flex:auto;float:right">
+          <div class="r10" id="login-area" style="height:415px">
+            <div class="row">
+              <div class="hidden-xs col-sm-3 col-md-12 text-center">
+                <div style="font-size: 50px">
+                  <span class="fa-stack ericsson-color-dark-blue visible-xl-inline-block" style="margin-left:90px">
+                    <i class="fa-stack-2x fa fa-fw fa-circle"></i>
+                    <i class="fa-stack-1x fa-inverse fa fa-fw fa-user"></i>
                   </span>
                 </div>
               </div>
-              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 keepSigned">
-                <label class="checkbox-inline" style="font-size:14px;">
-                  <input type="checkbox" [(ngModel)]="rememberme">
-                  Keep Me Signed In
-                </label>
+
+              <div class="col-sm-9 col-md-12">
+                <div class="form-group bs-tooltip" title="" data-original-title="Ericsson Signum">
+                  <div class="input-group">
+                    <span class="input-group-addon" style="padding:0">
+                      <img src="assets/ContentTest/images/ericsson_logo1.png" width="35" alt="Ericsson Signum">
+                    </span>
+                    <input placeholder="Ericsson Signum" maxlength="12" class="form-control input-lg" type="text" #username name="username" title={{toolTipText.USER_NAME}} [(ngModel)]="model.username"
+                           (keypress)="checkKeyPressed($event)" required="required" style="font-size:15px;">
+                  </div>
+                </div>
+                <div class="form-group bs-tooltip" title="" data-original-title="LAN Password">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i style="font-size: 17px" class="ericsson-color-dark-blue fa fa-lock"></i>
+                    </span>
+                    <input placeholder="LAN Password" class="form-control input-lg" type="{{ showPassword ? 'text' : 'password' }}" #password name="password" title={{toolTipText.PASSWORD}} [(ngModel)]="model.password"
+                           (mousedown)="onFocus($event)"
+                           (keypress)="checkKeyPressed($event)"
+                           (input)="onPasswordChange($event.target.value)" required="required" style="border-radius: 0 6px 6px 0;font-size:15px;">
+                    <span title={{toolTipPasswordText}}
+                          [ngClass]="{ 'glyphicon-eye-open' : showPassword , 'glyphicon-eye-close': !showPassword }"
+                          class="glyphicon form-control-feedback"
+                          style="z-index:6; cursor: pointer; pointer-events: all;"
+                          (click)="showHidePassword()">
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 keepSigned">
+                  <label class="checkbox-inline" style="font-size:14px;">
+                    <input type="checkbox" [(ngModel)]="rememberme">
+                    Keep Me Signed In
+                  </label>
+                </div>
+                <br />
+                <p>
+                  <button title={{toolTipText.LOGIN}} (click)="LoginUser()" class="btn1 btn-primary btn-lg btn-block" style="font-size:15px;">
+                    Login to Navigator365
+                  </button>
+                </p>
+                <div class="mt20">
+                  <a href="" id="loginprivacyLink" target="_blank" title="Read QMT Privacy Notice">
+                    <i class="fa fa-user-secret fa-2x" aria-hidden="true"></i>
+                    <label style="margin-left:10px;font-size:14px;">  Read QMT Privacy Notice</label>
+                  </a>
+                </div>
+                <div>
+                  <a href="" id="loginCodeBusinessEthics" target="_blank" title="Adhere to Code of Business Ethics">
+                    <!--<i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>-->
+                    <img src="assets/ContentTest/images/N365CodeEthicsCompliance.png" width="21" height="24" style="vertical-align:text-bottom;" />
+                    <label style="margin-left:10px;font-size:14px;"> Adhere to Code of Business Ethics</label>
+                  </a>
+                </div>
               </div>
-              <br />
-              <p>
-                <button title={{toolTipText.LOGIN}}  (click)="LoginUser()" class="btn btn-primary btn-lg btn-block" style="font-size:15px;">
-                  Login to Navigator365
-                </button>
-              </p>
-              <div class="mt20">
-                <a href="" id="loginprivacyLink" target="_blank" title="Read QMT Privacy Notice">
-                  <i class="fa fa-user-secret fa-2x" aria-hidden="true"></i>
-                  <label style="margin-left:10px;font-size:14px;">  Read QMT Privacy Notice</label>
-                </a>
-              </div>
-              <div>
-                <a href="" id="loginCodeBusinessEthics" target="_blank" title="Adhere to Code of Business Ethics">
-                  <!--<i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>-->
-                  <img src="assets/ContentTest/images/N365CodeEthicsCompliance.png" width="21" height="24" style="vertical-align:text-bottom;" />
-                  <label style="margin-left:10px;font-size:14px;"> Adhere to Code of Business Ethics</label>
-                </a>
-              </div>
+
             </div>
 
           </div>
 
+          <br class="visible-xs-block visible-sm-block">
         </div>
-
-        <br class="visible-xs-block visible-sm-block">
-      </div>
-      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 pull-left" style="margin-bottom:20px;display:block;flex:auto;float:left">
-        <ngb-carousel>
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img src="assets/image3.jpg" alt="Navigator Slider">
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img src="assets/image1.jpg" alt="Navigator Slider">
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img src="assets/image3.jpg" alt="Navigator Slider">
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img src="assets/image1.jpg" alt="Navigator Slider">
-            </div>
-          </ng-template>
-        </ngb-carousel>
-      </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 pull-left" style="margin-bottom:20px;display:block;flex:auto;float:left">
+          <ngb-carousel>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img src="assets/image3.jpg" alt="Navigator Slider">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img src="assets/image1.jpg" alt="Navigator Slider">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img src="assets/image3.jpg" alt="Navigator Slider">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img src="assets/image1.jpg" alt="Navigator Slider">
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
       </div>
       <hr style="margin:15px 0;">
       <div class="row page-content" style="padding:0 15px;">
@@ -260,7 +274,8 @@
       </button>
       <br /><br />
     </div>
-    
+
 
 
   </div>
+</form>

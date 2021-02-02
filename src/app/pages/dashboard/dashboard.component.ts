@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BtnCellRenderer } from '../shared/btn-cell-renderer.component';
 import { HttpClient } from '@angular/common/http';
-
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +25,10 @@ export class DashboardComponent {
   public rowData;
   public components;
   public frameworkComponents;
-  constructor(private http: HttpClient) {
+ getUserRole() {
+    return this.cookieService.get('userrole')
+  }
+  constructor(private http: HttpClient,private cookieService: CookieService) {
     this.columnDefs = [
       {
         headerName: 'Actions',
