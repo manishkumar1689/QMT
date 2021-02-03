@@ -188,7 +188,7 @@
           </div>
 
           <div class="column md-4">
-            <div class="width-margin-left">
+            <div class="width-margin-left multi-select">
               <ng-multiselect-dropdown [placeholder]="'Select Git Instance Type'" [data]="instanceTypes"
                                        [settings]="dropdownInstanceTypeSettings">
               </ng-multiselect-dropdown>
@@ -216,7 +216,19 @@
         </div>
 
         <div class="row" style="height:10px"></div>
+      
         <div class="row" style="margin-left:0px">
+          <div class="column md-1">
+            <label id="newonboardingbox:j_idt72" style="margin-left:0px !important;" title="Please check if you want to onboard this as External-DevOps project">Dashboard:</label>
+
+          </div>
+          <div class="column md-3">
+            <div class="multi-select">
+              <ng-multiselect-dropdown [placeholder]="'Select Dashboard'" [data]="dashboards"
+                                       [settings]="dropdownDashboardSettings">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
           <div class="column md-1">
             <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Project Job Name:<span style="color: red;">*</span></label>
           </div>
@@ -227,63 +239,85 @@
             </div>
           </div>
 
-          <div class="column md-2">
-            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Standard Job Name:<span style="color: red;">*</span></label>
+          <div class="column md-1">
+            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="margin-left:-30px !important;white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Standard Job Name:<span style="color: red;">*</span></label>
 
           </div>
 
           <div class="column md-3">
-            <div>
+            <div class="multi-select" style="float:left">
               <ng-multiselect-dropdown [placeholder]="'Select Market Areas'" [data]="marketAreas"
                                        [settings]="dropdownMarketAreaSettings">
               </ng-multiselect-dropdown>
             </div>
+            <div style="float:left;margin-left:4px;margin-top:-5px">
+              <button class="btn primary">Add</button>
+            </div>
           </div>
-          <div class="column md-3">
-            <button class="btn primary" >Add</button>
-          </div>
 
-
-
-        </div>
+        </div>  
         <div class="row" style="height:10px"></div>
         <div class="row" style="margin-left:0px">
-          <div class="column md-6">
+
+
+          <div class="column md-1">
+            <!--<label id="newonboardingbox:j_idt72" style="margin-left:0px !important;" title="Please check if you want to onboard this as External-DevOps project">Dashboard:</label>
+            <br />-->
+            <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Polling Activated:<span style="color: red;">*</span></label>
+            <br />
+            <label id="newonboardingbox:j_idt74" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Domain assoicated with this Onboarding Project">Interval(Minutes):<span style="color: red;">*</span></label>
+            <br />
+            <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):<span style="color: red;">*</span></label>
+            <br />
+          </div>
+
+          <div class="column md-3">
+            <!--<div class="multi-select">
+              <ng-multiselect-dropdown [placeholder]="'Select Dashboard'" [data]="dashboards"
+                                       [settings]="dropdownDashboardSettings">
+              </ng-multiselect-dropdown>
+            </div>
+            <br />-->
+            <label class="switch" style="margin-top:5px">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            <br />
+            <div class="width-margin-left" style="margin-top:15px">
+              <input type="number" name="interval" class="form-control" />
+            </div>
+            <br />
+            <div style="max-width:75%">
+              <my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
+                              [(ngModel)]="startDateObject"
+                              required>
+              </my-date-picker>
+            </div>
+
+            <br />
+          </div>
+          <div class="column md-8">
             <ag-grid id="Projectid" #ProjectGrid [rowData]="gridDataGit" [gridHeader]="gridDataGit"
                      [GridIdentifier]="GridIdentifier"
                      (ActivateDeActivateRecord)="ActivateDeActivateRecord($event)"
                      EnableGridState="true"></ag-grid>
           </div>
-          <div class="column md-1">
-            </div>
-            <div class="column md-1">
-              <label id="newonboardingbox:j_idt72" style="margin-left:0px !important;" title="Please check if you want to onboard this as External-DevOps project">Dashboard:</label>
-            </div>
 
-            <div class="column md-4">
-              <div class="width-margin-left">
-                <ng-multiselect-dropdown [placeholder]="'Select Dashboard'" [data]="dashboards"
-                                         [settings]="dropdownDashboardSettings">
-                </ng-multiselect-dropdown>
-              </div>
-            </div>
+
+          <!--<div class="column md-2">
+  </div>
+
+  <div class="column md-1">
+  </div>
+
+  <div class="column lg-3">
+  </div>-->
 
 
 
-            <!--<div class="column md-2">
-    </div>
-
-    <div class="column md-1">
-    </div>
-
-    <div class="column lg-3">
-    </div>-->
-
-
-
-          </div>
+        </div>
           <br />
-          <div class="row" style="margin-left:0px">
+          <!--<div class="row" style="margin-left:0px">
             <div class="column md-1">
               <label id="newonboardingbox:j_idt72" class="ui-outputlabel ui-widget" style="white-space: nowrap" title="Please check if you want to onboard this as External-DevOps project">Polling Activated:<span style="color: red;">*</span></label>
             </div>
@@ -311,19 +345,19 @@
               <label id="newonboardingbox:j_idt77" class="ui-outputlabel ui-widget" style="white-space: nowrap;" title="Mandatory: Select Product assoicated with this Onboarding Project">Schedule(CST):<span style="color: red;">*</span></label>
             </div>
 
-            <div class="column md-2" style="margin-top:-7px">
+            <div class="column md-2" style="margin-top:-7px">-->
               <!--<div class="width-margin-left">-->
               <!--<input type="text" name="schedule" class="form-control" />-->
-              <my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
+              <!--<my-date-picker name="mydate" [options]="startDatePickerOptions" placeholder='mm/dd/yyyy'
                               [(ngModel)]="startDateObject"
                               required>
-              </my-date-picker>
+              </my-date-picker>-->
               <!--</div>-->
-            </div>
+            <!--</div>
 
 
 
-          </div>
+          </div>-->
 </fieldset>
     </div>
 
