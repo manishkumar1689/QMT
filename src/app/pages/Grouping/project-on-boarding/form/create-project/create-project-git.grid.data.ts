@@ -6,7 +6,7 @@ export const GitGridData = {
           GridHeight: "430",
           DeleteAction: true,
          
-         
+           domLayout: 'autoHeight',
           Activate: false,
           SortOrder: "true",
           EnableGridGroup: "true",

@@ -37,7 +37,7 @@
     </div>
   </eds-settings>
   
-  <div class="app" [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
+  <div class="app"  [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
     <!--<eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)"></eds-app-bar>-->
 
     <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)" *ngIf="isUserLoggedIn()"></eds-app-bar>
@@ -52,8 +52,8 @@
       </eds-sub-tree>
     </eds-tree>
   </div>-->
-      <div class="appnav" [ngClass]="{hidden: !menuOpened}"
-           style="padding-right: 10px;" *ngIf="isUserLoggedIn()">
+      <div class="appnav"  [ngClass]="{hidden: !menuOpened}"
+           style="padding-right: 10px; border-right:1px solid #BDC3C7" *ngIf="isUserLoggedIn()">
         <eds-tree mode="navigation">
           <eds-tree-item route='/dashboard/projectOnBoarding'>Project OnBoarding</eds-tree-item>
 
@@ -70,7 +70,7 @@
       <!--<div class="appcontent" style="margin-top: -10px;overflow: unset;" [ngClass]="{'login-screen-bg': !isUserLoggedIn()}">
     <router-outlet></router-outlet>
   </div>-->
-      <div class="appcontent" style="margin-top:-10px">
+      <div class="appcontent" style="margin-top:-10px;background-color:white">
         <router-outlet></router-outlet>
       </div>
     </div>

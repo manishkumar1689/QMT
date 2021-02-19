@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MyNotificationService } from '../../common/notification/my.notification.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreateGroupComponent implements OnInit {
   groupTypes: any;
   dropdownGroupTypeSettings: any;
-
+groupType:boolean=true;
   source = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
   target = [];
 
@@ -27,8 +27,14 @@ export class CreateGroupComponent implements OnInit {
     { text: 'item 6', selected: false },
     { text: 'item 7', selected: false }
   ];
-  constructor() { }
-
+  constructor(private notificationService: MyNotificationService) { }
+onItemSelect(event){
+debugger;
+if(event.groupTypeName=="Portfolio"){
+this.groupType=true;
+}
+else{this.groupType=false;}
+}
   ngOnInit() {
     this.groupTypes = [
     {

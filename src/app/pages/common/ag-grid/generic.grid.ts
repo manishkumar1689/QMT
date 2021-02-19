@@ -146,6 +146,7 @@ export class TestGridComponent {
     defaultColDef: {
       resizable: true,
     },
+domLayout:'autoHeight',
     enableBrowserTooltips: true,
     cacheBlockSize: 100,
     animateRows: false,

@@ -134,7 +134,7 @@
     margin: 10px;
     border-width: 1px;
     border-style: groove;
-    border-color: #BDC3C7;
+    border: 1px solid #BDC3C7;
     border-image: initial;">
         <legend>GIT:</legend>
 
@@ -188,7 +188,7 @@
           </div>
 
           <div class="column md-4">
-            <div class="width-margin-left multi-select">
+            <div class="width-margin-left multi-select" style="width:170px;margin-left:4px">
               <ng-multiselect-dropdown [placeholder]="'Select Git Instance Type'" [data]="instanceTypes"
                                        [settings]="dropdownInstanceTypeSettings">
               </ng-multiselect-dropdown>

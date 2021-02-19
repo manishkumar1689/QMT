@@ -146,7 +146,7 @@ import { AuthGuard } from './pages/auth/AuthGuard ';
     SimpleNotificationsModule.forRoot(),
     
   ],
-  providers: [ThemeService,AuthGuard,LoginService,NgbCarouselConfig, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
+  providers: [MyNotificationService,ThemeService,AuthGuard,LoginService,NgbCarouselConfig, GlobalDataService, CookieService, MyNotificationService, { provide: CookieOptions, useValue: {} },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
